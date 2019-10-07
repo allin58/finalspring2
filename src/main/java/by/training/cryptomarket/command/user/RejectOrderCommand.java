@@ -5,6 +5,7 @@ import by.training.cryptomarket.entity.Order;
 import by.training.cryptomarket.entity.User;
 import by.training.cryptomarket.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 
@@ -19,6 +20,7 @@ import java.util.List;
  * @version 1.0
  */
 @Component
+@Qualifier("RejectOrderCommand")
 public class RejectOrderCommand implements Command {
 
     @Autowired

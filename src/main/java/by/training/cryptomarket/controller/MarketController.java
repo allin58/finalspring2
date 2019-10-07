@@ -74,41 +74,49 @@ public class MarketController {
     }
 
 
-    @RequestMapping(path = "/test")
-    public String testHandler(ModelMap model, HttpServletRequest request,  HttpServletResponse response){
-
-        System.out.println("test controller");
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        System.out.println(authentication.getAuthorities());
-        System.out.println(authentication.getName());
-        model.addAttribute("testatribut","1111111111");
-
-        return "test";
-    }
 
 
 
 
     @RequestMapping(path = "/registration**")
     public String getRegistration(@RequestParam(value = "command", required = false)String command,
-            ModelMap model,HttpServletRequest request,  HttpServletResponse response) {
+                                  ModelMap model,HttpServletRequest request,  HttpServletResponse response) {
 
 
         model.addAttribute("registrationmessage","");
 
         if (command != null) {
-              Command command1  = commandFactory.createCommand("registration");
+            Command command1  = commandFactory.createCommand("registration");
 
             try {
                 String path = command1.execute(request,response,model);
                 return path;
             } catch (Exception e) {
-               return "registration";
+                return "registration";
             }
         }
 
-          return "registration";
+        return "registration";
     }
+
+
+    @RequestMapping(path = "/changelanguage")
+    public String languageHandler(ModelMap model,HttpServletRequest request,  HttpServletResponse response) {
+
+        model.addAttribute("loginmessage","");
+
+        Command command1  = commandFactory.createCommand("changelanguage");
+        try {
+            commandFactory.createCommand("changelanguage").execute(request,response,model);
+        } catch (Exception e) {
+            LOGGER.info("failed to switch language");
+        }
+
+        return "redirect:/";
+    }
+
+
+
 
 
     @RequestMapping(path = "/login**")
@@ -118,10 +126,12 @@ public class MarketController {
                            ModelMap model,HttpServletRequest request,  HttpServletResponse response) {
 
 
-
         model.addAttribute("loginmessage","");
+
         if (error != null)
             model.addAttribute("loginmessage","loginfailed");
+
+
 
         return "login";
     }

@@ -5,6 +5,7 @@ import by.training.cryptomarket.entity.mapping.TraidingCouple;
 import by.training.cryptomarket.service.CryptoPairService;
 import by.training.cryptomarket.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 
@@ -19,6 +20,7 @@ import java.util.List;
  * @version 1.0
  */
 @Component
+@Qualifier("ToMarketCommand")
 public class ToMarketCommand implements Command {
 
     @Autowired

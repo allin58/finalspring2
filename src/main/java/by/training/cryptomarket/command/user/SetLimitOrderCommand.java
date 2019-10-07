@@ -8,6 +8,7 @@ import by.training.cryptomarket.entity.qualifier.WalletQualifier;
 import by.training.cryptomarket.service.OrderService;
 import by.training.cryptomarket.service.WalletService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 
@@ -22,6 +23,7 @@ import java.util.List;
  * @version 1.0
  */
 @Component
+@Qualifier("SetLimitOrderCommand")
 public class SetLimitOrderCommand implements Command {
 
     @Autowired

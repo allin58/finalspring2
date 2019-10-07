@@ -6,6 +6,7 @@ import by.training.cryptomarket.entity.Wallet;
 import by.training.cryptomarket.service.UserService;
 import by.training.cryptomarket.service.WalletService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
@@ -20,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  * @version 1.0
  */
 @Component
-@PreAuthorize("hasRole('ROLE_ANONYMOUS')")
+@Qualifier("RegistrationCommand")
 public class RegistrationCommand implements Command {
 
 

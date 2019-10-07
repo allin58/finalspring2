@@ -35,9 +35,9 @@
 
     <body>
 
-      <#assign loginUrl = "/login?command=login">
+      <#assign loginUrl = "/">
       <#assign regUrl = "/registration">
-      <#assign changelanguageUrl = "/login?command=changelanguage">
+      <#assign changelanguageUrl = "/changelanguage">
 
 <div  style="height:100%; background-color: cornsilk">
 

@@ -3,6 +3,7 @@ package by.training.cryptomarket.command.sec;
 import by.training.cryptomarket.command.Command;
 import by.training.cryptomarket.service.CryptoPairService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  * @version 1.0
  */
 @Component
+@Qualifier("TogglePairCommand")
 public class TogglePairCommand implements Command {
 
     @Autowired

@@ -6,6 +6,7 @@ import by.training.cryptomarket.command.general.*;
 import by.training.cryptomarket.command.sec.TogglePairCommand;
 import by.training.cryptomarket.command.user.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -23,66 +24,86 @@ import java.util.Map;
  public final class CommandFactory {
 
     @Autowired
-    LoginCommand loginCommand;
+    @Qualifier("LoginCommand")
+    Command loginCommand;
 
    @Autowired
-    LogoutCommand logoutCommand;
+   @Qualifier("LogoutCommand")
+   Command logoutCommand;
 
     @Autowired
-    ToRegistrationCommand toRegistrationCommand;
+    @Qualifier("ToRegistrationCommand")
+    Command toRegistrationCommand;
 
     @Autowired
-    RegistrationCommand registrationCommand;
-
-
-    @Autowired
-    ChangeLanguageCommand changeLanguageCommand;
-
-    @Autowired
-    ApproveTransactionCommand approveTransactionCommand;
-
-    @Autowired
-    RejectTransactionCommand rejectTransactionCommand;
-
-    @Autowired
-    TogglePairCommand togglePairCommand;
-
-    @Autowired
-    ToMarketCommand toMarketCommand;
-
-    @Autowired
-    ToCabinetCommand toCabinetCommand;
-
-    @Autowired
-    ToWalletCommand toWalletCommand;
-
-    @Autowired
-    DepositCommand depositCommand;
-
-    @Autowired
-    ToDepositCommand toDepositCommand;
-
-    @Autowired
-    ToWithdrawCommand toWithdrawCommand;
-
-    @Autowired
-    WithdrawCommand withdrawCommand;
-
-    @Autowired
-    ToMyOrdersCommand toMyOrdersCommand;
-
-    @Autowired
-    RejectOrderCommand rejectOrderCommand;
-
-    @Autowired
-    SetLimitOrderCommand setLimitOrderCommand;
-
-    @Autowired
-    ExecuteMarketOrderCommand executeMarketOrderCommand;
+    @Qualifier("RegistrationCommand")
+    Command registrationCommand;
 
 
     @Autowired
-    SetTypeOfOrderCommand setTypeOfOrderCommand;
+    @Qualifier("ChangeLanguageCommand")
+    Command changeLanguageCommand;
+
+    @Autowired
+    @Qualifier("ApproveTransactionCommand")
+    Command approveTransactionCommand;
+
+    @Autowired
+    @Qualifier("RejectTransactionCommand")
+    Command rejectTransactionCommand;
+
+    @Autowired
+    @Qualifier("TogglePairCommand")
+    Command togglePairCommand;
+
+    @Autowired
+    @Qualifier("ToMarketCommand")
+    Command toMarketCommand;
+
+    @Autowired
+    @Qualifier("ToCabinetCommand")
+    Command toCabinetCommand;
+
+    @Autowired
+    @Qualifier("ToWalletCommand")
+    Command toWalletCommand;
+
+    @Autowired
+    @Qualifier("DepositCommand")
+    Command depositCommand;
+
+    @Autowired
+    @Qualifier("ToDepositCommand")
+    Command toDepositCommand;
+
+    @Autowired
+    @Qualifier("ToWithdrawCommand")
+    Command toWithdrawCommand;
+
+    @Autowired
+    @Qualifier("WithdrawCommand")
+    Command withdrawCommand;
+
+    @Autowired
+    @Qualifier("ToMyOrdersCommand")
+    Command toMyOrdersCommand;
+
+    @Autowired
+    @Qualifier("RejectOrderCommand")
+    Command rejectOrderCommand;
+
+    @Autowired
+    @Qualifier("SetLimitOrderCommand")
+    Command setLimitOrderCommand;
+
+    @Autowired
+    @Qualifier("ExecuteMarketOrderCommand")
+    Command executeMarketOrderCommand;
+
+
+    @Autowired
+    @Qualifier("SetTypeOfOrderCommand")
+    Command setTypeOfOrderCommand;
 
 
 

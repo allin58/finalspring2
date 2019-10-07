@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -27,6 +28,7 @@ import java.util.Properties;
 @Configuration
 @ComponentScan(basePackages = "by.training.cryptomarket")
 @EnableTransactionManagement
+@EnableAspectJAutoProxy
 public class SpringConfig implements WebMvcConfigurer {
 
     @Autowired
@@ -81,8 +83,8 @@ public class SpringConfig implements WebMvcConfigurer {
 
     @Bean
     public DriverManagerDataSource driverManagerDataSource() {
-       // DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
-        SingleConnectionDataSource driverManagerDataSource = new SingleConnectionDataSource();
+        DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
+      //  SingleConnectionDataSource driverManagerDataSource = new SingleConnectionDataSource();
 
         try {
             Properties prop = new Properties();

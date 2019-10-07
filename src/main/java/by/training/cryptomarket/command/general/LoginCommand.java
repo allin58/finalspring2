@@ -8,6 +8,7 @@ import by.training.cryptomarket.service.OrderService;
 import by.training.cryptomarket.service.TransactionService;
 import by.training.cryptomarket.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
@@ -25,6 +26,7 @@ import java.util.List;
  * @version 1.0
  */
 @Component
+@Qualifier("LoginCommand")
 public class LoginCommand implements Command {
 
 

@@ -6,6 +6,7 @@ import by.training.cryptomarket.entity.mapping.MappingTransaction;
 import by.training.cryptomarket.service.CryptoPairService;
 import by.training.cryptomarket.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 
@@ -20,6 +21,7 @@ import java.util.List;
  * @version 1.0
  */
 @Component
+@Qualifier("ToCabinetCommand")
 public class ToCabinetCommand implements Command {
 
     @Autowired

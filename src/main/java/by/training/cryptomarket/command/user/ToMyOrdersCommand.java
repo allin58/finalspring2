@@ -5,6 +5,7 @@ import by.training.cryptomarket.entity.Order;
 import by.training.cryptomarket.entity.User;
 import by.training.cryptomarket.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 
@@ -20,6 +21,7 @@ import java.util.List;
  */
 
 @Component
+@Qualifier("ToMyOrdersCommand")
 public class ToMyOrdersCommand implements Command {
 
    @Autowired

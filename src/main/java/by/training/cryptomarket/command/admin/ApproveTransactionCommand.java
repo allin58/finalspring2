@@ -3,6 +3,7 @@ package by.training.cryptomarket.command.admin;
 import by.training.cryptomarket.command.Command;
 import by.training.cryptomarket.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  * @version 1.0
  */
 @Component
+@Qualifier("ApproveTransactionCommand")
 public class ApproveTransactionCommand implements Command {
 
 

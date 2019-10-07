@@ -1,6 +1,7 @@
 package by.training.cryptomarket.command.user;
 
 import by.training.cryptomarket.command.Command;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  * @version 1.0
  */
 @Component
+@Qualifier("ToWithdrawCommand")
 public class ToWithdrawCommand implements Command {
 
 
