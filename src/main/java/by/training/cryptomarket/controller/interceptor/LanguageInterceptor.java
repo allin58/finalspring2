@@ -1,44 +1,33 @@
 package by.training.cryptomarket.controller.interceptor;
 
 
-import by.training.cryptomarket.utf8control.UTF8Control;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Locale;
+import java.util.Properties;
 import java.util.ResourceBundle;
+
 
 public class LanguageInterceptor extends HandlerInterceptorAdapter {
 
-    @Autowired
-    ServletConfig config;
+
+
 
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-
-
-
-
-       /* HttpServletRequest httpRequest = request;
-        HttpSession session = httpRequest.getSession();*/
-
-
-
-
-
-
-       /* if (modelAndView.getModel().get("language") == null) {
-            modelAndView.addObject("language", "en");
-
-        }
-*/
 
 
      HttpServletRequest httpRequest =  request;
@@ -49,12 +38,9 @@ public class LanguageInterceptor extends HandlerInterceptorAdapter {
      }
 
 
-           // Locale locale = new Locale((String) modelAndView.getModel().get("language"));
-            Locale locale = new Locale((String) httpRequest.getSession().getAttribute("language"));
 
-
-           ResourceBundle resourceBundle = ResourceBundle.getBundle("text", locale);
-           //ResourceBundle resourceBundle = ResourceBundle.getBundle("text", locale, new UTF8Control());
+           Locale locale = new Locale((String) httpRequest.getSession().getAttribute("language"));
+            ResourceBundle resourceBundle = ResourceBundle.getBundle("text", locale);
             modelAndView.addObject("login", resourceBundle.getString("button.login"));
             modelAndView.addObject("registration", resourceBundle.getString("button.registration"));
             modelAndView.addObject("logout", resourceBundle.getString("button.logout"));
@@ -154,6 +140,30 @@ public class LanguageInterceptor extends HandlerInterceptorAdapter {
 
 
 
-        super.postHandle(request, response, handler, modelAndView);
+     Properties props = new Properties();
+
+
+     String version;
+     String buildDate;
+
+     try {
+
+      props.load(request.getServletContext().getResourceAsStream("/WEB-INF/classes/build.properties"));
+      version = props.getProperty("build.version");
+      buildDate = props.getProperty("build.date");
+
+     } catch (Exception e) {
+      e.printStackTrace();
+      version = "-";
+      buildDate = "-";;
+     }
+
+
+     modelAndView.addObject("buildVersion", version);
+     modelAndView.addObject("buildDate", buildDate);
+
+
+
+     super.postHandle(request, response, handler, modelAndView);
     }
 }

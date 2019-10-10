@@ -8,6 +8,8 @@ import by.training.cryptomarket.service.TransactionService;
 import by.training.cryptomarket.service.WalletService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 
@@ -41,6 +43,8 @@ public class RejectTransactionCommand implements Command {
      * @throws Exception
      */
     @Override
+   // @PreAuthorize("hasRole('admin')")
+    @Secured("admin")
     public String execute(final HttpServletRequest request,
                           final HttpServletResponse response, ModelMap model) throws Exception {
 

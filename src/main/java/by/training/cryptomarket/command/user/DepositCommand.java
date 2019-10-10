@@ -36,7 +36,10 @@ public class DepositCommand implements Command {
     @Override
     public String execute(final HttpServletRequest request,
                           final HttpServletResponse response, ModelMap model) throws Exception {
+
+
         request.getSession().setAttribute("transactionerror", "");
+
         try {
            Double amount = Double.valueOf(request.getParameter("amount"));
            if (amount < 0) {
@@ -54,6 +57,7 @@ public class DepositCommand implements Command {
             User user = (User) request.getSession().getAttribute("user");
             List<MappingTransaction> transactionList = transactionService.getTransactionsByUser(user.getUserName());
             request.getSession().setAttribute("transactions", transactionList);
+
             return "wallet";
         } catch (Exception e) {
 

@@ -34,7 +34,7 @@
 
     <body>
 
-      <#assign regUrl = "/login?command=registration">
+      <#assign regUrl = "/registration?command=registration">
 
 
 <div  style="height:100%; background-color: cornsilk">

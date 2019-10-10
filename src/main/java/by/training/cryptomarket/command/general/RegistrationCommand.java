@@ -42,12 +42,13 @@ public class RegistrationCommand implements Command {
     public String execute(final HttpServletRequest request,
                           final HttpServletResponse response, ModelMap model) throws Exception {
 
-        System.out.println("registrationcommand");
+
 
         String username = request.getParameter("username");
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
         String password = request.getParameter("password");
+
 
         //request.getSession().setAttribute("registrationmessage", null);
         model.addAttribute("registrationmessage","");
@@ -100,7 +101,7 @@ public class RegistrationCommand implements Command {
 
 
                 model.addAttribute("loginmessage","successful");
-                return "login";
+                return "redirect:/";
 
             }
 

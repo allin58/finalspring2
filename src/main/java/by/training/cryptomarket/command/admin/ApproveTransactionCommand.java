@@ -4,6 +4,8 @@ import by.training.cryptomarket.command.Command;
 import by.training.cryptomarket.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 
@@ -32,8 +34,11 @@ public class ApproveTransactionCommand implements Command {
      * @return appropriate jsp
      * @throws Exception
      */
+
     @Override
-    public String execute(final HttpServletRequest request,
+  //  @PreAuthorize("hasRole('admin')")
+    @Secured("admin")
+       public String execute(final HttpServletRequest request,
                           final HttpServletResponse response, ModelMap model) throws Exception {
        Integer idintity = Integer.valueOf(
                request.getParameter("identity").trim());

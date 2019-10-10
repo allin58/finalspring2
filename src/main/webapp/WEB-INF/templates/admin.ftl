@@ -81,7 +81,7 @@
                                  </td>
 
 
-                                 <td> <FORM action="${rejectransactionUrl}${transaction.identity}+&from=admin" method="post">
+                                 <td> <FORM action="${rejectransactionUrl}${transaction.identity}&from=admin" method="post">
                                      <button type="submit" class="uui-button test-color dark-gray">${reject}</button>
                                  </FORM>
                                  </td>

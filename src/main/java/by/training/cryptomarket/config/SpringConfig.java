@@ -3,10 +3,8 @@ package by.training.cryptomarket.config;
 import by.training.cryptomarket.controller.interceptor.LanguageInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.*;
+import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -29,11 +27,14 @@ import java.util.Properties;
 @ComponentScan(basePackages = "by.training.cryptomarket")
 @EnableTransactionManagement
 @EnableAspectJAutoProxy
+@PropertySource("classpath:db.properties")
 public class SpringConfig implements WebMvcConfigurer {
 
-    @Autowired
-    ServletConfig config;
+  /*  @Autowired
+    ServletConfig config;*/
 
+    @Autowired
+    Environment env;
 
 
 /*
@@ -50,8 +51,7 @@ public class SpringConfig implements WebMvcConfigurer {
         resolver.setCache(true);
         resolver.setPrefix("");
         resolver.setSuffix(".ftl");
-        //resolver.setContentType("UTF-8");
-
+        resolver.setContentType("text/html;charset=UTF-8");
         return resolver;
     }
 
@@ -59,7 +59,16 @@ public class SpringConfig implements WebMvcConfigurer {
     public FreeMarkerConfigurer freemarkerConfig() {
         FreeMarkerConfigurer freeMarkerConfigurer = new FreeMarkerConfigurer();
         freeMarkerConfigurer.setTemplateLoaderPath("/WEB-INF/templates/");
-       // freeMarkerConfigurer.setDefaultEncoding("UTF-8");
+
+    /*    freemarker.template.Configuration configuration = null;
+        try {
+            configuration = freeMarkerConfigurer.createConfiguration();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        configuration.setTemplateExceptionHandler(new MyTemplateExceptionHandler());
+        freeMarkerConfigurer.setConfiguration(configuration);*/
 
         return freeMarkerConfigurer;
     }
@@ -86,23 +95,23 @@ public class SpringConfig implements WebMvcConfigurer {
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
       //  SingleConnectionDataSource driverManagerDataSource = new SingleConnectionDataSource();
 
-        try {
-            Properties prop = new Properties();
 
+
+
+           /* Properties prop = new Properties();
             prop.load(config.getServletContext().getResourceAsStream("/WEB-INF/classes/db.properties"));
             driverManagerDataSource.setDriverClassName(prop.getProperty("db.drivername"));
             driverManagerDataSource.setUsername(prop.getProperty("db.username"));
             driverManagerDataSource.setPassword(prop.getProperty("db.password"));
             driverManagerDataSource.setUrl(prop.getProperty("db.url"));
-        } catch (IOException e) {
-         /*
-        driverManagerDataSource.setDriverClassName("org.postgresql.Driver");
-        driverManagerDataSource.setUsername("market5");
-        driverManagerDataSource.setPassword("market");
-        driverManagerDataSource.setUrl("jdbc:postgresql://localhost:5432/market");*/
-        }
+              */
 
 
+
+        driverManagerDataSource.setDriverClassName(env.getProperty("db.drivername"));
+        driverManagerDataSource.setUsername(env.getProperty("db.username"));
+        driverManagerDataSource.setPassword(env.getProperty("db.password"));
+        driverManagerDataSource.setUrl(env.getProperty("db.url"));
 
 
         return driverManagerDataSource;

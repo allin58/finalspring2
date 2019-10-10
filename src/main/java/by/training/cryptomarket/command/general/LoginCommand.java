@@ -60,8 +60,6 @@ public class LoginCommand implements Command {
                           final HttpServletResponse response, ModelMap model) throws Exception {
 
 
-
-
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
 
