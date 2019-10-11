@@ -34,38 +34,9 @@
 
     <body>
 
-      <#assign loginUrl = "/market?command=login">
-      <#assign regUrl = "/registration?command=toregistration">
-      <#assign changelanguageUrl = "/login?command=changelanguage">
-
-<div  style="height:100%; background-color: cornsilk">
-
-<div class="uui-login-panel" style = "margin-top : 20% ; margin-left : 40% ; background: #7F993A ">
-    <p style="color: aliceblue" class="build">ERROR</p>
-</div>
+     ${url}
+     ${exception}
 
 
-
-
-
-      <footer style="position: absolute;left: 0;bottom: 0;width: 100%;height: 80px;">
-         <div class="uui-footer">
-        <div class="footer-logo-copyright">
-
-           <p style="color: aliceblue" class="build">Build version ${buildVersion}</p>
-           <p style="color: aliceblue" class="build">Build date  ${buildDate} </p>
-
-        </div>
-
-
-
-
-
-
-    </div>
-</footer>
-
-</div>
-        
     </body>
 </html>

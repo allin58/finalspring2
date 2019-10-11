@@ -38,7 +38,7 @@
 
 <#assign seq = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']>
 
-${testatribut}
+${tedtatrib}
 
 
 <FORM action="/test2" method="post">

@@ -1,6 +1,7 @@
 package by.training.cryptomarket.config;
 
 import by.training.cryptomarket.controller.interceptor.LanguageInterceptor;
+import freemarker.template.TemplateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.*;
@@ -55,20 +56,16 @@ public class SpringConfig implements WebMvcConfigurer {
         return resolver;
     }
 
+
+
+
+
+
     @Bean
     public FreeMarkerConfigurer freemarkerConfig() {
+
         FreeMarkerConfigurer freeMarkerConfigurer = new FreeMarkerConfigurer();
         freeMarkerConfigurer.setTemplateLoaderPath("/WEB-INF/templates/");
-
-    /*    freemarker.template.Configuration configuration = null;
-        try {
-            configuration = freeMarkerConfigurer.createConfiguration();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        configuration.setTemplateExceptionHandler(new MyTemplateExceptionHandler());
-        freeMarkerConfigurer.setConfiguration(configuration);*/
 
         return freeMarkerConfigurer;
     }

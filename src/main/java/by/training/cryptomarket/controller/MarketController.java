@@ -11,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +24,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Properties;
 
 //@RestController
@@ -198,6 +201,23 @@ public class MarketController {
         }
         return path;
     }
+
+
+
+    @RequestMapping(path = "/test")
+    public String getTest(@RequestParam(value = "command", required = false)String command,
+                                  ModelMap model,HttpServletRequest request,  HttpServletResponse response) throws Exception {
+
+        if (true) {
+            throw new Exception();
+        }
+
+        model.addAttribute("tedtatrib","asd");
+
+      return "test";
+        }
+
+
 
 
 
