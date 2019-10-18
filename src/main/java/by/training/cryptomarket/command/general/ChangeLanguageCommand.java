@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Nikita Karchahin
  * @version 1.0
  */
-@Component
+@Component("changelanguage")
 @Qualifier("ChangeLanguageCommand")
 public class ChangeLanguageCommand implements Command {
 
@@ -29,6 +29,7 @@ public class ChangeLanguageCommand implements Command {
     @Override
     public String execute(final HttpServletRequest request, final HttpServletResponse response, ModelMap model) throws Exception {
         request.getSession().setAttribute("language", request.getParameter("language"));
+
 
       //  model.addAttribute("language",request.getParameter("language"));
        // model.addAttribute("loginmessage","null");

@@ -1,42 +1,29 @@
 package servicetest;
 
-import by.training.cryptomarket.config.TestSpringConfig;
-import by.training.cryptomarket.daojdbctemplate.sql.UserDaoImpl;
 import by.training.cryptomarket.entity.mapping.TraidingCouple;
 import by.training.cryptomarket.service.CryptoPairService;
-import org.apache.logging.log4j.util.Strings;
+import config.TestSpringConfig;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.TestInstance;
-import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.ArgumentsSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringJUnitWebConfig(TestSpringConfig.class)
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)  // эта аннотация позволяет не создавать новый экземпляр теста для каждого теста
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class CryptoPairServiceTest {
-
-    @Autowired
-    UserDaoImpl userDao;
 
 
     @Autowired
     CryptoPairService cryptoPairService;
 
-
-    @Autowired
-    JdbcOperations jdbcOperations;
 
     @BeforeAll
     public void init() {

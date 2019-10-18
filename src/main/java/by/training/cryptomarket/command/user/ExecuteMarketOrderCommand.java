@@ -26,7 +26,7 @@ import java.util.List;
  * @version 1.0
  */
 
-@Component
+@Component("executemarketorder")
 @Qualifier("ExecuteMarketOrderCommand")
 public class ExecuteMarketOrderCommand implements Command {
 

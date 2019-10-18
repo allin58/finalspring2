@@ -19,7 +19,7 @@ import java.security.Principal;
  * @author Nikita Karchahin
  * @version 1.0
  */
-@Component
+@Component("togglepair")
 @Qualifier("TogglePairCommand")
 public class TogglePairCommand implements Command {
 

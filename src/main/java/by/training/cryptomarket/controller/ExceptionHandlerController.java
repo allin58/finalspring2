@@ -17,7 +17,6 @@ public class ExceptionHandlerController {
     public String defaultErrorHandler(HttpServletRequest request, Exception e, Model model) {
 
 
-
         model.addAttribute("exception", e);
         model.addAttribute("url", request.getRequestURL());
 

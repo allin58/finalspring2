@@ -32,7 +32,7 @@
 
     </head>
 
-    <body>
+   <body style="background-color: cornsilk">
 
       <#assign logoutUrl = "/logout">
       <#assign approvteransactionUrl = "/admin?command=approvetransaction&identity=">
@@ -63,23 +63,21 @@
 
 
     <div style="height:300px;overflow-y:scroll;">
-        <table class="table">
+        <table>
 
             <tbody>
-
                              <#list transactionData as transaction>
 
                              <tr>
                                  <td>${transaction.user}</td>
                                  <td>${transaction.coin}</td>
+                                 <td>${transaction.type}</td>
                                  <td>${transaction.amount}</td>
-
 
                                  <td> <FORM action="${approvteransactionUrl}${transaction.identity}" method="post">
                                      <button type="submit" class="uui-button test-color dark-gray">${approve}</button>
                                  </FORM>
                                  </td>
-
 
                                  <td> <FORM action="${rejectransactionUrl}${transaction.identity}&from=admin" method="post">
                                      <button type="submit" class="uui-button test-color dark-gray">${reject}</button>

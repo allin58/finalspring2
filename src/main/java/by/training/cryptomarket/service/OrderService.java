@@ -172,6 +172,8 @@ public class OrderService {
 
 
             Order order = orderDao.read(identity);
+
+
             cancelOrderTransaction.setOrder(order);
             cancelOrderTransaction.commit();
 

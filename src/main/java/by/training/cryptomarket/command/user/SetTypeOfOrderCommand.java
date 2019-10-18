@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Nikita Karchahin
  * @version 1.0
  */
-@Component
+@Component("settypeoforder")
 @Qualifier("SetTypeOfOrderCommand")
 public class SetTypeOfOrderCommand implements Command {
     @Autowired

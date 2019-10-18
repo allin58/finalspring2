@@ -22,7 +22,7 @@ import java.util.List;
  * @version 1.0
  */
 
-@Component
+@Component("towallet")
 @Qualifier("ToWalletCommand")
 public class ToWalletCommand implements Command {
 

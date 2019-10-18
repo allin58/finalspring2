@@ -33,7 +33,7 @@
 
 </head>
 
-<body>
+<body style="background-color: cornsilk">
 
       <#assign logoutUrl = "/logout">
       <#assign walletUrl = "/wallet?command=towallet">
@@ -46,6 +46,9 @@
       <#assign ordermes = "${ordermessage}">
 
 
+
+
+ <#if activepairs?has_content >
 
 
 <div  style="height:100%; background-color: cornsilk">
@@ -66,6 +69,10 @@
         </div>
 
 
+
+
+
+
         <div class="uui-header navigation-header" style="margin-top: 20px ">
             <nav>
 
@@ -80,6 +87,8 @@
                 </ul>
             </nav>
         </div>
+
+
 
 
     </header>
@@ -236,6 +245,43 @@
     </div>
 </footer>
 
+  <#else>
+
+<div  style="height:100%; background-color: cornsilk">
+
+    <header>
+        <div class="uui-header navigation-header">
+            <nav>
+
+                <ul class="uui-navigation nav navbar-nav">
+                    <li><a href=${marketUrl}>${market}</a></li>
+                    <li><a href=${walletUrl}>${mywallet}</a></li>
+                    <li><a href=${toorderUrl}>${myorders}</a></li>
+                    <li><a href=${logoutUrl}>${logout}</a></li>
+
+                    <li> <H2 style = "color: aliceblue" >${usertext} ${user.userName} ${market} </H2></li>
+                </ul>
+            </nav>
+        </div>
+
+
+
+
+        <div class="uui-header navigation-header" style="margin-top: 20px ">
+            <nav>
+
+                <ul class="uui-navigation nav navbar-nav">
+                    <H2 style="float: left; color: aliceblue">${marketError["marketerror"]}</H2>
+
+                </ul>
+            </nav>
+        </div>
+
+       </div>
+
+    </header>
+
+   </#if>
 
 
 

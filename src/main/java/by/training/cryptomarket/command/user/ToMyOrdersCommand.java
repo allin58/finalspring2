@@ -20,7 +20,7 @@ import java.util.List;
  * @version 1.0
  */
 
-@Component
+@Component("toorders")
 @Qualifier("ToMyOrdersCommand")
 public class ToMyOrdersCommand implements Command {
 

@@ -22,7 +22,7 @@ import java.util.List;
  * @author Nikita Karchahin
  * @version 1.0
  */
-@Component
+@Component("setlimitorder")
 @Qualifier("SetLimitOrderCommand")
 public class SetLimitOrderCommand implements Command {
 

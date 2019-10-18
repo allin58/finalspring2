@@ -120,6 +120,7 @@ if (id == 0) return null;
     public User getUser(String login) {
 
         List<User> users = userDao.read();
+
         User user =null;
         for (User user1 : users) {
             if(user1.getUserName().equals(login)) {

@@ -4,6 +4,7 @@ package by.training.cryptomarket.daojdbctemplate.sql;
 import by.training.cryptomarket.daojdbctemplate.WalletDao;
 import by.training.cryptomarket.entity.Wallet;
 import by.training.cryptomarket.exception.PersistentException;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -60,18 +61,23 @@ public class WalletDaoImpl extends BaseDao implements WalletDao {
     public List<Wallet> read() {
 
 
-        List<Wallet> wallets = jdbcOperations.query(readListSql, new RowMapper<Wallet>() {
-            @Override
-            public Wallet mapRow(ResultSet resultSet, int i) throws SQLException {
-                Wallet wallet = new Wallet();
-                wallet.setIdentity(resultSet.getInt("identity"));
-                wallet.setBtc(resultSet.getBigDecimal("BTC").doubleValue());
-                wallet.setEth(resultSet.getBigDecimal("ETH").doubleValue());
-                wallet.setUsdt(resultSet.getBigDecimal("USDT").doubleValue());
+        List<Wallet> wallets = null;
+        try {
+            wallets = jdbcOperations.query(readListSql, new RowMapper<Wallet>() {
+                @Override
+                public Wallet mapRow(ResultSet resultSet, int i) throws SQLException {
+                    Wallet wallet = new Wallet();
+                    wallet.setIdentity(resultSet.getInt("identity"));
+                    wallet.setBtc(resultSet.getBigDecimal("BTC").doubleValue());
+                    wallet.setEth(resultSet.getBigDecimal("ETH").doubleValue());
+                    wallet.setUsdt(resultSet.getBigDecimal("USDT").doubleValue());
 
-                return wallet;
-            }
-        });
+                    return wallet;
+                }
+            });
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in WalletDaoImpl, method read()");
+        }
         return wallets;
 
 
@@ -90,21 +96,25 @@ public class WalletDaoImpl extends BaseDao implements WalletDao {
 
 
         GeneratedKeyHolder keyHolder = new GeneratedKeyHolder();
-        jdbcOperations.update(new PreparedStatementCreator() {
-            @Override
-            public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+        try {
+            jdbcOperations.update(new PreparedStatementCreator() {
+                @Override
+                public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
 
-                PreparedStatement ps =
-                        connection.prepareStatement(createSql);
-                ps.setInt(1, wallet.getIdentity());
-                ps.setBigDecimal(2, new BigDecimal(wallet.getBtc()));
-                ps.setBigDecimal(3, new BigDecimal(wallet.getEth()));
-                ps.setBigDecimal(4, new BigDecimal(wallet.getUsdt()));
-                return ps;
-            }
-        }, keyHolder);
+                    PreparedStatement ps =
+                            connection.prepareStatement(createSql);
+                    ps.setInt(1, wallet.getIdentity());
+                    ps.setBigDecimal(2, new BigDecimal(wallet.getBtc()));
+                    ps.setBigDecimal(3, new BigDecimal(wallet.getEth()));
+                    ps.setBigDecimal(4, new BigDecimal(wallet.getUsdt()));
+                    return ps;
+                }
+            }, keyHolder);
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in WalletDaoImpl, method create()");
+        }
 
-       // return (Integer) keyHolder.getKeys().get("identity");
+        // return (Integer) keyHolder.getKeys().get("identity");
         return 0;
   }
 
@@ -117,17 +127,22 @@ public class WalletDaoImpl extends BaseDao implements WalletDao {
     @Override
     public Wallet read(final Integer identity)  {
 
-        Wallet wallet = jdbcOperations.queryForObject(readSql, new Object[]{identity}, new RowMapper<Wallet>() {
-            @Override
-            public Wallet mapRow(ResultSet resultSet, int i) throws SQLException {
-                Wallet wallet = new Wallet();
-                wallet.setIdentity(identity);
-                wallet.setBtc(resultSet.getBigDecimal("BTC").doubleValue());
-                wallet.setEth(resultSet.getBigDecimal("ETH").doubleValue());
-                wallet.setUsdt(resultSet.getBigDecimal("USDT").doubleValue());
-                return wallet;
-            }
-        });
+        Wallet wallet = null;
+        try {
+            wallet = jdbcOperations.queryForObject(readSql, new Object[]{identity}, new RowMapper<Wallet>() {
+                @Override
+                public Wallet mapRow(ResultSet resultSet, int i) throws SQLException {
+                    Wallet wallet = new Wallet();
+                    wallet.setIdentity(identity);
+                    wallet.setBtc(resultSet.getBigDecimal("BTC").doubleValue());
+                    wallet.setEth(resultSet.getBigDecimal("ETH").doubleValue());
+                    wallet.setUsdt(resultSet.getBigDecimal("USDT").doubleValue());
+                    return wallet;
+                }
+            });
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in WalletDaoImpl, method read()");
+        }
         return wallet;
 
 
@@ -142,7 +157,11 @@ public class WalletDaoImpl extends BaseDao implements WalletDao {
     @Override
     public void update(final Wallet wallet) {
 
-        jdbcOperations.update(updateSql,wallet.getBtc(),wallet.getEth(),wallet.getUsdt(),wallet.getIdentity());
+        try {
+            jdbcOperations.update(updateSql,wallet.getBtc(),wallet.getEth(),wallet.getUsdt(),wallet.getIdentity());
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in WalletDaoImpl, method update()");
+        }
     }
 
     /**
@@ -152,7 +171,11 @@ public class WalletDaoImpl extends BaseDao implements WalletDao {
      */
     @Override
     public void delete(final Integer identity)  {
-        jdbcOperations.update(deleteSql, identity );
+        try {
+            jdbcOperations.update(deleteSql, identity );
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in WalletDaoImpl, method delete()");
+        }
 
     }
 }

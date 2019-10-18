@@ -4,6 +4,7 @@ package by.training.cryptomarket.daojdbctemplate.sql;
 import by.training.cryptomarket.daojdbctemplate.CoinDao;
 import by.training.cryptomarket.entity.Coin;
 import by.training.cryptomarket.exception.PersistentException;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
@@ -53,51 +54,90 @@ public class CoinDaoImpl extends BaseDao implements CoinDao {
     @Override
     public List<Coin> read(){
 
-        List<Coin> coins = jdbcOperations.query(readListSql, new RowMapper<Coin>() {
-            @Override
-            public Coin mapRow(ResultSet resultSet, int i) throws SQLException {
-                Coin coin = new Coin();
-                coin.setIdentity(resultSet.getInt("identity"));
-                coin.setTicker(resultSet.getString("coin"));
-                coin.setFullName(resultSet.getString("full_name"));
-                return coin;
-            }
-        });
+        List<Coin> coins = null;
+        try {
+            coins = jdbcOperations.query(readListSql, new RowMapper<Coin>() {
+                @Override
+                public Coin mapRow(ResultSet resultSet, int i) throws SQLException {
+                    Coin coin = new Coin();
+                    coin.setIdentity(resultSet.getInt("identity"));
+                    coin.setTicker(resultSet.getString("coin"));
+                    coin.setFullName(resultSet.getString("full_name"));
+                    return coin;
+                }
+            });
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in CoinDaoImpl, method read()");
+
+        }
+
+
         return coins;
     }
 
     @Override
     public Coin read(Integer identity) {
-    Coin coin = jdbcOperations.queryForObject(readSql, new Object[]{identity}, new RowMapper<Coin>() {
-    @Override
-    public Coin mapRow(ResultSet resultSet, int i) throws SQLException {
-        Coin coin = new Coin();
-        coin.setIdentity(identity);
-        coin.setTicker(resultSet.getString("coin"));
-        coin.setFullName(resultSet.getString("full_name"));
+
+
+        Coin coin = null;
+        try {
+            coin = jdbcOperations.queryForObject(readSql, new Object[]{identity}, new RowMapper<Coin>() {
+            @Override
+            public Coin mapRow(ResultSet resultSet, int i) throws SQLException {
+                Coin coin = new Coin();
+                coin.setIdentity(identity);
+                coin.setTicker(resultSet.getString("coin"));
+                coin.setFullName(resultSet.getString("full_name"));
+                return coin;
+            }
+        });
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in CoinDaoImpl, method read()");
+        }
+
+
         return coin;
-    }
-});
-        return coin;
+
+
+
+
     }
 
 
     @Override
     public Integer create(Coin coin){
-        jdbcOperations.update(createSql,coin.getIdentity(),coin.getTicker(),coin.getFullName());
+
+        try {
+            jdbcOperations.update(createSql,coin.getIdentity(),coin.getTicker(),coin.getFullName());
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in CoinDaoImpl, method create()");
+        }
+
+
         return coin.getIdentity();
+
     }
 
 
 
     @Override
     public void update(Coin coin)  {
-        jdbcOperations.update(updateSql,coin.getTicker(),coin.getFullName(),coin.getIdentity());
+        try {
+            jdbcOperations.update(updateSql,coin.getTicker(),coin.getFullName(),coin.getIdentity());
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in CoinDaoImpl, method update()");
+        }
     }
 
     @Override
     public void delete(Integer identity) {
-        jdbcOperations.update(deleteSql, identity );
+
+
+        try {
+            jdbcOperations.update(deleteSql, identity );
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in CoinDaoImpl, method delete()");
+        }
     }
 
 }

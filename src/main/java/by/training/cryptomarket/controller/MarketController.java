@@ -2,32 +2,24 @@ package by.training.cryptomarket.controller;
 
 import by.training.cryptomarket.command.Command;
 import by.training.cryptomarket.command.CommandFactory;
-import by.training.cryptomarket.command.general.LoginCommand;
-import by.training.cryptomarket.command.general.RegistrationCommand;
-import by.training.cryptomarket.service.CryptoPairService;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
 import javax.annotation.PostConstruct;
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Properties;
+import java.util.List;
+import java.util.Map;
 
-//@RestController
 @Controller
 public class MarketController {
 
@@ -37,11 +29,11 @@ public class MarketController {
      */
     static final Logger LOGGER = LogManager.getLogger("by.training.final.ServletLogger");
 
-  /*  @Autowired
-    ServletConfig config;*/
 
     @Autowired
     CommandFactory commandFactory;
+
+
 
 
 
@@ -56,6 +48,7 @@ public class MarketController {
     @RequestMapping(path = "/registration**")
     public String getRegistration(@RequestParam(value = "command", required = false)String command,
                                   ModelMap model,HttpServletRequest request,  HttpServletResponse response) {
+
 
 
         model.addAttribute("registrationmessage","");
@@ -80,7 +73,7 @@ public class MarketController {
 
         model.addAttribute("loginmessage","");
 
-        Command command1  = commandFactory.createCommand("changelanguage");
+       // Command command1  = commandFactory.createCommand("changelanguage");
         try {
             commandFactory.createCommand("changelanguage").execute(request,response,model);
         } catch (Exception e) {
@@ -142,8 +135,7 @@ public class MarketController {
             path = command.execute(request,response,model);
 
         } catch (Exception e) {
-            e.printStackTrace();
-            path = "error";
+                   path = "error";
         }
         return path;
     }
@@ -204,15 +196,25 @@ public class MarketController {
 
 
 
+
+
+
     @RequestMapping(path = "/test")
     public String getTest(@RequestParam(value = "command", required = false)String command,
                                   ModelMap model,HttpServletRequest request,  HttpServletResponse response) throws Exception {
 
-        if (true) {
+    /*    if (true) {
             throw new Exception();
-        }
+        }*/
 
-        model.addAttribute("tedtatrib","asd");
+        ArrayList<Integer> list = new ArrayList();
+      /*  list.add(12);
+        list.add(143);
+        list.add(12);
+        list.add(14);*/
+
+        model.addAttribute("intlist",list);
+        model.addAttribute("testparam","teeset");
 
       return "test";
         }

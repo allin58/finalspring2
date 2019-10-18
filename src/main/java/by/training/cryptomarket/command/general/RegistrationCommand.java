@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Nikita Karchahin
  * @version 1.0
  */
-@Component
+@Component("registration")
 @Qualifier("RegistrationCommand")
 public class RegistrationCommand implements Command {
 
@@ -48,6 +48,8 @@ public class RegistrationCommand implements Command {
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
         String password = request.getParameter("password");
+
+
 
 
         //request.getSession().setAttribute("registrationmessage", null);

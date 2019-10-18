@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Nikita Karchahin
  * @version 1.0
  */
-@Component
+@Component("towithdraw")
 @Qualifier("ToWithdrawCommand")
 public class ToWithdrawCommand implements Command {
 

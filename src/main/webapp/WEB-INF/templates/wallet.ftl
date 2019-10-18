@@ -33,7 +33,7 @@
 
 </head>
 
-<body>
+<body style="background-color: cornsilk">
 
       <#assign logoutUrl = "/logout">
       <#assign walletUrl = "/wallet?command=towallet">

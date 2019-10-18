@@ -4,6 +4,7 @@ package by.training.cryptomarket.daojdbctemplate.sql;
 import by.training.cryptomarket.daojdbctemplate.UserDao;
 import by.training.cryptomarket.entity.User;
 import by.training.cryptomarket.exception.PersistentException;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -46,6 +47,9 @@ public class UserDaoImpl extends BaseDao implements UserDao {
   private static  String deleteSql = "DELETE FROM users WHERE identity = ?";
 
 
+
+
+
     /**
      * The method that returns collection of users.
      * @return collection of users
@@ -53,20 +57,30 @@ public class UserDaoImpl extends BaseDao implements UserDao {
      */
     public List<User> read()  {
 
-        List<User> users = jdbcOperations.query(readListSql, new RowMapper<User>() {
-            @Override
-            public User mapRow(ResultSet resultSet, int i) throws SQLException {
-                User user = new User();
-                user.setIdentity(resultSet.getInt("identity"));
-                user.setUserName(resultSet.getString("user_name"));
-                user.setName(resultSet.getString("name"));
-                user.setSurname(resultSet.getString("surname"));
-                user.setHashOfPassword(resultSet.getString("hash_of_password"));
-                user.setRole(resultSet.getString("role"));
 
-                return user;
-            }
-        });
+
+        List<User> users = null;
+        try {
+            users = jdbcOperations.query(readListSql, new RowMapper<User>() {
+                @Override
+                public User mapRow(ResultSet resultSet, int i) throws SQLException {
+                    User user = new User();
+                    user.setIdentity(resultSet.getInt("identity"));
+                    user.setUserName(resultSet.getString("user_name"));
+                    user.setName(resultSet.getString("name"));
+                    user.setSurname(resultSet.getString("surname"));
+                    user.setHashOfPassword(resultSet.getString("hash_of_password"));
+                    user.setRole(resultSet.getString("role"));
+
+
+                    return user;
+                }
+            });
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in UserDaoImpl, method read()");
+        }
+
+
         return users;
 
 
@@ -80,22 +94,26 @@ public class UserDaoImpl extends BaseDao implements UserDao {
      */
     public Integer create(final User user) {
         GeneratedKeyHolder keyHolder = new GeneratedKeyHolder();
-              jdbcOperations.update(new PreparedStatementCreator() {
-            @Override
-            public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+        try {
+            jdbcOperations.update(new PreparedStatementCreator() {
+          @Override
+          public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
 
-                PreparedStatement ps =
-                        connection.prepareStatement(createSql);
-                ps.setString(1, user.getUserName());
-                ps.setString(2, user.getName());
-                ps.setString(3, user.getSurname());
-                ps.setString(4, user.getHashOfPassword());
-                ps.setString(5, user.getRole());
-                return ps;
-            }
-        }, keyHolder);
+              PreparedStatement ps =
+                      connection.prepareStatement(createSql);
+              ps.setString(1, user.getUserName());
+              ps.setString(2, user.getName());
+              ps.setString(3, user.getSurname());
+              ps.setString(4, user.getHashOfPassword());
+              ps.setString(5, user.getRole());
+              return ps;
+          }
+      }, keyHolder);
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in UserDaoImpl, method create()");
+        }
 
-       // return (Integer) keyHolder.getKeys().get("identity");
+        // return (Integer) keyHolder.getKeys().get("identity");
         return 0;
     }
 
@@ -107,7 +125,9 @@ public class UserDaoImpl extends BaseDao implements UserDao {
      */
     public User read(final Integer identity) {
 
-            User user = jdbcOperations.queryForObject(readSql, new Object[]{identity}, new RowMapper<User>() {
+        User user = null;
+        try {
+            user = jdbcOperations.queryForObject(readSql, new Object[]{identity}, new RowMapper<User>() {
             @Override
             public User mapRow(ResultSet resultSet, int i) throws SQLException {
                 User user = new User();
@@ -120,6 +140,9 @@ public class UserDaoImpl extends BaseDao implements UserDao {
                 return user;
             }
         });
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in UserDaoImpl, method read()");
+        }
         return user;
 
     }
@@ -132,7 +155,11 @@ public class UserDaoImpl extends BaseDao implements UserDao {
      */
     public void update(final User user)  {
 
-        jdbcOperations.update(updateSql,user.getUserName(),user.getName(),user.getSurname(),user.getHashOfPassword(),user.getRole(),user.getIdentity());
+        try {
+            jdbcOperations.update(updateSql,user.getUserName(),user.getName(),user.getSurname(),user.getHashOfPassword(),user.getRole(),user.getIdentity());
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in UserDaoImpl, method update()");
+        }
 
     }
 
@@ -144,7 +171,11 @@ public class UserDaoImpl extends BaseDao implements UserDao {
      */
     public void delete(final Integer identity) {
 
-        jdbcOperations.update(deleteSql, identity );
+        try {
+            jdbcOperations.update(deleteSql, identity );
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in UserDaoImpl, method delete()");
+        }
 
     }
 }

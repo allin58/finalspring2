@@ -23,6 +23,7 @@ import java.util.Map;
 @Component
  public final class CommandFactory {
 
+/*
     @Autowired
     @Qualifier("LoginCommand")
     Command loginCommand;
@@ -105,13 +106,17 @@ import java.util.Map;
     @Qualifier("SetTypeOfOrderCommand")
     Command setTypeOfOrderCommand;
 
+*/
 
 
     /**
      * Collection for storage of commands.
      */
-    private static Map<String, Command> commands;
 
+
+
+    @Autowired
+    private  Map<String, Command> commands;
 
 
     /**
@@ -126,7 +131,7 @@ import java.util.Map;
     public void init() {
 
 
-        commands = new HashMap<>();
+     /*   commands = new HashMap<>();
 
         commands.put("login", loginCommand);
         commands.put("logout", logoutCommand);
@@ -152,7 +157,7 @@ import java.util.Map;
         commands.put("setlimitorder", setLimitOrderCommand);
         commands.put("executemarketorder", executeMarketOrderCommand);
 
-        commands.put("settypeoforder", setTypeOfOrderCommand);
+        commands.put("settypeoforder", setTypeOfOrderCommand);*/
     }
 
 
@@ -163,6 +168,7 @@ import java.util.Map;
      * @return toReturn
      */
     public Command createCommand(final String command) {
+
         Command toReturn = commands.get(command.trim());
         if (toReturn == null) {
             toReturn = commands.get("login");

@@ -21,7 +21,7 @@ import java.util.List;
  * @author Nikita Karchahin
  * @version 1.0
  */
-@Component
+@Component("withdraw")
 @Qualifier("WithdrawCommand")
 public class WithdrawCommand implements Command {
 

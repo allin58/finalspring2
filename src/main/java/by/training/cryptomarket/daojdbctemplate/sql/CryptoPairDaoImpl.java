@@ -4,6 +4,7 @@ package by.training.cryptomarket.daojdbctemplate.sql;
 import by.training.cryptomarket.daojdbctemplate.CryptoPairDao;
 import by.training.cryptomarket.entity.CryptoPair;
 import by.training.cryptomarket.exception.PersistentException;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -57,19 +58,26 @@ public class CryptoPairDaoImpl extends BaseDao implements CryptoPairDao {
     public List<CryptoPair> read() throws PersistentException {
 
 
-        List<CryptoPair> cryptoPairs = jdbcOperations.query(readListSql, new RowMapper<CryptoPair>() {
-            @Override
-            public CryptoPair mapRow(ResultSet resultSet, int i) throws SQLException {
+        List<CryptoPair> cryptoPairs = null;
+        try {
+            cryptoPairs = jdbcOperations.query(readListSql, new RowMapper<CryptoPair>() {
+                @Override
+                public CryptoPair mapRow(ResultSet resultSet, int i) throws SQLException {
 
-                CryptoPair cryptoPair = new CryptoPair();
-                cryptoPair.setIdentity((resultSet.getInt("identity")));
-                cryptoPair.setFirstCurrency(resultSet.getInt("first_currency"));
-                cryptoPair.setSecondCurrency(resultSet.getInt("second_currency"));
-                cryptoPair.setActive(resultSet.getBoolean("active"));
+                    CryptoPair cryptoPair = new CryptoPair();
+                    cryptoPair.setIdentity((resultSet.getInt("identity")));
+                    cryptoPair.setFirstCurrency(resultSet.getInt("first_currency"));
+                    cryptoPair.setSecondCurrency(resultSet.getInt("second_currency"));
+                    cryptoPair.setActive(resultSet.getBoolean("active"));
 
-                return cryptoPair;
-            }
-        });
+                    return cryptoPair;
+                }
+            });
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in CryptoPairDaoImpl, method read()");
+        }
+
+
         return cryptoPairs;
 
 
@@ -86,21 +94,25 @@ public class CryptoPairDaoImpl extends BaseDao implements CryptoPairDao {
     public Integer create(final CryptoPair cryptoPair) throws PersistentException {
 
         GeneratedKeyHolder keyHolder = new GeneratedKeyHolder();
-        jdbcOperations.update(new PreparedStatementCreator() {
-            @Override
-            public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+        try {
+            jdbcOperations.update(new PreparedStatementCreator() {
+                @Override
+                public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
 
-                PreparedStatement ps =
-                        connection.prepareStatement(createSql,Statement.RETURN_GENERATED_KEYS);
-                ps.setInt(1, cryptoPair.getIdentity());
-                ps.setInt(2, cryptoPair.getFirstCurrency());
-                ps.setInt(3, cryptoPair.getSecondCurrency());
-                ps.setBoolean(4, cryptoPair.getActive());
+                    PreparedStatement ps =
+                            connection.prepareStatement(createSql,Statement.RETURN_GENERATED_KEYS);
+                    ps.setInt(1, cryptoPair.getIdentity());
+                    ps.setInt(2, cryptoPair.getFirstCurrency());
+                    ps.setInt(3, cryptoPair.getSecondCurrency());
+                    ps.setBoolean(4, cryptoPair.getActive());
 
 
-                return ps;
-            }
-        }, keyHolder);
+                    return ps;
+                }
+            }, keyHolder);
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in CryptoPairDaoImpl, method create()");
+        }
 
         return (Integer) keyHolder.getKeys().get("identity");
 
@@ -115,17 +127,24 @@ public class CryptoPairDaoImpl extends BaseDao implements CryptoPairDao {
      */
     @Override
     public CryptoPair read(final Integer identity) throws PersistentException {
-        CryptoPair cryptoPair = jdbcOperations.queryForObject(readSql, new Object[]{identity}, new RowMapper<CryptoPair>() {
-            @Override
-            public CryptoPair mapRow(ResultSet resultSet, int i) throws SQLException {
-                CryptoPair cryptoPair = new CryptoPair();
-                cryptoPair.setIdentity(identity);
-                cryptoPair.setFirstCurrency(resultSet.getInt("first_currency"));
-                cryptoPair.setSecondCurrency(resultSet.getInt("second_currency"));
-                cryptoPair.setActive(resultSet.getBoolean("active"));
-                return cryptoPair;
-            }
-        });
+
+
+        CryptoPair cryptoPair = null;
+        try {
+            cryptoPair = jdbcOperations.queryForObject(readSql, new Object[]{identity}, new RowMapper<CryptoPair>() {
+                @Override
+                public CryptoPair mapRow(ResultSet resultSet, int i) throws SQLException {
+                    CryptoPair cryptoPair = new CryptoPair();
+                    cryptoPair.setIdentity(identity);
+                    cryptoPair.setFirstCurrency(resultSet.getInt("first_currency"));
+                    cryptoPair.setSecondCurrency(resultSet.getInt("second_currency"));
+                    cryptoPair.setActive(resultSet.getBoolean("active"));
+                    return cryptoPair;
+                }
+            });
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in CryptoPairDaoImpl, method read()");
+        }
         return cryptoPair;
     }
 
@@ -137,7 +156,11 @@ public class CryptoPairDaoImpl extends BaseDao implements CryptoPairDao {
     @Override
     public void update(final CryptoPair cryptoPair)  {
 
-        jdbcOperations.update(updateSql,cryptoPair.getFirstCurrency(),cryptoPair.getSecondCurrency(),cryptoPair.getActive(),cryptoPair.getIdentity());
+        try {
+            jdbcOperations.update(updateSql,cryptoPair.getFirstCurrency(),cryptoPair.getSecondCurrency(),cryptoPair.getActive(),cryptoPair.getIdentity());
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in CryptoPairDaoImpl, method update()");
+        }
     }
 
 
@@ -149,7 +172,11 @@ public class CryptoPairDaoImpl extends BaseDao implements CryptoPairDao {
      */
     @Override
     public void delete(final Integer identity)  {
-        jdbcOperations.update(deleteSql, identity );
+        try {
+            jdbcOperations.update(deleteSql, identity );
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in CryptoPairDaoImpl, method delete()");
+        }
 
     }
 }

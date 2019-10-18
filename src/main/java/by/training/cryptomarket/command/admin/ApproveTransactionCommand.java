@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Nikita Karchahin
  * @version 1.0
  */
-@Component
+@Component("approvetransaction")
 @Qualifier("ApproveTransactionCommand")
 public class ApproveTransactionCommand implements Command {
 

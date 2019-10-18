@@ -1,19 +1,14 @@
-package by.training.cryptomarket.config;
+package config;
 
 
 import by.training.cryptomarket.controller.interceptor.LanguageInterceptor;
-
-
 import io.zonky.test.db.postgres.embedded.EmbeddedPostgres;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.*;
-import org.springframework.core.env.Environment;
-import org.springframework.core.env.Profiles;
-import org.springframework.jdbc.core.JdbcOperations;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
@@ -23,10 +18,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 
-
-import javax.sql.DataSource;
 import java.io.IOException;
-import java.util.Properties;
 
 
 @EnableWebMvc
@@ -50,21 +42,8 @@ public class TestSpringConfig implements WebMvcConfigurer {
     public FreeMarkerConfigurer freemarkerConfig() {
         FreeMarkerConfigurer freeMarkerConfigurer = new FreeMarkerConfigurer();
         freeMarkerConfigurer.setTemplateLoaderPath("/WEB-INF/templates/");
-
-    /*    freemarker.template.Configuration configuration = null;
-        try {
-            configuration = freeMarkerConfigurer.createConfiguration();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        configuration.setTemplateExceptionHandler(new MyTemplateExceptionHandler());
-        freeMarkerConfigurer.setConfiguration(configuration);*/
-
         return freeMarkerConfigurer;
     }
-
-
 
 
 
@@ -89,11 +68,8 @@ public class TestSpringConfig implements WebMvcConfigurer {
 
 
     public void addInterceptors(InterceptorRegistry registry) {
-
         registry.addInterceptor(new LanguageInterceptor())
                 .addPathPatterns("/**");
-
-
     }
 
 
@@ -103,7 +79,6 @@ public class TestSpringConfig implements WebMvcConfigurer {
     protected JdbcTemplate jdbcTemplate() throws IOException {
 
         JdbcTemplate jdbcTemplate = new JdbcTemplate(embeddedPostgres().getPostgresDatabase());
-
 
         jdbcTemplate.execute("CREATE TABLE IF NOT EXISTS \"coins\" (\n" +
                 "    \"identity\" INTEGER PRIMARY KEY,\n" +

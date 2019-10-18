@@ -19,7 +19,7 @@ import java.util.List;
  * @author Nikita Karchahin
  * @version 1.0
  */
-@Component
+@Component("deposit")
 @Qualifier("DepositCommand")
 public class DepositCommand implements Command {
 

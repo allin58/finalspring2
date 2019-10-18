@@ -25,7 +25,7 @@ import java.util.List;
  * @author Nikita Karchahin
  * @version 1.0
  */
-@Component
+@Component("login")
 @Qualifier("LoginCommand")
 public class LoginCommand implements Command {
 
@@ -80,14 +80,15 @@ public class LoginCommand implements Command {
                     request.getSession().setAttribute("user", user);
                   switch (user.getRole()) {
                       case "admin" :
-                         //request.getSession().setAttribute("transactionData",  transactionService.getPendingTransactions());
+
                           model.addAttribute("transactionData",transactionService.getPendingTransactions());
 
                           return "admin";
 
                       case "sec" :
+
                           request.getSession().setAttribute("secData", cryptoPairService.getAllPairs());
-                         // model.addAttribute("secData", cryptoPairService.getAllPairs());
+
                           return "sec";
 
                       case "user" :
@@ -100,34 +101,30 @@ public class LoginCommand implements Command {
 
                                   pair = activePairs.get(0).getPair();
                               } else {
-                                  model.addAttribute("activepairs", "");
-                                  model.addAttribute("pair", "");
-                                  model.addAttribute("marketerror", "marketerror");
 
-                                 /* request.getSession().setAttribute("activepairs", null);
-                                  request.getSession().setAttribute("pair", null);
-                                  request.getSession().setAttribute("marketerror", "marketerror");*/
+                                  request.getSession().setAttribute("activepairs", "");
+                                  request.getSession().setAttribute("pair", "");
+                                  request.getSession().setAttribute("marketerror", "marketerror");
+                                  request.getSession().setAttribute("ordermessage", "");
                                   return "market";
                               }
                           }
                           request.getSession().setAttribute("pair", pair);
                           request.getSession().setAttribute("typeoforder", "limit");
-                         // model.addAttribute("pair", pair);
-                         // model.addAttribute("typeoforder", "limit");
 
 
                           List activePairs = cryptoPairService.getActivePairs();
                           request.getSession().setAttribute("activepairs", activePairs);
-                         // model.addAttribute("activepairs", activePairs);
+
 
 
                           List askList = orderService.getAskOrdersByPair(pair.trim());
                           request.getSession().setAttribute("asklist", askList);
-                         // model.addAttribute("asklist", askList);
+
 
                           List bidList = orderService.getBidOrdersByPair(pair.trim());
                           request.getSession().setAttribute("bidlist", bidList);
-                         // model.addAttribute("bidlist", bidList);
+
 
                           request.getSession().setAttribute("ordermessage", "");
                           return "market";
@@ -136,8 +133,6 @@ public class LoginCommand implements Command {
             }
 
         model.addAttribute("loginmessage","loginfailed");
-
-        //request.getSession().setAttribute("loginmessage", "loginfailed");
 
         return "login";
 

@@ -45,6 +45,10 @@ public class EncodingFilter implements Filter {
                          final ServletResponse servletResponse,
                          final FilterChain filterChain) throws IOException, ServletException {
 
+
+
+
+
         servletRequest.setCharacterEncoding("UTF-8");
         filterChain.doFilter(servletRequest, servletResponse);
     }

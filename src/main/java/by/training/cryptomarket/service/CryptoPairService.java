@@ -34,6 +34,7 @@ public class CryptoPairService {
      */
    public List<TraidingCouple> getAllPairs() throws Exception {
 
+
        List<CryptoPair> cryptoPairs;
        List<TraidingCouple> traidingCouples = new ArrayList<>();
 
@@ -51,9 +52,26 @@ public class CryptoPairService {
                String pair = coinDao.read(first).getTicker() + "-" + coinDao.read(second).getTicker();
                traidingCouple.setPair(pair);
                traidingCouples.add(traidingCouple);
+
+                 }
+
+       List<TraidingCouple> traidingCouplesSorted = new ArrayList<>();
+
+       for (int i = 1; i <=  traidingCouples.size(); i++) {
+
+           for (TraidingCouple traidingCouple : traidingCouples) {
+               if (traidingCouple.getIdentity() == i)
+                   traidingCouplesSorted.add(traidingCouple);
+
            }
 
-      return  traidingCouples;
+
+       }
+
+
+
+
+      return  traidingCouplesSorted;
 
    }
 

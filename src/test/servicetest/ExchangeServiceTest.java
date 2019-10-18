@@ -1,47 +1,32 @@
 package servicetest;
 
-import by.training.cryptomarket.config.TestSpringConfig;
 import by.training.cryptomarket.daojdbctemplate.sql.OrderDaoImpl;
-import by.training.cryptomarket.daojdbctemplate.sql.UserDaoImpl;
 import by.training.cryptomarket.daojdbctemplate.sql.WalletDaoImpl;
 import by.training.cryptomarket.entity.Order;
 import by.training.cryptomarket.entity.User;
 import by.training.cryptomarket.entity.Wallet;
-import by.training.cryptomarket.service.CryptoPairService;
 import by.training.cryptomarket.service.OrderService;
 import by.training.cryptomarket.service.UserService;
 import by.training.cryptomarket.service.WalletService;
+import config.TestSpringConfig;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
 
 import java.util.List;
-import java.util.stream.Stream;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 @SpringJUnitWebConfig(TestSpringConfig.class)
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)  // эта аннотация позволяет не создавать новый экземпляр теста для каждого теста
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ExchangeServiceTest {
 
     @Autowired
-    UserDaoImpl userDao;
-
-
-    @Autowired
-    CryptoPairService cryptoPairService;
-
-    @Autowired
     WalletService walletService;
-
-    @Autowired
-    JdbcOperations jdbcOperations;
 
     @Autowired
     WalletDaoImpl walletDao;

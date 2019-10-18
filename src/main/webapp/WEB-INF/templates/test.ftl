@@ -38,12 +38,17 @@
 
 <#assign seq = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']>
 
-${tedtatrib}
+${testparam}
+ <#if intlist?has_content >
 
 
-<FORM action="/test2" method="post">
-    <button type="submit" class="uui-button test-color dark-gray">test2</button>
-</FORM>
+  <#list intlist as iin>
+
+          <li><a>${iin}</a></li>
+  </#list>
+  <#else>
+     <li><a>gyptoer</a></li>
+  </#if>
 
 
 

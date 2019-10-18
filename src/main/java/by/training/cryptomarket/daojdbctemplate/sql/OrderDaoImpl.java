@@ -4,6 +4,7 @@ package by.training.cryptomarket.daojdbctemplate.sql;
 import by.training.cryptomarket.daojdbctemplate.OrderDao;
 import by.training.cryptomarket.entity.Order;
 import by.training.cryptomarket.exception.PersistentException;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -27,6 +28,7 @@ public class OrderDaoImpl extends BaseDao implements OrderDao {
      * The field to store the sql create request.
      */
     private static  String createSql = "INSERT INTO orders (user_id,pair,amount,price,type,state) VALUES (?, ?::currencyPairs, ?, ?, ?::typesoforder, ?::statesOfOrder)";
+
 
     /**
      * The field to store the sql readList request.
@@ -58,21 +60,26 @@ public class OrderDaoImpl extends BaseDao implements OrderDao {
     @Override
     public List<Order> read()  {
 
-        List<Order> orders = jdbcOperations.query(readListSql, new RowMapper<Order>() {
-            @Override
-            public Order mapRow(ResultSet resultSet, int i) throws SQLException {
-                Order order = new Order();
-                order.setIdentity(resultSet.getInt("identity"));
-                order.setUserId(resultSet.getInt("user_id"));
-                order.setPair((resultSet.getString("pair")));
-                order.setAmount((resultSet.getBigDecimal("amount")).doubleValue());
-                order.setPrice((resultSet.getBigDecimal("price")).doubleValue());
-                order.setType((resultSet.getString("type")));
-                order.setState((resultSet.getString("state")));
+        List<Order> orders = null;
+        try {
+            orders = jdbcOperations.query(readListSql, new RowMapper<Order>() {
+                @Override
+                public Order mapRow(ResultSet resultSet, int i) throws SQLException {
+                    Order order = new Order();
+                    order.setIdentity(resultSet.getInt("identity"));
+                    order.setUserId(resultSet.getInt("user_id"));
+                    order.setPair((resultSet.getString("pair")));
+                    order.setAmount((resultSet.getBigDecimal("amount")).doubleValue());
+                    order.setPrice((resultSet.getBigDecimal("price")).doubleValue());
+                    order.setType((resultSet.getString("type")));
+                    order.setState((resultSet.getString("state")));
 
-                return order;
-            }
-        });
+                    return order;
+                }
+            });
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in OrderDaoImpl, method read()");
+        }
         return orders;
 
 
@@ -90,25 +97,29 @@ public class OrderDaoImpl extends BaseDao implements OrderDao {
     public Integer create(final Order order)  {
         GeneratedKeyHolder keyHolder = new GeneratedKeyHolder();
 
-        jdbcOperations.update(new PreparedStatementCreator() {
+        try {
+            jdbcOperations.update(new PreparedStatementCreator() {
 
-            @Override
-            public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+                @Override
+                public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
 
-                PreparedStatement ps =
-                        connection.prepareStatement(createSql);
+                    PreparedStatement ps =
+                            connection.prepareStatement(createSql);
 
-                ps.setInt(1, order.getUserId());
-                ps.setString(2, order.getPair());
-                ps.setBigDecimal(3, new BigDecimal(order.getAmount()));
-                ps.setBigDecimal(4, new BigDecimal(order.getPrice()));
-                ps.setString(5, order.getType());
-                ps.setString(6, order.getState());
-                return ps;
-            }
-        }, keyHolder);
+                    ps.setInt(1, order.getUserId());
+                    ps.setString(2, order.getPair());
+                    ps.setBigDecimal(3, new BigDecimal(order.getAmount()));
+                    ps.setBigDecimal(4, new BigDecimal(order.getPrice()));
+                    ps.setString(5, order.getType());
+                    ps.setString(6, order.getState());
+                    return ps;
+                }
+            }, keyHolder);
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in OrderDaoImpl, method create()");
+        }
 
-       // return (Integer) keyHolder.getKeys().get("identity");
+
         return 0;
 
 
@@ -122,20 +133,25 @@ public class OrderDaoImpl extends BaseDao implements OrderDao {
      */
     @Override
     public Order read(final Integer identity)  {
-        Order order = jdbcOperations.queryForObject(readSql, new Object[]{identity}, new RowMapper<Order>() {
-            @Override
-            public Order mapRow(ResultSet resultSet, int i) throws SQLException {
-                Order order = new Order();
-                order.setIdentity(identity);
-                order.setUserId(resultSet.getInt("user_id"));
-                order.setPair(resultSet.getString("pair"));
-                order.setAmount(resultSet.getBigDecimal("amount").doubleValue());
-                order.setPrice(resultSet.getBigDecimal("price").doubleValue());
-                order.setType(resultSet.getString("type"));
-                order.setState(resultSet.getString("state"));
-                return order;
-            }
-        });
+        Order order = null;
+        try {
+            order = jdbcOperations.queryForObject(readSql, new Object[]{identity}, new RowMapper<Order>() {
+                @Override
+                public Order mapRow(ResultSet resultSet, int i) throws SQLException {
+                    Order order = new Order();
+                    order.setIdentity(identity);
+                    order.setUserId(resultSet.getInt("user_id"));
+                    order.setPair(resultSet.getString("pair"));
+                    order.setAmount(resultSet.getBigDecimal("amount").doubleValue());
+                    order.setPrice(resultSet.getBigDecimal("price").doubleValue());
+                    order.setType(resultSet.getString("type"));
+                    order.setState(resultSet.getString("state"));
+                    return order;
+                }
+            });
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in OrderDaoImpl, method read()");
+        }
         return order;
     }
 
@@ -147,7 +163,11 @@ public class OrderDaoImpl extends BaseDao implements OrderDao {
      */
     @Override
     public void update(final Order order) {
-             jdbcOperations.update(updateSql,order.getUserId(),order.getPair(),order.getAmount(),order.getPrice(),order.getType(),order.getState(),order.getIdentity());
+        try {
+            jdbcOperations.update(updateSql,order.getUserId(),order.getPair(),order.getAmount(),order.getPrice(),order.getType(),order.getState(),order.getIdentity());
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in OrderDaoImpl, method update()");
+        }
     }
 
     /**
@@ -158,6 +178,10 @@ public class OrderDaoImpl extends BaseDao implements OrderDao {
     @Override
     public void delete(final Integer identity) {
 
-        jdbcOperations.update(deleteSql, identity );
+        try {
+            jdbcOperations.update(deleteSql, identity );
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in OrderDaoImpl, method delete()");
+        }
     }
 }

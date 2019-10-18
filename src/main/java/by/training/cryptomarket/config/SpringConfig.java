@@ -31,20 +31,12 @@ import java.util.Properties;
 @PropertySource("classpath:db.properties")
 public class SpringConfig implements WebMvcConfigurer {
 
-  /*  @Autowired
-    ServletConfig config;*/
+
 
     @Autowired
     Environment env;
 
 
-/*
-
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/**").addResourceLocations("/uui");
-    }
-*/
 
     @Bean
     public FreeMarkerViewResolver freemarkerViewResolver() {
@@ -91,18 +83,6 @@ public class SpringConfig implements WebMvcConfigurer {
     public DriverManagerDataSource driverManagerDataSource() {
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
       //  SingleConnectionDataSource driverManagerDataSource = new SingleConnectionDataSource();
-
-
-
-
-           /* Properties prop = new Properties();
-            prop.load(config.getServletContext().getResourceAsStream("/WEB-INF/classes/db.properties"));
-            driverManagerDataSource.setDriverClassName(prop.getProperty("db.drivername"));
-            driverManagerDataSource.setUsername(prop.getProperty("db.username"));
-            driverManagerDataSource.setPassword(prop.getProperty("db.password"));
-            driverManagerDataSource.setUrl(prop.getProperty("db.url"));
-              */
-
 
 
         driverManagerDataSource.setDriverClassName(env.getProperty("db.drivername"));

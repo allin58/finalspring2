@@ -32,7 +32,7 @@
 
     </head>
 
-    <body>
+    <body style="background-color: cornsilk">
 
       <#assign logoutUrl = "/logout">
       <#assign toggleUrl = "/sec?command=togglepair&identity=">

@@ -6,6 +6,7 @@ package by.training.cryptomarket.daojdbctemplate.sql;
 import by.training.cryptomarket.daojdbctemplate.TransactionDao;
 import by.training.cryptomarket.entity.Transaction;
 import by.training.cryptomarket.exception.PersistentException;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -43,6 +44,7 @@ public class TransactionDaoImpl extends BaseDao implements TransactionDao {
      */
     private static  String updateSql = "UPDATE transactions SET user_id = ?, coin_id = ?, amount = ?, type = ?::transactionType, date = ?, status= ?::transactionStatus WHERE identity = ?";
 
+
     /**
      * The field to store the sql delete request.
      */
@@ -62,21 +64,26 @@ public class TransactionDaoImpl extends BaseDao implements TransactionDao {
     public List<Transaction> read() {
 
 
-        List<Transaction> transactions = jdbcOperations.query(readListSql, new RowMapper<Transaction>() {
-            @Override
-            public Transaction mapRow(ResultSet resultSet, int i) throws SQLException {
-                Transaction transaction = new Transaction();
-                transaction.setIdentity(resultSet.getInt("identity"));
-                transaction.setUserId(resultSet.getInt("user_id"));
-                transaction.setCoinId((resultSet.getInt("coin_id")));
-                transaction.setAmount((resultSet.getBigDecimal("amount")).doubleValue());
-                transaction.setType((resultSet.getString("type")));
-                transaction.setStatus((resultSet.getString("status")));
-                transaction.setTimestamp((resultSet.getTimestamp("date")));
+        List<Transaction> transactions = null;
+        try {
+            transactions = jdbcOperations.query(readListSql, new RowMapper<Transaction>() {
+                @Override
+                public Transaction mapRow(ResultSet resultSet, int i) throws SQLException {
+                    Transaction transaction = new Transaction();
+                    transaction.setIdentity(resultSet.getInt("identity"));
+                    transaction.setUserId(resultSet.getInt("user_id"));
+                    transaction.setCoinId((resultSet.getInt("coin_id")));
+                    transaction.setAmount((resultSet.getBigDecimal("amount")).doubleValue());
+                    transaction.setType((resultSet.getString("type")));
+                    transaction.setStatus((resultSet.getString("status")));
+                    transaction.setTimestamp((resultSet.getTimestamp("date")));
 
-                return transaction;
-            }
-        });
+                    return transaction;
+                }
+            });
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in TransactionDaoImpl, method read()");
+        }
         return transactions;
 
 
@@ -93,26 +100,30 @@ public class TransactionDaoImpl extends BaseDao implements TransactionDao {
     public Integer create(final Transaction transaction) {
 
         GeneratedKeyHolder keyHolder = new GeneratedKeyHolder();
-        jdbcOperations.update(new PreparedStatementCreator() {
-            @Override
-            public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+        try {
+            jdbcOperations.update(new PreparedStatementCreator() {
+                @Override
+                public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
 
-               // PreparedStatement ps = connection.prepareStatement(createSql,Statement.RETURN_GENERATED_KEYS);
-                PreparedStatement ps = connection.prepareStatement(createSql);
+                   // PreparedStatement ps = connection.prepareStatement(createSql,Statement.RETURN_GENERATED_KEYS);
+                    PreparedStatement ps = connection.prepareStatement(createSql);
 
-                ps.setInt(1, transaction.getUserId());
-                ps.setInt(2, transaction.getCoinId());
-                ps.setBigDecimal(3, new BigDecimal(transaction.getAmount()));
-                ps.setString(4, transaction.getType());
-                ps.setTimestamp(5, transaction.getTimestamp());
-                ps.setString(6, transaction.getStatus());
+                    ps.setInt(1, transaction.getUserId());
+                    ps.setInt(2, transaction.getCoinId());
+                    ps.setBigDecimal(3, new BigDecimal(transaction.getAmount()));
+                    ps.setString(4, transaction.getType());
+                    ps.setTimestamp(5, transaction.getTimestamp());
+                    ps.setString(6, transaction.getStatus());
 
 
-                return ps;
-            }
-        }, keyHolder);
+                    return ps;
+                }
+            }, keyHolder);
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in TransactionDaoImpl, method create()");
+        }
 
-       // return (Integer) keyHolder.getKeys().get("identity");
+
         return 0;
 
 
@@ -127,23 +138,28 @@ public class TransactionDaoImpl extends BaseDao implements TransactionDao {
      */
     @Override
     public Transaction read(final Integer identity) {
-        Transaction transaction = jdbcOperations.queryForObject(readSql, new Object[]{identity}, new RowMapper<Transaction>() {
-            @Override
-            public Transaction mapRow(ResultSet resultSet, int i) throws SQLException {
+        Transaction transaction = null;
+        try {
+            transaction = jdbcOperations.queryForObject(readSql, new Object[]{identity}, new RowMapper<Transaction>() {
+                @Override
+                public Transaction mapRow(ResultSet resultSet, int i) throws SQLException {
 
-                Transaction transaction = new Transaction();
-                transaction.setIdentity(identity);
-                transaction.setUserId(resultSet.getInt("user_id"));
-                transaction.setCoinId((resultSet.getInt("coin_id")));
-                transaction.setAmount((resultSet.getBigDecimal("amount")).doubleValue());
-                transaction.setType((resultSet.getString("type")));
-                transaction.setTimestamp((resultSet.getTimestamp("date")));
-                transaction.setStatus((resultSet.getString("status")));
+                    Transaction transaction = new Transaction();
+                    transaction.setIdentity(identity);
+                    transaction.setUserId(resultSet.getInt("user_id"));
+                    transaction.setCoinId((resultSet.getInt("coin_id")));
+                    transaction.setAmount((resultSet.getBigDecimal("amount")).doubleValue());
+                    transaction.setType((resultSet.getString("type")));
+                    transaction.setTimestamp((resultSet.getTimestamp("date")));
+                    transaction.setStatus((resultSet.getString("status")));
 
 
-                return transaction;
-            }
-        });
+                    return transaction;
+                }
+            });
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in TransactionDaoImpl, method read()");
+        }
         return transaction;
 
 
@@ -158,9 +174,12 @@ public class TransactionDaoImpl extends BaseDao implements TransactionDao {
     @Override
     public void update(final Transaction transaction)  {
 
-       String updateSql = "UPDATE transactions SET user_id = ?, coin_id = ?, amount = ?, type = ?::transactionType, date = ?, status= ?::transactionStatus WHERE identity = ?";
 
-        jdbcOperations.update(updateSql,transaction.getUserId(),transaction.getCoinId(),transaction.getAmount(),transaction.getType(),transaction.getTimestamp(),transaction.getStatus(),transaction.getIdentity());
+        try {
+            jdbcOperations.update(updateSql,transaction.getUserId(),transaction.getCoinId(),transaction.getAmount(),transaction.getType(),transaction.getTimestamp(),transaction.getStatus(),transaction.getIdentity());
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in TransactionDaoImpl, method update()");
+        }
     }
 
     /**
@@ -171,7 +190,11 @@ public class TransactionDaoImpl extends BaseDao implements TransactionDao {
     @Override
     public void delete(final Integer identity)  {
 
-        jdbcOperations.update(deleteSql, identity );
+        try {
+            jdbcOperations.update(deleteSql, identity );
+        } catch (DataAccessException e) {
+            LOGGER.info("DataAccessException in TransactionDaoImpl, method delete()");
+        }
 
     }
 }
