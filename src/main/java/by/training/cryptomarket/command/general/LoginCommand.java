@@ -3,10 +3,7 @@ package by.training.cryptomarket.command.general;
 import by.training.cryptomarket.command.Command;
 import by.training.cryptomarket.entity.User;
 import by.training.cryptomarket.entity.mapping.TraidingCouple;
-import by.training.cryptomarket.service.CryptoPairService;
-import by.training.cryptomarket.service.OrderService;
-import by.training.cryptomarket.service.TransactionService;
-import by.training.cryptomarket.service.UserService;
+import by.training.cryptomarket.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.Authentication;
@@ -14,7 +11,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 
-import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
@@ -30,12 +26,12 @@ import java.util.List;
 public class LoginCommand implements Command {
 
 
-    public UserService getUserService() {
+  /*  public UserService getUserService() {
         return userService;
-    }
+    }*/
 
     @Autowired
-    UserService userService;
+    UserServiceInter userService;
 
     @Autowired
     TransactionService transactionService;
@@ -63,6 +59,9 @@ public class LoginCommand implements Command {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
 
+
+
+
         model.addAttribute("loginmessage","");
 
 
@@ -78,7 +77,7 @@ public class LoginCommand implements Command {
                 if (user != null) {
 
                     request.getSession().setAttribute("user", user);
-                  switch (user.getRole()) {
+                  switch (user.getRole().toString()) {
                       case "admin" :
 
                           model.addAttribute("transactionData",transactionService.getPendingTransactions());
@@ -92,11 +91,13 @@ public class LoginCommand implements Command {
                           return "sec";
 
                       case "user" :
+
                           String pair = request.getParameter("pair");
                           if (pair == null || "".equals(pair)) {
 
 
                               List<TraidingCouple> activePairs = cryptoPairService.getActivePairs();
+
                               if (activePairs.size() > 0) {
 
                                   pair = activePairs.get(0).getPair();

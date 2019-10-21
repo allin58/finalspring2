@@ -5,6 +5,8 @@ import by.training.cryptomarket.entity.Order;
 import by.training.cryptomarket.entity.User;
 import by.training.cryptomarket.entity.Wallet;
 import by.training.cryptomarket.entity.qualifier.WalletQualifier;
+import by.training.cryptomarket.enums.StateOfOrder;
+import by.training.cryptomarket.enums.TypeOfOrder;
 import by.training.cryptomarket.service.OrderService;
 import by.training.cryptomarket.service.WalletService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -94,8 +96,8 @@ public class SetLimitOrderCommand implements Command {
 
 
                     Order order = new Order();
-                    order.setType("Bid");
-                    order.setState("active");
+                    order.setType(TypeOfOrder.Bid);
+                    order.setState(StateOfOrder.active);
                     order.setPair(pair);
                     order.setUserId(user.getIdentity());
                     order.setPrice(price);
@@ -112,12 +114,13 @@ public class SetLimitOrderCommand implements Command {
 
 
                     Order order2 = new Order();
-                    order2.setType("Ask");
-                    order2.setState("active");
+                    order2.setType(TypeOfOrder.Ask);
+                    order2.setState(StateOfOrder.active);
                     order2.setPair(pair);
                     order2.setUserId(user.getIdentity());
                     order2.setPrice(price);
                     order2.setAmount(amount);
+
 
                     orderService2.createNewOrder(order2);
 

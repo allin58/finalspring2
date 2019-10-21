@@ -14,9 +14,9 @@ CREATE TABLE IF NOT EXISTS "coins" (
 
 
 CREATE TYPE roles AS ENUM (
-  'user',
-  'sec', 
-  'admin');
+   'user',
+   'sec',
+   'admin');
 
 CREATE TABLE IF NOT EXISTS "users" (
     "identity"  SERIAL PRIMARY KEY,
@@ -103,7 +103,7 @@ CREATE TYPE transactionType AS ENUM (
 CREATE TYPE transactionStatus AS ENUM (
   'pending',
   'approved',
-   'rejected');
+  'rejected');
 
 CREATE TABLE IF NOT EXISTS "transactions" (
   "identity" SERIAL PRIMARY KEY,

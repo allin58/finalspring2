@@ -2,10 +2,10 @@ package by.training.cryptomarket.service;
 
 
 
-import by.training.cryptomarket.daojdbctemplate.sql.OrderDaoImpl;
-import by.training.cryptomarket.daojdbctemplate.transaction.CancelOrderTransaction;
-import by.training.cryptomarket.daojdbctemplate.transaction.ExecuteOrderTransaction;
-import by.training.cryptomarket.daojdbctemplate.transaction.SetOrderTransaction;
+import by.training.cryptomarket.dao.sql.OrderDaoImpl;
+import by.training.cryptomarket.dao.transaction.CancelOrderTransaction;
+import by.training.cryptomarket.dao.transaction.ExecuteOrderTransaction;
+import by.training.cryptomarket.dao.transaction.SetOrderTransaction;
 import by.training.cryptomarket.entity.Order;
 import by.training.cryptomarket.entity.User;
 import by.training.cryptomarket.entity.comparator.OrderComparatorImpl;
@@ -53,8 +53,8 @@ public class OrderService {
             List<Order> orders = orderDao.read();
             for (Order order : orders) {
               if (pair.equals(order.getPair())
-                      && "Ask".equals(order.getType())
-                      && "active".equals(order.getState())) {
+                      && "Ask".equals(order.getType().toString())
+                      && "active".equals(order.getState().toString())) {
                   resultOrders.add(order);
               }
             }
@@ -80,8 +80,8 @@ public class OrderService {
             List<Order> orders = orderDao.read();
             for (Order order : orders) {
                 if (pair.equals(order.getPair())
-                        && "Bid".equals(order.getType())
-                        && "active".equals(order.getState())) {
+                        && "Bid".equals(order.getType().toString())
+                        && "active".equals(order.getState().toString())) {
                     resultOrders.add(order);
                 }
             }

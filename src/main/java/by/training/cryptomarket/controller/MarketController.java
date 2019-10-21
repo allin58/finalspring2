@@ -3,11 +3,14 @@ package by.training.cryptomarket.controller;
 import by.training.cryptomarket.command.Command;
 import by.training.cryptomarket.command.CommandFactory;
 
+
+import by.training.cryptomarket.dao.sql.UserDaoImpl;
+import by.training.cryptomarket.entity.User;
+import by.training.cryptomarket.service.UserServiceInter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -17,8 +20,6 @@ import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 @Controller
 public class MarketController {
@@ -95,7 +96,14 @@ public class MarketController {
                            ModelMap model,HttpServletRequest request,  HttpServletResponse response) {
 
 
-        model.addAttribute("loginmessage","");
+        String loginmessage = (String) request.getSession().getAttribute("loginmessage");
+
+        if("successful".equals(loginmessage))
+             model.addAttribute("loginmessage",loginmessage);
+        else
+             model.addAttribute("loginmessage","");
+
+
 
         if (error != null)
             model.addAttribute("loginmessage","loginfailed");
@@ -105,8 +113,10 @@ public class MarketController {
 
 
 
+
     @RequestMapping(path = "/")
     public String logining(ModelMap model,HttpServletRequest request,  HttpServletResponse response) {
+
 
         Command command  = commandFactory.createCommand("login");
         String path;
@@ -135,7 +145,7 @@ public class MarketController {
             path = command.execute(request,response,model);
 
         } catch (Exception e) {
-                   path = "error";
+                    path = "error";
         }
         return path;
     }
@@ -196,6 +206,8 @@ public class MarketController {
 
 
 
+@Autowired
+    UserServiceInter userService;
 
 
 
@@ -212,6 +224,10 @@ public class MarketController {
         list.add(143);
         list.add(12);
         list.add(14);*/
+
+        System.out.println(userService.getUser("Eve").getRole());
+
+
 
         model.addAttribute("intlist",list);
         model.addAttribute("testparam","teeset");

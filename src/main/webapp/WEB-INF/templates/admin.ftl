@@ -36,7 +36,7 @@
 
       <#assign logoutUrl = "/logout">
       <#assign approvteransactionUrl = "/admin?command=approvetransaction&identity=">
-      <#assign rejectransactionUrl = "/admin?command=rejectransaction&identity">
+      <#assign rejectransactionUrl = "/admin?command=rejectransaction&identity=">
 
 
 

@@ -41,7 +41,7 @@ public class ToCabinetCommand implements Command {
     @Override
     public String execute(final HttpServletRequest request,
                           final HttpServletResponse response, ModelMap model) throws Exception {
-        String role = ((User) request.getSession().getAttribute("user")).getRole();
+        String role = ((User) request.getSession().getAttribute("user")).getRole().toString();
 
         switch (role) {
             case "admin" :

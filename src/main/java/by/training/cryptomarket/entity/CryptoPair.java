@@ -1,79 +1,59 @@
 package by.training.cryptomarket.entity;
 
 
+import javax.persistence.Entity;
+import javax.persistence.*;
 
-/**
- * The pair class entity.
- *
- * @author Nikita Karchahin
- * @version 1.0
- */
-public class CryptoPair extends  Entity {
+@Entity
+@Table(name = "cryptocurrency_pairs")
+public class CryptoPair {
 
-    /**
-     * The field for storage a firstCurrency.
-     */
+    @Id
+    @Column(name = "identity")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer identity;
+
+    @Column(name = "first_currency")
     private Integer firstCurrency;
 
-    /**
-     * The field for storage a secondCurrency.
-     */
-    private Integer secondCurrency;
 
-    /**
-     * The field for storage a active.
-     */
+    @Column(name = "second_currency")
+      private Integer secondCurrency;
+
+
+    @Column(name = "active")
     private Boolean active;
 
-    /**
-     * The getter for firstCurrency.
-     * @return firstCurrency
-     */
+
+    public Integer getIdentity() {
+        return identity;
+    }
+
+    public void setIdentity(Integer identity) {
+        this.identity = identity;
+    }
+
     public Integer getFirstCurrency() {
         return firstCurrency;
     }
 
-    /**
-     * The setter for firstCurrency.
-     * @param firstCurrency firstCurrency
-     */
-    public void setFirstCurrency(final Integer firstCurrency) {
+    public void setFirstCurrency(Integer firstCurrency) {
         this.firstCurrency = firstCurrency;
     }
 
-
-    /**
-     * The getter for secondCurrency.
-     * @return secondCurrency
-     */
     public Integer getSecondCurrency() {
         return secondCurrency;
     }
 
-    /**
-     * The setter for secondCurrency.
-     * @param secondCurrency secondCurrency
-     */
-    public void setSecondCurrency(final Integer secondCurrency) {
+    public void setSecondCurrency(Integer secondCurrency) {
         this.secondCurrency = secondCurrency;
     }
 
-
-
-    /**
-     * The getter for active.
-     * @return ticker
-     */
     public Boolean getActive() {
         return active;
     }
 
-
-    /**
-     * The setter for active.
-     * @param active active
-     */
-    public void setActive(final Boolean active) {
+    public void setActive(Boolean active) {
         this.active = active;
     }
 }

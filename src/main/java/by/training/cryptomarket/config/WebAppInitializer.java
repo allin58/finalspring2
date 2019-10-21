@@ -11,6 +11,8 @@ import javax.servlet.ServletRegistration;
 public class WebAppInitializer implements WebApplicationInitializer  {
 
     public void onStartup(ServletContext ctx) throws ServletException {
+
+
         AnnotationConfigWebApplicationContext webCtx = new AnnotationConfigWebApplicationContext();
         webCtx.register(SpringConfig.class);
      //   webCtx.register(SpringSecurityConfig.class);

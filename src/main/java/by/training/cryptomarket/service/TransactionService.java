@@ -2,15 +2,17 @@ package by.training.cryptomarket.service;
 
 
 
-import by.training.cryptomarket.daojdbctemplate.sql.CoinDaoImpl;
-import by.training.cryptomarket.daojdbctemplate.sql.TransactionDaoImpl;
-import by.training.cryptomarket.daojdbctemplate.sql.UserDaoImpl;
-import by.training.cryptomarket.daojdbctemplate.transaction.ApproveRequestTransaction;
-import by.training.cryptomarket.daojdbctemplate.transaction.RejectRequestTransaction;
-import by.training.cryptomarket.daojdbctemplate.transaction.WithdrawTransaction;
+import by.training.cryptomarket.dao.sql.CoinDaoImpl;
+import by.training.cryptomarket.dao.sql.TransactionDaoImpl;
+import by.training.cryptomarket.dao.sql.UserDaoImpl;
+import by.training.cryptomarket.dao.transaction.ApproveRequestTransaction;
+import by.training.cryptomarket.dao.transaction.RejectRequestTransaction;
+import by.training.cryptomarket.dao.transaction.WithdrawTransaction;
 import by.training.cryptomarket.entity.Coin;
 import by.training.cryptomarket.entity.Transaction;
 import by.training.cryptomarket.entity.mapping.MappingTransaction;
+import by.training.cryptomarket.enums.TransactionStatus;
+import by.training.cryptomarket.enums.TransactionType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -64,8 +66,8 @@ public class TransactionService {
                        MappingTransaction mappingTransaction = new MappingTransaction();
                        mappingTransaction.setIdentity(transaction.getIdentity());
                        mappingTransaction.setAmount(transaction.getAmount());
-                       mappingTransaction.setType(transaction.getType());
-                       mappingTransaction.setStatus(transaction.getStatus());
+                       mappingTransaction.setType(transaction.getType().toString());
+                       mappingTransaction.setStatus(transaction.getStatus().toString());
                        mappingTransaction.setCoin(coinDao.read(transaction.getCoinId()).getFullName());
                        mappingTransaction.setUser(userDao.read(transaction.getUserId()).getUserName());
                        mappingTransactions.add(mappingTransaction);
@@ -148,16 +150,22 @@ public class TransactionService {
                                       final String coin) throws  Exception {
 
             List<Coin> coins = coinDao.read();
-            Integer coinId = null;
+                 Integer coinId = null;
+
+
+
             for (Coin coin1 : coins) {
                if (coin1.getTicker().equals(coin)) {
                    coinId = coin1.getIdentity();
                }
             }
-            Transaction transaction = new Transaction();
+
+
+
+        Transaction transaction = new Transaction();
             transaction.setCoinId(coinId);
-            transaction.setStatus("pending");
-            transaction.setType("deposit");
+            transaction.setStatus(TransactionStatus.pending);
+            transaction.setType(TransactionType.deposit);
             transaction.setUserId(userId);
             transaction.setAmount(amount);
 
@@ -190,8 +198,8 @@ public class TransactionService {
             }
             Transaction transaction = new Transaction();
             transaction.setCoinId(coinId);
-            transaction.setStatus("pending");
-            transaction.setType("withdraw");
+            transaction.setStatus(TransactionStatus.pending);
+            transaction.setType(TransactionType.withdraw);
             transaction.setUserId(userId);
             transaction.setAmount(amount);
             withdrawTransaction.setTransaction(transaction);

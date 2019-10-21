@@ -57,7 +57,7 @@
                     <li><a href=${toorderUrl}>${myorders}</a></li>
                     <li><a href=${logoutUrl}>${logout}</a></li>
 
-                    <li> <H2 style = "color: aliceblue" >${usertext} ${user.userName} ${myorders} </H2></li>
+                    <li> <H2 style = "color: aliceblue" >${usertext} ${user.userName} </H2></li>
                 </ul>
             </nav>
         </div>
@@ -69,30 +69,21 @@
     <!--------------------------------------------------------->
     <div class="uui-info-panel-horizontal white" style = " background: #7F993A ">
 
+  <H2 style="color: black;margin-top:100px;  ">${myorders} </H2>
+
         <div style="height:500px;overflow-y:scroll;">
             <table class="table">
-
                 <thead>
-
-
-
                 </thead>
-
-
-
                 <tbody>
 
-
                              <#list orders as order>
-
                              <tr>
                                  <td>${order.pair}</td>
                                  <td>${order.amount}</td>
                                  <td>${order.price}</td>
                                  <td>${order.type}</td>
                                  <td>${orderState["${order.state}"]}</td>
-
-
                               <#if order.state == "active">
                                  <td >
                                      <FORM action="${rejectorderUrl}${order.identity}" method="post">

@@ -1,140 +1,129 @@
 package by.training.cryptomarket.entity;
 
+
+import by.training.cryptomarket.enums.PostgreSQLEnumType;
+import by.training.cryptomarket.enums.TransactionStatus;
+import by.training.cryptomarket.enums.TransactionType;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
+
+import javax.persistence.Entity;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
-/**
- * The transaction class entity.
- *
- * @author Nikita Karchahin
- * @version 1.0
- */
-public class Transaction extends Entity {
+@Entity
+@Table(name = "transactions")
+@TypeDef( name = "t_enum",  typeClass = PostgreSQLEnumType.class)
+public class Transaction{
 
-    /**
-     * The field for storage a userId.
-     */
-    private Integer userId;
+    @Id
+    @Column(name = "identity")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer identity;
 
-    /**
-     * The field for storage a coinId.
-     */
-    private Integer coinId;
 
-    /**
-     * The field for storage a amount.
-     */
+    @Column(name = "amount")
     private Double amount;
 
-    /**
-     * The field for storage a type.
-     */
-    private String type;
 
-    /**
-     * The field for storage a timestamp.
-     */
+
+    @Column(name = "date")
     private Timestamp timestamp;
 
-    /**
-     * The field for storage a status.
-     */
+
+/*
+    @Column(name = "type")
+    private String type;
+
+    @Column(name = "status")
     private String status;
+*/
 
-    /**
-     * The getter for status.
-     * @return status
-     */
-    public String getStatus() {
-        return status;
+
+
+    @Column(name = "type")
+    @Enumerated(EnumType.STRING)
+    @Type( type = "t_enum")
+    private TransactionType type;
+
+    @Column(name = "status")
+    @Enumerated(EnumType.STRING)
+    @Type( type = "t_enum")
+    private TransactionStatus status;
+
+
+    @Column(name ="user_id")
+    private Integer userId;
+
+    @Column(name ="coin_id")
+    private Integer coinId;
+
+
+
+
+
+   /* @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "identity")
+    private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "coin_id", referencedColumnName = "identity")
+    private Coin coin;*/
+
+
+    public Integer getIdentity() {
+        return identity;
     }
 
-    /**
-     * The setter for status.
-     * @param status status
-     */
-    public void setStatus(final String status) {
-        this.status = status;
+    public void setIdentity(Integer identity) {
+        this.identity = identity;
     }
 
-
-    /**
-     * The getter for userId.
-     * @return userId
-     */
-    public Integer getUserId() {
-        return userId;
-    }
-
-    /**
-     * The setter for userId.
-     * @param userId userId
-     */
-    public void setUserId(final Integer userId) {
-        this.userId = userId;
-    }
-
-
-    /**
-     * The getter for coinId.
-     * @return coinId
-     */
-    public Integer getCoinId() {
-        return coinId;
-    }
-
-    /**
-     * The setter for coinId.
-     * @param coinId coinId
-     */
-    public void setCoinId(final Integer coinId) {
-        this.coinId = coinId;
-    }
-
-    /**
-     * The getter for amount.
-     * @return amount
-     */
     public Double getAmount() {
         return amount;
     }
 
-    /**
-     * The setter for amount.
-     * @param amount amount
-     */
-    public void setAmount(final Double amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
-    /**
-     * The getter for type.
-     * @return type
-     */
-    public String getType() {
-        return type;
-    }
-
-    /**
-     * The setter for type.
-     * @param type type
-     */
-    public void setType(final String type) {
-        this.type = type;
-    }
-
-    /**
-     * The getter for timestamp.
-     * @return timestamp
-     */
     public Timestamp getTimestamp() {
         return timestamp;
     }
 
-    /**
-     * The setter for timestamp.
-     * @param timestamp timestamp
-     */
     public void setTimestamp(Timestamp timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public TransactionType getType() {
+        return type;
+    }
+
+    public void setType(TransactionType type) {
+        this.type = type;
+    }
+
+    public TransactionStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(TransactionStatus status) {
+        this.status = status;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public Integer getCoinId() {
+        return coinId;
+    }
+
+    public void setCoinId(Integer coinId) {
+        this.coinId = coinId;
     }
 }

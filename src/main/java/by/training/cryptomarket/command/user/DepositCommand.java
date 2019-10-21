@@ -38,6 +38,8 @@ public class DepositCommand implements Command {
                           final HttpServletResponse response, ModelMap model) throws Exception {
 
 
+
+
         request.getSession().setAttribute("transactionerror", "");
 
         try {

@@ -1,8 +1,8 @@
 package by.training.cryptomarket.service;
 
 
-import by.training.cryptomarket.daojdbctemplate.sql.CoinDaoImpl;
-import by.training.cryptomarket.daojdbctemplate.sql.CryptoPairDaoImpl;
+import by.training.cryptomarket.dao.sql.CoinDaoImpl;
+import by.training.cryptomarket.dao.sql.CryptoPairDaoImpl;
 import by.training.cryptomarket.entity.CryptoPair;
 import by.training.cryptomarket.entity.mapping.TraidingCouple;
 import org.springframework.beans.factory.annotation.Autowired;

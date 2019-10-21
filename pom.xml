@@ -12,12 +12,17 @@
     <packaging>war</packaging>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+
         <spring.securiry>5.1.6.RELEASE</spring.securiry>
         <jdk.version>1.8</jdk.version>
         <spring.version>5.1.5.RELEASE</spring.version>
+
+      <!--  <thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>-->
+        <!--  <junit.version>4.12</junit.version>-->
+        <!-- <logback.version>1.2.3</logback.version>-->
         <jetty-maven-plugin.version>9.4.15.v20190215</jetty-maven-plugin.version>
+
+
         <timestamp>${maven.build.timestamp}</timestamp>
         <maven.build.timestamp.format>dd-MM-yyyy HH:mm </maven.build.timestamp.format>
 
@@ -51,6 +56,29 @@
             <version>3.0.1</version>
             <scope>provided</scope>
         </dependency>
+
+
+     <!--   <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>javax.servlet.jsp-api</artifactId>
+            <version>2.3.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>-->
+
+
+
+     <!--   <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.1-901-1.jdbc4</version>
+        </dependency>-->
+
 
         <!-- https://mvnrepository.com/artifact/postgresql/postgresql -->
         <dependency>
@@ -107,7 +135,6 @@
             <version>3.0.4</version>
         </dependency>
 
-
         <dependency>
             <groupId>io.zonky.test</groupId>
             <artifactId>embedded-postgres</artifactId>
@@ -146,6 +173,7 @@
             <artifactId>freemarker</artifactId>
             <version>2.3.23</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
@@ -196,10 +224,11 @@
         </dependency>
 
 
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
-            <version>5.1.1.RELEASE</version>
+            <version>5.1.5.RELEASE</version>
         </dependency>
 
         <dependency>
@@ -214,7 +243,6 @@
             <artifactId>jaxb-api</artifactId>
             <version>2.1</version>
         </dependency>
-
 
 
 
@@ -253,9 +281,7 @@
                     <target>${jdk.version}</target>
                 </configuration>
             </plugin>
-
-
-       <!--     <plugin>
+            <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>${jetty-maven-plugin.version}</version>
@@ -265,22 +291,24 @@
                         <contextPath>/</contextPath>
                     </webApp>
                 </configuration>
-            </plugin>-->
+            </plugin>
 
-            <plugin>
+
+         <!--   <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
                     <url>http://localhost:8080/manager/text</url>
                     <path>/</path>
-                    <!-- Set update to ture to avoid exist war package can not be override
-                        error -->
+                    &lt;!&ndash; Set update to ture to avoid exist war package can not be override
+                        error &ndash;&gt;
                     <update>true</update>
                     <username>admin</username>
                     <password>admin</password>
                 </configuration>
             </plugin>
+-->
 
             <!--  without web.xml-->
             <plugin>
@@ -323,7 +351,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.0</version>
+                <version>2.22.1</version>
             </plugin>
 
 

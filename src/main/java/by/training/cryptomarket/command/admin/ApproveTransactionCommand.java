@@ -43,6 +43,7 @@ public class ApproveTransactionCommand implements Command {
        Integer idintity = Integer.valueOf(
                request.getParameter("identity").trim());
 
+
        transactionService.approveTransaction(idintity);
 
        request.getSession().setAttribute("transactionData",

@@ -1,7 +1,7 @@
 package by.training.cryptomarket.entity.comparator;
 
-import by.training.cryptomarket.entity.Order;
 
+import by.training.cryptomarket.entity.Order;
 
 /**
  * The class for comparator by price.

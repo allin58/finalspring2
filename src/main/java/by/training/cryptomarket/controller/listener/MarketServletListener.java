@@ -46,7 +46,7 @@ public class MarketServletListener implements ServletRequestListener {
            if (request.getSession().getAttribute("user") != null) {
                User user = (User) request.getSession().getAttribute("user");
                userName = user.getUserName();
-               role = user.getRole();
+               role = user.getRole().toString();
            }
            LOGGER.info("username-" + userName + ", role-" + role + ", command-" +  request.getParameter("command"));
 

@@ -1,77 +1,68 @@
 package by.training.cryptomarket.entity;
 
-/**
- * The wallet class entity.
- *
- * @author Nikita Karchahin
- * @version 1.0
- */
-public class Wallet extends Entity {
+import javax.persistence.Entity;
+import javax.persistence.*;
 
-    /**
-     * The field for storage a amount of bitcoin.
-     */
+@Entity
+@Table(name = "wallets")
+public class Wallet{
+
+    @Id
+    @Column(name = "user_id")
+    private Integer identity;
+
+    public Integer getIdentity() {
+        return identity;
+    }
+
+    public void setIdentity(Integer identity) {
+        this.identity = identity;
+    }
+
+    @OneToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "identity")
+    private User user;
+
+
+    @Column(name = "btc")
     private  Double btc;
 
-    /**
-     * The field for storage a amount of ethereum.
-     */
+    @Column(name = "eth")
     private  Double eth;
 
-    /**
-     * The field for storage a amount of tether.
-     */
+    @Column(name = "usdt")
     private  Double usdt;
 
-    /**
-     * The getter for btc.
-     * @return btc
-     */
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public Double getBtc() {
         return btc;
     }
 
-    /**
-     * The setter for btc.
-     * @param btc btc
-     */
     public void setBtc(Double btc) {
         this.btc = btc;
     }
 
-    /**
-     * The getter for eth.
-     * @return eth
-     */
     public Double getEth() {
         return eth;
     }
 
-    /**
-     * The setter for eth.
-     * @param eth eth
-     */
     public void setEth(Double eth) {
         this.eth = eth;
     }
 
-    /**
-     * The getter for usdt.
-     * @return usdt
-     */
     public Double getUsdt() {
         return usdt;
     }
 
-    /**
-     * The setter for usdt.
-     * @param usdt usdt
-     */
     public void setUsdt(Double usdt) {
         this.usdt = usdt;
     }
-
-
-
-
 }

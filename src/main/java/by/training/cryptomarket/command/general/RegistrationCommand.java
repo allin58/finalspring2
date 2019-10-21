@@ -3,11 +3,12 @@ package by.training.cryptomarket.command.general;
 import by.training.cryptomarket.command.Command;
 import by.training.cryptomarket.entity.User;
 import by.training.cryptomarket.entity.Wallet;
+import by.training.cryptomarket.enums.Role;
 import by.training.cryptomarket.service.UserService;
+import by.training.cryptomarket.service.UserServiceInter;
 import by.training.cryptomarket.service.WalletService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 
@@ -26,7 +27,7 @@ public class RegistrationCommand implements Command {
 
 
     @Autowired
-    UserService userService;
+    UserServiceInter userService;
 
     @Autowired
     WalletService walletService;
@@ -80,29 +81,25 @@ public class RegistrationCommand implements Command {
                 user.setUserName(username);
                 user.setName(name);
                 user.setSurname(surname);
-                user.setRole("user");
+                //user.setRole("user");
+                user.setRole(Role.user);
                 user.setHashOfPassword(password);
 
 
-
                 userService.addUser(user);
+
                 Integer userId = userService.getUser(username).getIdentity();
-
-
-
                 Wallet wallet = new Wallet();
                 wallet.setIdentity(userId);
                 wallet.setBtc(0.0);
                 wallet.setEth(0.0);
                 wallet.setUsdt(0.0);
+                walletService.addNewWallet(wallet);
 
 
-                 walletService.addNewWallet(wallet);
+             //   model.addAttribute("loginmessage","successful");
 
-
-
-
-                model.addAttribute("loginmessage","successful");
+                request.getSession().setAttribute("loginmessage","successful");
                 return "redirect:/";
 
             }

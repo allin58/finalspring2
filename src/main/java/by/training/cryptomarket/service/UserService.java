@@ -2,13 +2,15 @@ package by.training.cryptomarket.service;
 
 
 
-import by.training.cryptomarket.daojdbctemplate.sql.UserDaoImpl;
+import by.training.cryptomarket.dao.sql.UserDaoImpl;
 import by.training.cryptomarket.entity.User;
 import org.bouncycastle.util.encoders.Hex;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.PostConstruct;
+
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.util.List;
@@ -19,6 +21,8 @@ import java.util.List;
  * @author Nikita Karchahin
  * @version 1.0
  */
+
+
 
 @Service
 public class UserService implements UserServiceInter {
@@ -36,13 +40,13 @@ public class UserService implements UserServiceInter {
      * @return identity of user
      * @throws Exception Exception
      */
-    public Integer addUser(final User user) throws Exception {
+          public Integer addUser(final User user) throws Exception {
 
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
         byte[] hash = digest.digest((user.getHashOfPassword()).getBytes(StandardCharsets.UTF_8));
         user.setHashOfPassword(new String(Hex.encode(hash)));
-        userDao.create(user);
-        return 0;
+               userDao.create(user);
+              return 0;
 
     }
 
@@ -111,19 +115,28 @@ if (id == 0) return null;
     public List getAllUsers() throws Exception {
 
         List<User> users;
+
         users = userDao.read();
+
         return users;
     }
+
 
 
     @Override
     public User getUser(String login) {
 
-        List<User> users = userDao.read();
+
+        List<User> users = null;
+
+            users = userDao.read();
 
         User user =null;
+
         for (User user1 : users) {
+
             if(user1.getUserName().equals(login)) {
+
                 user = user1;
             }
 

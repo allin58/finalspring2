@@ -11,6 +11,16 @@ import by.training.cryptomarket.entity.Entity;
 public class MappingTransaction extends Entity {
 
 
+    private Integer identity;
+
+    public Integer getIdentity() {
+        return identity;
+    }
+
+    public void setIdentity(Integer identity) {
+        this.identity = identity;
+    }
+
     /**
      * The field for userName.
      */

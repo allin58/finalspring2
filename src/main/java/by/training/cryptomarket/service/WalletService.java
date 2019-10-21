@@ -2,7 +2,7 @@ package by.training.cryptomarket.service;
 
 
 
-import by.training.cryptomarket.daojdbctemplate.sql.WalletDaoImpl;
+import by.training.cryptomarket.dao.sql.WalletDaoImpl;
 import by.training.cryptomarket.entity.Wallet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

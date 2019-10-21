@@ -10,6 +10,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.jdbc.datasource.SingleConnectionDataSource;
+import org.springframework.orm.hibernate5.HibernateTransactionManager;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
@@ -68,14 +70,41 @@ public class SpringConfig implements WebMvcConfigurer {
     @Autowired
     DriverManagerDataSource driverManagerDataSource;
 
-
+/*
    @Bean
     public PlatformTransactionManager transactionManager() {
         return new DataSourceTransactionManager(driverManagerDataSource);
 
 
+    }*/
+
+
+    @Bean
+    public LocalSessionFactoryBean sessionFactory() {
+        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
+        sessionFactory.setDataSource(driverManagerDataSource());
+        sessionFactory.setPackagesToScan("by.training.cryptomarket.entity");
+        sessionFactory.setHibernateProperties(hibernateProperties());
+        return sessionFactory;
     }
 
+
+
+
+    @Bean
+    public HibernateTransactionManager transactionManager() {
+        HibernateTransactionManager transactionManager = new HibernateTransactionManager();
+        transactionManager.setSessionFactory(sessionFactory().getObject());
+        return transactionManager;
+    }
+
+
+    private Properties hibernateProperties() {
+        Properties properties = new Properties();
+        properties.put("hibernate.dialect", env.getRequiredProperty("hibernate.dialect"));
+      //  properties.put("hibernate.show_sql", env.getRequiredProperty("hibernate.show_sql"));
+        return properties;
+    }
 
 
 
@@ -95,12 +124,13 @@ public class SpringConfig implements WebMvcConfigurer {
     }
 
 
+/*
     @Bean
-    @Qualifier("jdbcTemplate")
     public JdbcTemplate jdbcTemplate() {
         JdbcTemplate jdbcTemplate = new JdbcTemplate(driverManagerDataSource);
         return jdbcTemplate;
     }
+*/
 
 
     public void addInterceptors(InterceptorRegistry registry) {

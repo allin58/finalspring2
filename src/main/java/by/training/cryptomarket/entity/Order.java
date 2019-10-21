@@ -1,136 +1,140 @@
 package by.training.cryptomarket.entity;
 
-/**
- * The order class entity.
- *
- * @author Nikita Karchahin
- * @version 1.0
- */
-public class Order extends Entity {
 
-    /**
-     * The field for storage a userId.
-     */
+import by.training.cryptomarket.enums.PostgreSQLEnumType;
+import by.training.cryptomarket.enums.StateOfOrder;
+import by.training.cryptomarket.enums.TypeOfOrder;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
+
+import javax.persistence.Entity;
+import javax.persistence.*;
+
+@Entity
+@Table(name = "orders")
+@TypeDef( name = "t_enum",  typeClass = PostgreSQLEnumType.class)
+public class Order {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "identity")
+    private Integer identity;
+
+    @Column(name = "user_id")
     private Integer userId;
 
-    /**
-     * The field for storage a pair.
-     */
+    @Column(name = "pair")
     private String pair;
 
-    /**
-     * The field for storage a amount.
-     */
+    @Column(name = "amount")
     private  Double amount;
 
-    /**
-     * The field for storage a price.
-     */
+    @Column(name = "price")
     private Double price;
 
-    /**
-     * The field for storage a type.
-     */
-    private  String type;
+    @Column(name = "type")
+    @Enumerated(EnumType.STRING)
+    @Type( type = "t_enum")
+    private TypeOfOrder type;
 
-    /**
-     * The field for storage a state.
-     */
-    private  String state;
+    @Column(name = "state")
+    @Enumerated(EnumType.STRING)
+    @Type( type = "t_enum")
+    private  StateOfOrder state;
 
-    /**
-     * The getter for userId.
-     * @return userId
-     */
+
+
+    /*@ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "identity")
+    private User user;*/
+
+
+   /* public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+*/
+    public Integer getIdentity() {
+        return identity;
+    }
+
+    public void setIdentity(Integer identity) {
+        this.identity = identity;
+    }
+
     public Integer getUserId() {
         return userId;
     }
 
-    /**
-     * The setter for userId.
-     * @param userId userId
-     */
-    public void setUserId(final Integer userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
-    /**
-     * The getter for pair.
-     * @return pair
-     */
+/*    public Integer getUserId() {
+        return user.getIdentity();
+    }
+
+    public void setUserId(Integer userId) {
+        user.setIdentity(userId);
+    }*/
+
     public String getPair() {
         return pair;
     }
 
-    /**
-     * The setter for pair.
-     * @param pair pair
-     */
-    public void setPair(final String pair) {
+    public void setPair(String pair) {
         this.pair = pair;
     }
 
-    /**
-     * The getter for amount.
-     * @return amount
-     */
     public Double getAmount() {
         return amount;
     }
 
-    /**
-     * The setter for amount.
-     * @param amount amount
-     */
-    public void setAmount(final Double amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
-    /**
-     * The getter for price.
-     * @return price
-     */
     public Double getPrice() {
         return price;
     }
 
-    /**
-     * The setter for price.
-     * @param price price
-     */
-    public void setPrice(final Double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
-    /**
-     * The getter for type.
-     * @return type
-     */
-    public String getType() {
+    public TypeOfOrder getType() {
         return type;
     }
 
-    /**
-     * The setter for type.
-     * @param type type
-     */
-    public void setType(final String type) {
+    public void setType(TypeOfOrder type) {
         this.type = type;
     }
 
-    /**
-     * The getter for state.
-     * @return state
-     */
+    public StateOfOrder getState() {
+        return state;
+    }
+
+    public void setState(StateOfOrder state) {
+        this.state = state;
+    }
+
+
+    /* public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public String getState() {
         return state;
     }
 
-    /**
-     * The setter for state.
-     * @param state state
-     */
-    public void setState(final String state) {
+    public void setState(String state) {
         this.state = state;
-    }
+    }*/
 }

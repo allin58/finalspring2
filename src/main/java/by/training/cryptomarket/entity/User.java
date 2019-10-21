@@ -1,116 +1,110 @@
 package by.training.cryptomarket.entity;
 
-/**
- * The user class entity.
- *
- * @author Nikita Karchahin
- * @version 1.0
- */
-public class User extends Entity {
+import by.training.cryptomarket.enums.PostgreSQLEnumType;
+import by.training.cryptomarket.enums.Role;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
 
-    /**
-     * The field for storage a userName.
-     */
-    private  String userName;
-
-    /**
-     * The field for storage a name.
-     */
-    private  String name;
-
-    /**
-     * The field for storage a surname.
-     */
-    private  String surname;
-
-    /**
-     * The field for storage a hashOfPassword.
-     */
-    private   String hashOfPassword;
-
-    /**
-     * The field for storage a role.
-     */
-    private   String role;
+import javax.persistence.Entity;
+import javax.persistence.*;
+import java.util.List;
 
 
-    /**
-     * The getter for name.
-     * @return name
-     */
-    public String getName() {
-        return name;
+@Entity
+@Table(name = "users")
+@TypeDef( name = "role_enum",  typeClass = PostgreSQLEnumType.class)
+public class User  {
+
+
+    @Id
+    @Column(name = "identity")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Integer identity;
+
+    @Column(name = "user_name")
+        private  String userName;
+
+    @Column(name = "name")
+        private  String name;
+
+    @Column(name = "surname")
+        private  String surname;
+
+    @Column(name = "hash_of_password")
+        private   String hashOfPassword;
+
+      @Column(name = "role")
+      @Enumerated(EnumType.STRING)
+      @Type( type = "role_enum")
+              private Role role;
+
+   /* @OneToMany(mappedBy = "user",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @Fetch(value = FetchMode.SUBSELECT)
+    private List<Transaction> transactions;*/
+
+
+ /*   @OneToMany(mappedBy = "user",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @Fetch(value = FetchMode.SUBSELECT)
+    private List<Order> orders;
+*/
+
+
+
+
+    public Integer getIdentity() {
+        return identity;
     }
 
-    /**
-     * The setter for name.
-     * @param name name
-     */
-    public void setName(final String name) {
-        this.name = name;
+    public void setIdentity(Integer identity) {
+        this.identity = identity;
     }
 
-    /**
-     * The getter for surname.
-     * @return surname
-     */
-    public String getSurname() {
-        return surname;
-    }
-
-    /**
-     * The setter for surname.
-     * @param surname surname
-     */
-    public void setSurname(final String surname) {
-        this.surname = surname;
-    }
-
-    /**
-     * The getter for userName.
-     * @return userName
-     */
     public String getUserName() {
         return userName;
     }
 
-    /**
-     * The setter for userName.
-     * @param userName userName
-     */
-    public void setUserName(final String userName) {
+    public void setUserName(String userName) {
         this.userName = userName;
     }
 
-    /**
-     * The getter for hashOfPassword.
-     * @return hashOfPassword
-     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
     public String getHashOfPassword() {
         return hashOfPassword;
     }
 
-    /**
-     * The setter for hashOfPassword.
-     * @param hashOfPassword hashOfPassword
-     */
-    public void setHashOfPassword(final String hashOfPassword) {
+    public void setHashOfPassword(String hashOfPassword) {
         this.hashOfPassword = hashOfPassword;
     }
 
-    /**
-     * The getter for role.
-     * @return role
-     */
-    public String getRole() {
+    public Role getRole()
+    {
+
         return role;
     }
 
-    /**
-     * The setter for role.
-     * @param role role
-     */
-    public void setRole(final String role) {
+    public void setRole(Role role) {
+
+
+
         this.role = role;
+
+
     }
 }

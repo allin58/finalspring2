@@ -8,6 +8,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 
 import java.util.HashSet;
 import java.util.Set;
@@ -16,23 +18,26 @@ import java.util.Set;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
-    private UserService userService;
+    private UserServiceInter userService;
+
 
     @Override
+    @Transactional
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
 
-        User user = userService.getUser(login);
 
 
-        Set<GrantedAuthority> roles = new HashSet();
-       roles.add(new SimpleGrantedAuthority(user.getRole()));
+            User user = userService.getUser(login);
+
+            Set<GrantedAuthority> roles = new HashSet();
+            roles.add(new SimpleGrantedAuthority(user.getRole().toString()));
 
 
+        UserDetails userDetails = new org.springframework.security.core.userdetails.User(user.getUserName(),
+                    user.getHashOfPassword(),
+                    roles);
 
-        UserDetails userDetails =
-                new org.springframework.security.core.userdetails.User(user.getUserName(),
-                        user.getHashOfPassword(),
-                        roles);
+
 
         return userDetails;
     }

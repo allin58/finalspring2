@@ -10,12 +10,10 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.MessageDigestPasswordEncoder;
-import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import org.springframework.web.filter.CharacterEncodingFilter;
 
-import javax.sql.DataSource;
 
 
 @Configuration
@@ -24,18 +22,13 @@ import javax.sql.DataSource;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired()
-    private UserDetailsServiceImpl userDetailsService;
+    @Autowired
+    private UserDetailsService userDetailsService;
 
 
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-
-                CharacterEncodingFilter filter = new CharacterEncodingFilter();
-                filter.setEncoding("UTF-8");
-                filter.setForceEncoding(true);
-                http.addFilterBefore(filter, CsrfFilter.class);
 
 
 

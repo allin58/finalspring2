@@ -1,54 +1,47 @@
 package by.training.cryptomarket.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.*;
 
-/**
- * The coin class entity.
- *
- * @author Nikita Karchahin
- * @version 1.0
- */
-public class Coin extends Entity {
-
-    /**
-     * The field for storage a ticker.
-     */
-    private String ticker;
+@Entity
+@Table(name = "coins")
+public class Coin {
 
 
-    /**
-     * The field for storage a fullName.
-     */
-    private String fullName;
 
-    /**
-     * Getter for ticker.
-     * @return ticker
-     */
+    @Id
+    @Column(name = "identity")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer identity;
+
+
+    @Column(name = "coin")
+    private  String ticker;;
+
+    @Column(name = "full_name")
+    private  String fullName;;
+
+    public Integer getIdentity() {
+        return identity;
+    }
+
+    public void setIdentity(Integer identity) {
+        this.identity = identity;
+    }
+
     public String getTicker() {
         return ticker;
     }
 
-    /**
-     * Setter for ticker.
-     * @param ticker ticker
-     */
-    public void setTicker(final String ticker) {
+    public void setTicker(String ticker) {
         this.ticker = ticker;
     }
 
-    /**
-     * Getter for fullName.
-     * @return fullName
-     */
     public String getFullName() {
         return fullName;
     }
 
-    /**
-     * Setter for fullName.
-     * @param fullName fullName
-     */
-    public void setFullName(final String fullName) {
+    public void setFullName(String fullName) {
         this.fullName = fullName;
     }
 }
