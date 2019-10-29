@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ToMarketCommand.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">server</a> &gt; <a href="index.source.html" class="el_package">by.training.cryptomarket.command.user</a> &gt; <span class="el_source">ToMarketCommand.java</span></div><h1>ToMarketCommand.java</h1><pre class="source lang-java linenums">package by.training.cryptomarket.command.user;
+
+import by.training.cryptomarket.command.Command;
+import by.training.cryptomarket.entity.mapping.TraidingCouple;
+import by.training.cryptomarket.service.CryptoPairService;
+import by.training.cryptomarket.service.OrderService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+import org.springframework.ui.ModelMap;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.List;
+
+/**
+ * The class implements Command interface.
+ *
+ * @author Nikita Karchahin
+ * @version 1.0
+ */
+@Component(&quot;tomarket&quot;)
+@Qualifier(&quot;ToMarketCommand&quot;)
+<span class="fc" id="L24">public class ToMarketCommand implements Command {</span>
+
+    @Autowired
+    CryptoPairService cryptoPairService;
+
+    @Autowired
+    OrderService orderService;
+
+
+    /**
+     * This method is to redirect to the market.
+     * @param request request
+     * @param response response
+     * @return appropriate jsp
+     * @throws Exception
+     */
+    @Override
+    public String execute(final HttpServletRequest request,
+                          final HttpServletResponse response, ModelMap model) throws Exception {
+
+
+
+<span class="nc" id="L46">        request.getSession().setAttribute(&quot;marketerror&quot;, &quot;&quot;);</span>
+<span class="nc" id="L47">        request.getSession().setAttribute(&quot;ordermessage&quot;, &quot;&quot;);</span>
+<span class="nc" id="L48">        request.getSession().setAttribute(&quot;typeoforder&quot;, &quot;limit&quot;);</span>
+<span class="nc" id="L49">       String pair = request.getParameter(&quot;pair&quot;);</span>
+
+<span class="nc bnc" id="L51" title="All 4 branches missed.">       if (pair == null || &quot;&quot;.equals(pair)) {</span>
+
+
+
+<span class="nc" id="L55">           List&lt;TraidingCouple&gt; activePairs = cryptoPairService.getActivePairs();</span>
+<span class="nc bnc" id="L56" title="All 2 branches missed.">if (activePairs.size() &gt; 0) {</span>
+
+<span class="nc" id="L58">    pair = activePairs.get(0).getPair();</span>
+
+} else {
+
+<span class="nc" id="L62">    request.getSession().setAttribute(&quot;activepairs&quot;, &quot;&quot;);</span>
+<span class="nc" id="L63">    request.getSession().setAttribute(&quot;pair&quot;, &quot;&quot;);</span>
+<span class="nc" id="L64">    request.getSession().setAttribute(&quot;marketerror&quot;, &quot;marketerror&quot;);</span>
+<span class="nc" id="L65">    return &quot;market&quot;;</span>
+}
+
+
+
+       }
+
+
+
+
+<span class="nc" id="L75">        request.getSession().setAttribute(&quot;pair&quot;, pair);</span>
+
+
+
+<span class="nc" id="L79">        List activePairs = cryptoPairService.getActivePairs();</span>
+
+<span class="nc" id="L81">        request.getSession().setAttribute(&quot;activepairs&quot;, activePairs);</span>
+
+<span class="nc" id="L83">        List askList = orderService.getAskOrdersByPair(pair.trim());</span>
+<span class="nc" id="L84">        request.getSession().setAttribute(&quot;asklist&quot;, askList);</span>
+
+<span class="nc" id="L86">        List bidList = orderService.getBidOrdersByPair(pair.trim());</span>
+<span class="nc" id="L87">        request.getSession().setAttribute(&quot;bidlist&quot;, bidList);</span>
+
+<span class="nc" id="L89">        return &quot;market&quot;;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

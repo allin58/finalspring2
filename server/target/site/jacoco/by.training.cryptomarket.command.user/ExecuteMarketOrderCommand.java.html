@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ExecuteMarketOrderCommand.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">server</a> &gt; <a href="index.source.html" class="el_package">by.training.cryptomarket.command.user</a> &gt; <span class="el_source">ExecuteMarketOrderCommand.java</span></div><h1>ExecuteMarketOrderCommand.java</h1><pre class="source lang-java linenums">package by.training.cryptomarket.command.user;
+
+import by.training.cryptomarket.command.Command;
+import by.training.cryptomarket.entity.Order;
+import by.training.cryptomarket.entity.User;
+import by.training.cryptomarket.entity.Wallet;
+import by.training.cryptomarket.entity.qualifier.WalletQualifier;
+import by.training.cryptomarket.service.OrderService;
+import by.training.cryptomarket.service.WalletService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+import org.springframework.ui.ModelMap;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.Collections;
+import java.util.List;
+
+//import org.graalvm.compiler.lir.CompositeValue;
+
+/**
+ * The class implements Command interface.
+ *
+ * @author Nikita Karchahin
+ * @version 1.0
+ */
+
+@Component(&quot;executemarketorder&quot;)
+@Qualifier(&quot;ExecuteMarketOrderCommand&quot;)
+<span class="fc" id="L31">public class ExecuteMarketOrderCommand implements Command {</span>
+
+    @Autowired
+    OrderService orderService;
+
+
+    @Autowired
+    OrderService orderServiceB;
+
+    @Autowired
+    WalletService walletService;
+
+
+    /**
+     * This method which allows to execute market order.
+     * @param request request
+     * @param response response
+     * @return appropriate jsp
+     * @throws Exception
+     */
+    @Override
+    public String execute(final HttpServletRequest request,
+                          final HttpServletResponse response, ModelMap model) throws Exception {
+
+<span class="nc" id="L55">        request.getSession().setAttribute(&quot;ordermessage&quot;, null);</span>
+<span class="nc" id="L56">        String typeOfOrder = null;</span>
+<span class="nc bnc" id="L57" title="All 2 branches missed.">        if (request.getParameter(&quot;buybutton&quot;) != null) {</span>
+<span class="nc" id="L58">            typeOfOrder = request.getParameter(&quot;buybutton&quot;).trim();</span>
+        }
+<span class="nc bnc" id="L60" title="All 2 branches missed.">        if (request.getParameter(&quot;sellbutton&quot;) != null) {</span>
+<span class="nc" id="L61">            typeOfOrder = request.getParameter(&quot;sellbutton&quot;).trim();</span>
+        }
+
+
+<span class="nc" id="L65">        String pair = ((String) request.getSession().getAttribute(&quot;pair&quot;)).trim();</span>
+<span class="nc" id="L66">        String firstCoin = pair.split(&quot;-&quot;)[0];</span>
+<span class="nc" id="L67">        String secondCoin = pair.split(&quot;-&quot;)[1];</span>
+<span class="nc" id="L68">        Double amount = 0.0;</span>
+<span class="nc" id="L69">        User user = (User) request.getSession().getAttribute(&quot;user&quot;);</span>
+
+<span class="nc" id="L71">        Wallet wallet = walletService.getWalletByUserId(user.getIdentity());</span>
+
+        try {
+<span class="nc" id="L74">            amount = Double.valueOf(request.getParameter(&quot;amount&quot;));</span>
+<span class="nc bnc" id="L75" title="All 2 branches missed.">            if (amount &lt; 0) {</span>
+<span class="nc" id="L76">                throw new Exception();</span>
+            }
+
+<span class="nc" id="L79">        } catch (Exception e) {</span>
+<span class="nc" id="L80">            request.getSession().setAttribute(&quot;ordermessage&quot;,</span>
+                    &quot;incorrectamount&quot;);
+<span class="nc" id="L82">            return &quot;market&quot;;</span>
+<span class="nc" id="L83">        }</span>
+
+
+<span class="nc" id="L86">        WalletQualifier walletQualifier = new WalletQualifier();</span>
+
+
+<span class="nc bnc" id="L89" title="All 3 branches missed.">        switch (typeOfOrder) {</span>
+            case &quot;buy&quot; :
+
+               // OrderService orderServiceB = new OrderService();
+<span class="nc" id="L93">                List&lt;Order&gt; orderList = orderServiceB.getAskOrdersByPair(pair);</span>
+<span class="nc" id="L94">                Collections.reverse(orderList);</span>
+<span class="nc" id="L95">                Double realAmountOfSecondCurrency = walletQualifier.getAmountByTicker(wallet, secondCoin);</span>
+<span class="nc" id="L96">                Double expectedAmountOfSecondCurrency = 0.0;</span>
+<span class="nc" id="L97">                Double rest = amount;</span>
+
+<span class="nc bnc" id="L99" title="All 2 branches missed.">                for (int i = 0; i &lt; orderList.size(); i++) {</span>
+<span class="nc" id="L100">                    Order order = orderList.get(i);</span>
+<span class="nc bnc" id="L101" title="All 2 branches missed.">                     if (amount &lt; order.getAmount()) {</span>
+<span class="nc bnc" id="L102" title="All 2 branches missed.">                        if (realAmountOfSecondCurrency &lt; amount * order.getPrice()) {</span>
+<span class="nc" id="L103">                            request.getSession().setAttribute(&quot;ordermessage&quot;,</span>
+                                    &quot;insufficientfunds&quot;);
+<span class="nc" id="L105">                            return &quot;market&quot;;</span>
+                        }
+                        break;
+                    }
+<span class="nc bnc" id="L109" title="All 2 branches missed.">                    if (rest != 0) {</span>
+<span class="nc bnc" id="L110" title="All 2 branches missed.">                        if (rest &gt; order.getAmount()) {</span>
+<span class="nc" id="L111">                            expectedAmountOfSecondCurrency = expectedAmountOfSecondCurrency + (order.getAmount() * order.getPrice());</span>
+<span class="nc" id="L112">                            rest = rest - order.getAmount();</span>
+                        } else {
+<span class="nc" id="L114">                            expectedAmountOfSecondCurrency = expectedAmountOfSecondCurrency + (rest * order.getPrice());</span>
+<span class="nc" id="L115">                            break;</span>
+                            }
+                    }
+
+                }
+
+<span class="nc bnc" id="L121" title="All 2 branches missed.">                if (expectedAmountOfSecondCurrency &gt; realAmountOfSecondCurrency) {</span>
+<span class="nc" id="L122">                    request.getSession().setAttribute(&quot;ordermessage&quot;, &quot;insufficientfunds&quot;);</span>
+<span class="nc" id="L123">                    return &quot;market&quot;;</span>
+                }
+<span class="nc" id="L125">                Double resultAmountB = 0.0;</span>
+
+<span class="nc bnc" id="L127" title="All 2 branches missed.">                for (Order order : orderList) {</span>
+<span class="nc bnc" id="L128" title="All 2 branches missed.">                    if (resultAmountB &lt; amount) {</span>
+<span class="nc bnc" id="L129" title="All 2 branches missed.">                        if (order.getAmount() &gt; amount - resultAmountB) {</span>
+
+
+<span class="nc" id="L132">                            orderServiceB.executePartlyOrder(order, user, amount - resultAmountB);</span>
+<span class="nc" id="L133">                            resultAmountB = amount;</span>
+                        } else {
+<span class="nc" id="L135">                            orderServiceB.executeOrder(order, user);</span>
+<span class="nc" id="L136">                            resultAmountB = resultAmountB + order.getAmount();</span>
+                        }
+
+
+
+
+                    } else {
+                        break;
+                    }
+<span class="nc" id="L145">                }</span>
+
+
+
+<span class="nc" id="L149">                break;</span>
+
+            case &quot;sell&quot; :
+
+<span class="nc bnc" id="L153" title="All 2 branches missed.">              if (walletQualifier.getAmountByTicker(wallet, firstCoin) &lt; amount) {</span>
+<span class="nc" id="L154">                  request.getSession().setAttribute(&quot;ordermessage&quot;,</span>
+                          &quot;insufficientfunds&quot;);
+<span class="nc" id="L156">                  return &quot;market&quot;;</span>
+                 }
+             // OrderService orderService = new OrderService();
+<span class="nc" id="L159">              List&lt;Order&gt; orders = orderService.getBidOrdersByPair(pair);</span>
+<span class="nc" id="L160">              Double resultAmount = 0.0;</span>
+<span class="nc bnc" id="L161" title="All 2 branches missed.">                for (Order order : orders) {</span>
+<span class="nc bnc" id="L162" title="All 2 branches missed.">                    if (resultAmount &lt; amount) {</span>
+
+<span class="nc bnc" id="L164" title="All 2 branches missed.">                       if (order.getAmount() &gt; amount - resultAmount) {</span>
+
+<span class="nc" id="L166">                           orderService.executePartlyOrder(order, user,</span>
+<span class="nc" id="L167">                                   amount - resultAmount);</span>
+
+<span class="nc" id="L169">                           resultAmount = amount;</span>
+                       } else {
+
+<span class="nc" id="L172">                           orderService.executeOrder(order, user);</span>
+<span class="nc" id="L173">                           resultAmount = resultAmount + order.getAmount();</span>
+                       }
+
+
+                    } else {
+                        break;
+                    }
+<span class="nc" id="L180">                }</span>
+
+                break;
+        }
+
+        //OrderService orderService = new OrderService();
+<span class="nc" id="L186">        List askList = orderService.getAskOrdersByPair(pair.trim());</span>
+<span class="nc" id="L187">        request.getSession().setAttribute(&quot;asklist&quot;, askList);</span>
+<span class="nc" id="L188">        List bidList = orderService.getBidOrdersByPair(pair.trim());</span>
+<span class="nc" id="L189">        request.getSession().setAttribute(&quot;bidlist&quot;, bidList);</span>
+<span class="nc" id="L190">        request.getSession().setAttribute(&quot;ordermessage&quot;,</span>
+                &quot;yourapplicationiscompleted&quot;);
+
+
+<span class="nc" id="L194">        return &quot;market&quot;;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

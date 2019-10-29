@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OrderService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">server</a> &gt; <a href="index.source.html" class="el_package">by.training.cryptomarket.service</a> &gt; <span class="el_source">OrderService.java</span></div><h1>OrderService.java</h1><pre class="source lang-java linenums">package by.training.cryptomarket.service;
+
+
+
+import by.training.cryptomarket.dao.sql.OrderDaoImpl;
+import by.training.cryptomarket.dao.transaction.CancelOrderTransaction;
+import by.training.cryptomarket.dao.transaction.ExecuteOrderTransaction;
+import by.training.cryptomarket.dao.transaction.SetOrderTransaction;
+import by.training.cryptomarket.entity.Order;
+import by.training.cryptomarket.entity.User;
+import by.training.cryptomarket.entity.comparator.OrderComparatorImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+
+/**
+ * This service ensures interact with orderds.
+ *
+ * @author Nikita Karchahin
+ * @version 1.0
+ */
+@Component
+<span class="fc" id="L27">public class OrderService {</span>
+
+    @Autowired
+    OrderDaoImpl orderDao;
+
+    @Autowired
+    CancelOrderTransaction cancelOrderTransaction;
+
+    @Autowired
+    ExecuteOrderTransaction executeOrderTransaction;
+
+    @Autowired
+    SetOrderTransaction setOrderTransaction;
+
+
+    /**
+     * This method returns a collection of ask orders by text view of pair.
+     * @param pair pair
+     * @return ask orders by pair
+     * @throws Exception Exception
+     */
+    public List getAskOrdersByPair(final String pair) throws Exception {
+<span class="nc" id="L49">        List&lt;Order&gt; resultOrders = new ArrayList&lt;&gt;();</span>
+
+
+
+<span class="nc" id="L53">            List&lt;Order&gt; orders = orderDao.read();</span>
+<span class="nc bnc" id="L54" title="All 2 branches missed.">            for (Order order : orders) {</span>
+<span class="nc bnc" id="L55" title="All 2 branches missed.">              if (pair.equals(order.getPair())</span>
+<span class="nc bnc" id="L56" title="All 2 branches missed.">                      &amp;&amp; &quot;Ask&quot;.equals(order.getType().toString())</span>
+<span class="nc bnc" id="L57" title="All 2 branches missed.">                      &amp;&amp; &quot;active&quot;.equals(order.getState().toString())) {</span>
+<span class="nc" id="L58">                  resultOrders.add(order);</span>
+              }
+<span class="nc" id="L60">            }</span>
+<span class="nc" id="L61">            Collections.sort(resultOrders, new OrderComparatorImpl());</span>
+
+
+<span class="nc" id="L64">        return resultOrders;</span>
+    }
+
+
+    /**
+     * This method returns a collection of bid orders by text view of pair.
+     * @param pair pair
+     * @return bid orders by pair
+     * @throws Exception Exception
+     */
+    public List getBidOrdersByPair(final String pair) throws Exception {
+<span class="fc" id="L75">        List&lt;Order&gt; resultOrders = new ArrayList&lt;&gt;();</span>
+
+
+
+
+<span class="fc" id="L80">            List&lt;Order&gt; orders = orderDao.read();</span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">            for (Order order : orders) {</span>
+<span class="fc bfc" id="L82" title="All 2 branches covered.">                if (pair.equals(order.getPair())</span>
+<span class="fc bfc" id="L83" title="All 2 branches covered.">                        &amp;&amp; &quot;Bid&quot;.equals(order.getType().toString())</span>
+<span class="fc bfc" id="L84" title="All 2 branches covered.">                        &amp;&amp; &quot;active&quot;.equals(order.getState().toString())) {</span>
+<span class="fc" id="L85">                    resultOrders.add(order);</span>
+                }
+<span class="fc" id="L87">            }</span>
+<span class="fc" id="L88">            Collections.sort(resultOrders, new OrderComparatorImpl());</span>
+<span class="fc" id="L89">            return resultOrders;</span>
+    }
+
+
+    /**
+     *  This method creates a new order.
+     * @param order order
+     * @throws Exception Exception
+     */
+   public void createNewOrder(final Order order) throws Exception {
+
+
+<span class="fc" id="L101">           setOrderTransaction.setOrder(order);</span>
+
+<span class="fc" id="L103">           setOrderTransaction.commit();</span>
+
+<span class="fc" id="L105">   }</span>
+
+
+    /**
+     * This method executes orders.
+     * @param order order to be processed
+     * @param user user who requested order processing
+     * @throws Exception Exception
+     */
+    public void executeOrder(final Order order, final User user) throws Exception {
+
+
+<span class="fc" id="L117">            executeOrderTransaction.setOrder(order);</span>
+<span class="fc" id="L118">            executeOrderTransaction.setUser(user);</span>
+<span class="fc" id="L119">            executeOrderTransaction.commit();</span>
+
+
+
+<span class="fc" id="L123">    }</span>
+
+
+    /**
+     * This method partly executed orders.
+     * @param order order to be processed
+     * @param user user who requested order processing
+     * @param amount amount
+     * @throws Exception Exception
+     */
+    public void executePartlyOrder(final Order order, final User user, final Double amount) throws Exception {
+
+
+<span class="nc" id="L136">            executeOrderTransaction.setOrder(order);</span>
+<span class="nc" id="L137">            executeOrderTransaction.setUser(user);</span>
+<span class="nc" id="L138">            executeOrderTransaction.setAmount(amount);</span>
+<span class="nc" id="L139">            executeOrderTransaction.commit();</span>
+
+<span class="nc" id="L141">    }</span>
+
+
+    /**
+     * This method returns a collection of orders userId.
+     * @param userId identity of user
+     * @return specific user orders
+     * @throws Exception Exception
+     */
+    public List getOrdersByUserId(final Integer userId) throws Exception {
+<span class="nc" id="L151">        List&lt;Order&gt; resultOrders = new ArrayList&lt;&gt;();</span>
+
+
+<span class="nc" id="L154">            List&lt;Order&gt; orders = orderDao.read();</span>
+<span class="nc bnc" id="L155" title="All 2 branches missed.">            for (Order order : orders) {</span>
+<span class="nc bnc" id="L156" title="All 2 branches missed.">               if (order.getUserId().equals(userId)) {</span>
+<span class="nc" id="L157">                   resultOrders.add(order);</span>
+               }
+<span class="nc" id="L159">            }</span>
+
+
+<span class="nc" id="L162">        return resultOrders;</span>
+    }
+
+
+    /**
+     * This method rejects order by id.
+     * @param identity identity
+     * @throws Exception Exception
+     */
+    public void rejectOrderById(final Integer identity) throws Exception {
+
+
+<span class="nc" id="L174">            Order order = orderDao.read(identity);</span>
+
+
+<span class="nc" id="L177">            cancelOrderTransaction.setOrder(order);</span>
+<span class="nc" id="L178">            cancelOrderTransaction.commit();</span>
+
+
+<span class="nc" id="L181">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

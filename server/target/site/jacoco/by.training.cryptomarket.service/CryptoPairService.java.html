@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CryptoPairService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">server</a> &gt; <a href="index.source.html" class="el_package">by.training.cryptomarket.service</a> &gt; <span class="el_source">CryptoPairService.java</span></div><h1>CryptoPairService.java</h1><pre class="source lang-java linenums">package by.training.cryptomarket.service;
+
+
+import by.training.cryptomarket.dao.sql.CoinDaoImpl;
+import by.training.cryptomarket.dao.sql.CryptoPairDaoImpl;
+import by.training.cryptomarket.entity.CryptoPair;
+import by.training.cryptomarket.entity.mapping.TraidingCouple;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+/**
+ * This service ensures interact with cryptocurrency pairs.
+ *
+ * @author Nikita Karchahin
+ * @version 1.0
+ */
+@Component
+<span class="fc" id="L22">public class CryptoPairService {</span>
+
+    @Autowired
+    CryptoPairDaoImpl cryptoPairDao;
+
+    @Autowired
+    CoinDaoImpl coinDao;
+
+    /**
+     * The method for getting all pairs.
+     * @return collection of all pairs
+     * @throws Exception Exception
+     */
+   public List&lt;TraidingCouple&gt; getAllPairs() throws Exception {
+
+
+       List&lt;CryptoPair&gt; cryptoPairs;
+<span class="fc" id="L39">       List&lt;TraidingCouple&gt; traidingCouples = new ArrayList&lt;&gt;();</span>
+
+
+<span class="fc" id="L42">       cryptoPairs = cryptoPairDao.read();</span>
+
+
+
+<span class="fc bfc" id="L46" title="All 2 branches covered.">           for (CryptoPair cryptoPair : cryptoPairs) {</span>
+<span class="fc" id="L47">               TraidingCouple traidingCouple = new TraidingCouple();</span>
+<span class="fc" id="L48">               traidingCouple.setIdentity(cryptoPair.getIdentity());</span>
+<span class="fc" id="L49">               traidingCouple.setActive(cryptoPair.getActive());</span>
+<span class="fc" id="L50">               Integer first = cryptoPair.getFirstCurrency();</span>
+<span class="fc" id="L51">               Integer second = cryptoPair.getSecondCurrency();</span>
+<span class="fc" id="L52">               String pair = coinDao.read(first).getTicker() + &quot;-&quot; + coinDao.read(second).getTicker();</span>
+<span class="fc" id="L53">               traidingCouple.setPair(pair);</span>
+<span class="fc" id="L54">               traidingCouples.add(traidingCouple);</span>
+
+<span class="fc" id="L56">                 }</span>
+
+<span class="fc" id="L58">       List&lt;TraidingCouple&gt; traidingCouplesSorted = new ArrayList&lt;&gt;();</span>
+
+<span class="fc bfc" id="L60" title="All 2 branches covered.">       for (int i = 1; i &lt;=  traidingCouples.size(); i++) {</span>
+
+<span class="fc bfc" id="L62" title="All 2 branches covered.">           for (TraidingCouple traidingCouple : traidingCouples) {</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">               if (traidingCouple.getIdentity() == i)</span>
+<span class="fc" id="L64">                   traidingCouplesSorted.add(traidingCouple);</span>
+
+<span class="fc" id="L66">           }</span>
+
+
+       }
+
+
+
+
+<span class="fc" id="L74">      return  traidingCouplesSorted;</span>
+
+   }
+
+
+    /**
+     * The method for getting active pairs.
+     * @return collection of active pairs
+     * @throws Exception Exception
+     */
+    public List&lt;TraidingCouple&gt; getActivePairs() throws Exception {
+
+
+<span class="nc" id="L87">        List&lt;TraidingCouple&gt; traidingCouples = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L88" title="All 2 branches missed.">        for (TraidingCouple traidingCouple : getAllPairs()) {</span>
+<span class="nc bnc" id="L89" title="All 2 branches missed.">            if (traidingCouple.getActive()) {</span>
+<span class="nc" id="L90">                traidingCouples.add(traidingCouple);</span>
+            }
+<span class="nc" id="L92">        }</span>
+
+<span class="nc" id="L94">        return  traidingCouples;</span>
+
+    }
+
+    /**
+     * The method for toggling status of pair.
+     * @param id id of pair
+     * @throws Exception Exception
+     */
+    public void togglePair(final String id) throws Exception {
+<span class="fc" id="L104">    Integer identity = Integer.parseInt(id.trim());</span>
+
+
+
+
+<span class="fc" id="L109">        CryptoPair cryptoPair = cryptoPairDao.read(identity);</span>
+
+<span class="fc bfc" id="L111" title="All 2 branches covered.">        if (cryptoPair.getActive()) {</span>
+<span class="fc" id="L112">            cryptoPair.setActive(false);</span>
+        } else {
+<span class="fc" id="L114">            cryptoPair.setActive(true);</span>
+        }
+<span class="fc" id="L116">        cryptoPairDao.update(cryptoPair);</span>
+
+<span class="fc" id="L118">}</span>
+
+    }
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

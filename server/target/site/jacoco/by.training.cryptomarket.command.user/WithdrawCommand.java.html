@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>WithdrawCommand.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">server</a> &gt; <a href="index.source.html" class="el_package">by.training.cryptomarket.command.user</a> &gt; <span class="el_source">WithdrawCommand.java</span></div><h1>WithdrawCommand.java</h1><pre class="source lang-java linenums">package by.training.cryptomarket.command.user;
+
+import by.training.cryptomarket.command.Command;
+import by.training.cryptomarket.entity.User;
+import by.training.cryptomarket.entity.Wallet;
+import by.training.cryptomarket.entity.mapping.MappingTransaction;
+import by.training.cryptomarket.service.TransactionService;
+import by.training.cryptomarket.service.WalletService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+import org.springframework.ui.ModelMap;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.List;
+
+/**
+ * The class implements Command interface.
+ *
+ * @author Nikita Karchahin
+ * @version 1.0
+ */
+@Component(&quot;withdraw&quot;)
+@Qualifier(&quot;WithdrawCommand&quot;)
+<span class="fc" id="L26">public class WithdrawCommand implements Command {</span>
+
+    @Autowired
+    TransactionService transactionService;
+
+    @Autowired
+    WalletService walletService;
+
+    /**
+     * This method which allows to do withdraw.
+     * @param request request
+     * @param response response
+     * @return appropriate jsp
+     * @throws Exception
+     */
+    @Override
+    public String execute(final HttpServletRequest request,
+                          final HttpServletResponse response, ModelMap model) throws Exception {
+<span class="fc" id="L44">        request.getSession().setAttribute(&quot;transactionerror&quot;,&quot;&quot;);</span>
+
+        try {
+
+
+<span class="fc" id="L49">            Double amount = null;</span>
+            try {
+<span class="fc" id="L51">                amount = Double.valueOf(request.getParameter(&quot;amount&quot;));</span>
+<span class="pc bpc" id="L52" title="1 of 2 branches missed.">                if (amount &lt;= 0) {</span>
+<span class="nc" id="L53">                    throw new Exception();</span>
+                }
+<span class="nc" id="L55">            } catch (Exception e) {</span>
+<span class="nc" id="L56">                request.getSession().setAttribute(&quot;transactionerror&quot;,&quot;incorrectamount&quot;);</span>
+<span class="nc" id="L57">                return &quot;withdraw&quot;;</span>
+<span class="fc" id="L58">            }</span>
+
+
+<span class="fc" id="L61">            String coin = (String) request.getSession().getAttribute(&quot;coin&quot;);</span>
+<span class="fc" id="L62">            Integer userId = ((User)request.getSession().getAttribute(&quot;user&quot;)).getIdentity();</span>
+
+
+
+<span class="fc" id="L66">            transactionService.setWithdrawTransaction(userId,amount,coin);</span>
+
+<span class="fc" id="L68">            User user = (User)request.getSession().getAttribute(&quot;user&quot;);</span>
+<span class="fc" id="L69">            List&lt;MappingTransaction&gt; transactionList = transactionService.getTransactionsByUser(user.getUserName());</span>
+<span class="fc" id="L70">            request.getSession().setAttribute(&quot;transactions&quot;,transactionList);</span>
+
+
+<span class="fc" id="L73">            Wallet wallet = walletService.getWalletByUserId(user.getIdentity());</span>
+<span class="fc" id="L74">            request.getSession().setAttribute(&quot;wallet&quot;,wallet);</span>
+
+<span class="fc" id="L76">            return &quot;wallet&quot;;</span>
+<span class="nc" id="L77">        } catch (Exception e) {</span>
+
+<span class="nc" id="L79">            request.getSession().setAttribute(&quot;transactionerror&quot;,&quot;insufficientfunds&quot;);</span>
+<span class="nc" id="L80">            return &quot;withdraw&quot;;</span>
+
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

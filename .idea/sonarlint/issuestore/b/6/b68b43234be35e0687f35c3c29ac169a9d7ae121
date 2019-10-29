@@ -1,3 +1,0 @@
-
-Â%squid:RedundantThrowsDeclarationCheck"’Remove the declaration of thrown exception 'org.springframework.security.core.userdetails.UsernameNotFoundException' which is a runtime exception.( èÎå
-}squid:S1488"cImmediately return this expression instead of assigning it to the temporary variable "userDetails".(â¨ğûÿÿÿÿ

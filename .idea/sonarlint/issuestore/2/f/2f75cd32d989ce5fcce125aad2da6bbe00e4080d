@@ -1,18 +1,0 @@
-
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(“ðÛû
-Tsquid:S2441":Make "List" serializable or don't store it in the session.(á’®úûÿÿÿÿ
-[squid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(‰Æáe
-N"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(ø°ÜŠ
-\squid:S1192"GDefine a constant instead of duplicating this literal "market" 4 times.(ÁÙƒÞ
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÃÇÃÞ
-`squid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(ø°ÜŠ
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(ìÑÑÈÿÿÿÿÿ8ŠþæÀÙ-
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(Ç‚þ©ÿÿÿÿÿ8‡íçÀÙ-
-gsquid:S1192"MDefine a constant instead of duplicating this literal "ordermessage" 5 times.(«É»™ùÿÿÿÿ
-S
-squid:S106"9Replace this use of System.out or System.err by a logger.(€Ë²:8É´çÀÙ-
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ëß¥«ùÿÿÿÿ
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ëß¥«ùÿÿÿÿ
-Osquid:S2441":Make "List" serializable or don't store it in the session.(Ç³Ž
