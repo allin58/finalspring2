@@ -1,0 +1,526 @@
+2019-10-25 14:52:08.570 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@5fe581e5 executed in 332 milliseconds
+2019-10-25 14:52:08.993 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@e3269cb executed in 323 milliseconds
+2019-10-25 14:52:09.040 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@d3b0d3c executed in 0 milliseconds
+2019-10-25 14:52:09.294 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@75693025 executed in 254 milliseconds
+2019-10-28 09:32:55.244 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@40a8a26f executed in 666 milliseconds
+2019-10-28 09:32:55.729 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@1e606f64 executed in 369 milliseconds
+2019-10-28 09:32:55.776 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@126a9a3d executed in 0 milliseconds
+2019-10-28 09:32:56.046 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@2c0dca15 executed in 254 milliseconds
+2019-10-28 09:39:54.623 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@55bc1d9a executed in 360 milliseconds
+2019-10-28 09:39:55.087 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@5e557ca8 executed in 363 milliseconds
+2019-10-28 09:39:55.140 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@3a9f186f executed in 0 milliseconds
+2019-10-28 09:39:55.403 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@1cb9e715 executed in 263 milliseconds
+2019-10-29 09:24:51.672 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@24de263a executed in 348 milliseconds
+2019-10-29 09:24:52.142 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@7dd6ef6f executed in 370 milliseconds
+2019-10-29 09:24:52.189 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@2b840f45 executed in 0 milliseconds
+2019-10-29 09:24:52.443 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@1b5c7821 executed in 254 milliseconds
+2019-10-29 09:26:36.327 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@55bc1d9a executed in 370 milliseconds
+2019-10-29 09:26:36.790 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@5e557ca8 executed in 363 milliseconds
+2019-10-29 09:26:36.828 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@3a9f186f executed in 0 milliseconds
+2019-10-29 09:26:37.091 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@1cb9e715 executed in 263 milliseconds
+2019-10-30 12:51:42.846 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@1b5c7821 executed in 332 milliseconds
+2019-10-30 12:51:43.294 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@23d007fb executed in 347 milliseconds
+2019-10-30 12:51:43.348 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@69ea4dc9 executed in 0 milliseconds
+2019-10-30 12:51:43.595 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@32843e52 executed in 247 milliseconds
+2019-10-30 12:57:20.563 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@d7273 executed in 285 milliseconds
+2019-10-30 12:57:20.980 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@31acd1c6 executed in 332 milliseconds
+2019-10-30 12:57:21.011 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@65e329f1 executed in 0 milliseconds
+2019-10-30 12:57:21.265 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@6ef11a53 executed in 254 milliseconds
+2019-10-30 12:58:34.941 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@327244a9 executed in 332 milliseconds
+2019-10-30 12:58:35.342 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@7960294f executed in 317 milliseconds
+2019-10-30 12:58:35.380 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@19dc7b60 executed in 0 milliseconds
+2019-10-30 12:58:35.627 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@5ff05177 executed in 232 milliseconds
+2019-10-30 13:00:26.214 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@3caf5c96 executed in 285 milliseconds
+2019-10-30 13:00:26.646 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@63c84d31 executed in 348 milliseconds
+2019-10-30 13:00:26.684 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@5fbae40 executed in 0 milliseconds
+2019-10-30 13:00:26.916 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@7aa3857b executed in 232 milliseconds
+2019-10-30 13:02:58.952 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@334b392d executed in 301 milliseconds
+2019-10-30 13:02:59.369 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@69ba72da executed in 323 milliseconds
+2019-10-30 13:02:59.400 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@17003497 executed in 0 milliseconds
+2019-10-30 13:02:59.654 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@5b3755f4 executed in 254 milliseconds
+2019-10-30 13:04:08.272 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@4c50cd7d executed in 216 milliseconds
+2019-10-30 13:04:08.673 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@37d3aa8c executed in 354 milliseconds
+2019-10-30 13:04:08.720 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@273293c8 executed in 0 milliseconds
+2019-10-30 13:04:08.758 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@986b619 executed in 38 milliseconds
+2019-10-30 13:05:05.468 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@4c50cd7d executed in 184 milliseconds
+2019-10-30 13:05:05.870 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@37d3aa8c executed in 364 milliseconds
+2019-10-30 13:05:05.907 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@273293c8 executed in 0 milliseconds
+2019-10-30 13:05:05.954 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@986b619 executed in 31 milliseconds
+2019-10-30 13:12:59.109 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@69499c6f executed in 185 milliseconds
+2019-10-30 13:12:59.495 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@3ea84e01 executed in 332 milliseconds
+2019-10-30 13:12:59.542 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@280d5a82 executed in 0 milliseconds
+2019-10-30 13:12:59.595 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@2e40fdbd executed in 38 milliseconds
+2019-10-30 13:13:20.419 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@7ab1ad9 executed in 514 milliseconds
+2019-10-30 13:13:20.869 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@5560b64d executed in 380 milliseconds
+2019-10-30 13:13:20.932 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@6141647f executed in 0 milliseconds
+2019-10-30 13:13:20.970 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@95cecc5 executed in 32 milliseconds
+2019-10-30 13:15:33.753 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@39a3984c executed in 502 milliseconds
+2019-10-30 13:15:34.213 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@574ebdaf executed in 379 milliseconds
+2019-10-30 13:15:34.275 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@3e9fb485 executed in 0 milliseconds
+2019-10-30 13:15:34.313 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@6e7e0259 executed in 38 milliseconds
+2019-10-30 13:18:13.464 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@35824343 executed in 338 milliseconds
+2019-10-30 13:18:14.066 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@62805014 executed in 502 milliseconds
+2019-10-30 13:18:14.113 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@7e605dc0 executed in 0 milliseconds
+2019-10-30 13:18:14.367 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@b2482f6 executed in 254 milliseconds
+2019-10-30 13:19:24.166 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@4404a6b executed in 635 milliseconds
+2019-10-30 13:19:24.627 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@33f349ae executed in 363 milliseconds
+2019-10-30 13:19:24.681 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@4f3fec43 executed in 0 milliseconds
+2019-10-30 13:19:24.944 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@646e6d07 executed in 263 milliseconds
+2019-10-30 13:20:23.318 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@249b86e executed in 285 milliseconds
+2019-10-30 13:20:23.734 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@3b89589a executed in 316 milliseconds
+2019-10-30 13:20:23.781 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@e8e4c33 executed in 0 milliseconds
+2019-10-30 13:20:24.035 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@4d04df35 executed in 254 milliseconds
+2019-10-30 13:23:53.166 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@31e7afde executed in 372 milliseconds
+2019-10-30 13:23:53.587 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@154864f8 executed in 320 milliseconds
+2019-10-30 13:23:53.634 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@b86cb18 executed in 0 milliseconds
+2019-10-30 13:23:53.888 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@7da77305 executed in 254 milliseconds
+2019-10-30 15:17:43.763 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@5b3755f4 executed in 317 milliseconds
+2019-10-30 15:17:44.148 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@102af1bb executed in 301 milliseconds
+2019-10-30 15:17:44.186 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@5fbae40 executed in 0 milliseconds
+2019-10-30 15:17:44.449 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@500ec769 executed in 248 milliseconds
+2019-10-31 14:04:08.058 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@6c167a8e executed in 323 milliseconds
+2019-10-31 14:04:08.437 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@6cf9b2fa executed in 301 milliseconds
+2019-10-31 14:04:08.475 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@66f9bdb1 executed in 0 milliseconds
+2019-10-31 14:04:08.722 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@2027ffb executed in 232 milliseconds
+2019-11-04 10:54:28.238 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@3927390c executed in 341 milliseconds
+2019-11-04 10:54:28.654 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@750443d3 executed in 321 milliseconds
+2019-11-04 10:54:28.702 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@16d8e7a9 executed in 0 milliseconds
+2019-11-04 10:54:28.970 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@466ea2b0 executed in 265 milliseconds
+2019-11-13 09:28:54.200 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@47cee966 executed in 285 milliseconds
+2019-11-13 09:28:54.617 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@2368f384 executed in 332 milliseconds
+2019-11-13 09:28:54.670 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@6b5dc75d executed in 0 milliseconds
+2019-11-13 09:28:54.902 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@1f2a67fd executed in 232 milliseconds
+2019-11-13 13:29:41.374 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@6b2c94b6 executed in 279 milliseconds
+2019-11-13 13:29:41.782 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@4c8f2ac3 executed in 323 milliseconds
+2019-11-13 13:29:41.828 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@725b7003 executed in 0 milliseconds
+2019-11-13 13:29:42.082 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@873e790 executed in 254 milliseconds
+2019-11-13 13:30:44.594 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@73e33ac0 executed in 300 milliseconds
+2019-11-13 13:30:45.011 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@6ef11a53 executed in 338 milliseconds
+2019-11-13 13:30:45.042 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@242fe099 executed in 0 milliseconds
+2019-11-13 13:30:45.274 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@7a162043 executed in 232 milliseconds
+2020-01-30 14:36:30.075 [http-bio-8080-exec-2] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@4bfc4c9c executed in 608 milliseconds
+2020-01-30 14:36:32.531 [http-bio-8080-exec-1] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-towallet
+2020-01-30 14:36:33.918 [http-bio-8080-exec-1] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToWalletCommand@5d20024d executed in 1383 milliseconds
+2020-01-30 14:36:34.603 [http-bio-8080-exec-9] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-toorders
+2020-01-30 14:36:34.635 [http-bio-8080-exec-9] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMyOrdersCommand@26c7bd78 executed in 31 milliseconds
+2020-01-30 14:36:35.603 [http-bio-8080-exec-10] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-30 14:36:36.110 [http-bio-8080-exec-10] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@53fd7415 executed in 505 milliseconds
+2020-01-30 14:48:07.052 [http-bio-8080-exec-1] INFO  by.training.final.ServletLogger - username-unknown, role-unknown, command-toorders
+2020-01-30 14:48:07.055 [http-bio-8080-exec-2] INFO  by.training.final.ServletLogger - username-unknown, role-unknown, command-toorders
+2020-01-30 14:55:25.178 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@170d1b6b executed in 617 milliseconds
+2020-01-30 14:55:27.973 [http-bio-8080-exec-6] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-towallet
+2020-01-30 14:55:29.382 [http-bio-8080-exec-6] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToWalletCommand@65b0eee8 executed in 1407 milliseconds
+2020-01-30 14:55:34.525 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-toorders
+2020-01-30 14:55:34.560 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMyOrdersCommand@2e6a9896 executed in 34 milliseconds
+2020-01-30 14:55:35.453 [http-bio-8080-exec-6] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-30 14:55:35.946 [http-bio-8080-exec-6] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@47f5e5f4 executed in 492 milliseconds
+2020-01-30 14:55:38.257 [http-bio-8080-exec-6] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-settypeoforder
+2020-01-30 14:55:38.288 [http-bio-8080-exec-6] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.SetTypeOfOrderCommand@3f1c7aa1 executed in 0 milliseconds
+2020-01-30 14:55:40.049 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-settypeoforder
+2020-01-30 14:55:40.051 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.SetTypeOfOrderCommand@3f1c7aa1 executed in 0 milliseconds
+2020-01-30 14:55:45.351 [http-bio-8080-exec-5] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-towallet
+2020-01-30 14:55:46.686 [http-bio-8080-exec-5] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToWalletCommand@65b0eee8 executed in 1335 milliseconds
+2020-01-30 14:55:49.044 [http-bio-8080-exec-9] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-30 14:55:49.545 [http-bio-8080-exec-9] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@47f5e5f4 executed in 500 milliseconds
+2020-01-30 14:56:04.752 [http-bio-8080-exec-4] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-setlimitorder
+2020-01-30 14:56:04.922 [http-bio-8080-exec-4] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.SetLimitOrderCommand@4cd650df executed in 170 milliseconds
+2020-01-30 15:01:00.464 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@5e95b456 executed in 301 milliseconds
+2020-01-30 15:01:01.038 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@74ef7342 executed in 490 milliseconds
+2020-01-30 15:01:01.085 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@6229ec3 executed in 0 milliseconds
+2020-01-30 15:01:01.519 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@5631a009 executed in 434 milliseconds
+2020-01-30 15:01:49.860 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@56326055 executed in 313 milliseconds
+2020-01-30 15:01:50.348 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@34eb2425 executed in 385 milliseconds
+2020-01-30 15:01:50.395 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@2793ea4a executed in 0 milliseconds
+2020-01-30 15:01:50.665 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@58b67e0a executed in 270 milliseconds
+2020-01-30 15:21:39.451 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@c968d7e executed in 356 milliseconds
+2020-01-30 15:21:39.952 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@1c4038d executed in 385 milliseconds
+2020-01-30 15:21:39.993 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@127f1549 executed in 0 milliseconds
+2020-01-30 15:21:40.269 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@472f3fab executed in 276 milliseconds
+2020-01-30 15:22:53.741 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@762f5ba6 executed in 639 milliseconds
+2020-01-30 15:23:13.731 [http-bio-8080-exec-16] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@762f5ba6 executed in 589 milliseconds
+2020-01-30 15:28:05.256 [http-bio-8080-exec-3] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@34f961a6 executed in 596 milliseconds
+2020-01-30 15:31:35.340 [http-bio-8080-exec-6] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@1e264916 executed in 616 milliseconds
+2020-01-30 15:31:49.813 [http-bio-8080-exec-6] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@1e264916 executed in 568 milliseconds
+2020-01-30 15:33:47.211 [http-bio-8080-exec-2] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@786542fd executed in 601 milliseconds
+2020-01-30 15:33:55.414 [http-bio-8080-exec-13] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@786542fd executed in 555 milliseconds
+2020-01-30 15:36:41.005 [http-bio-8080-exec-5] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@3d715662 executed in 627 milliseconds
+2020-01-30 15:36:50.107 [http-bio-8080-exec-4] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@3d715662 executed in 561 milliseconds
+2020-01-30 15:37:22.817 [http-bio-8080-exec-2] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-towallet
+2020-01-30 15:37:24.259 [http-bio-8080-exec-2] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToWalletCommand@18a6a3bf executed in 1442 milliseconds
+2020-01-30 15:37:28.030 [http-bio-8080-exec-14] INFO  by.training.final.ServletLogger - username-Craig, role-user, command-tomarket
+2020-01-30 15:37:28.544 [http-bio-8080-exec-14] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@240233bb executed in 511 milliseconds
+2020-01-30 15:37:45.533 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-30 15:37:46.031 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@240233bb executed in 498 milliseconds
+2020-01-30 15:37:49.340 [http-bio-8080-exec-3] INFO  by.training.final.ServletLogger - username-Craig, role-user, command-towallet
+2020-01-30 15:37:50.696 [http-bio-8080-exec-3] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToWalletCommand@18a6a3bf executed in 1354 milliseconds
+2020-01-30 15:37:51.395 [http-bio-8080-exec-14] INFO  by.training.final.ServletLogger - username-Craig, role-user, command-tomarket
+2020-01-30 15:37:51.888 [http-bio-8080-exec-14] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@240233bb executed in 492 milliseconds
+2020-01-30 15:41:16.380 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@55fd80e5 executed in 601 milliseconds
+2020-01-30 15:41:22.884 [http-bio-8080-exec-5] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-towallet
+2020-01-30 15:41:24.218 [http-bio-8080-exec-5] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToWalletCommand@5b2e0b02 executed in 1334 milliseconds
+2020-01-30 15:41:25.556 [http-bio-8080-exec-10] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-30 15:41:26.059 [http-bio-8080-exec-10] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@5889ad9e executed in 501 milliseconds
+2020-01-30 15:41:45.982 [http-bio-8080-exec-15] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@55fd80e5 executed in 555 milliseconds
+2020-01-30 15:41:47.170 [http-bio-8080-exec-12] INFO  by.training.final.ServletLogger - username-Craig, role-user, command-towallet
+2020-01-30 15:41:48.536 [http-bio-8080-exec-12] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToWalletCommand@5b2e0b02 executed in 1365 milliseconds
+2020-01-30 15:41:49.266 [http-bio-8080-exec-11] INFO  by.training.final.ServletLogger - username-Craig, role-user, command-tomarket
+2020-01-30 15:41:49.767 [http-bio-8080-exec-11] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@5889ad9e executed in 500 milliseconds
+2020-01-30 15:45:09.096 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@3d1ee08e executed in 603 milliseconds
+2020-01-30 15:45:21.400 [http-bio-8080-exec-2] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@3d1ee08e executed in 559 milliseconds
+2020-01-30 15:45:40.775 [http-bio-8080-exec-4] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-towallet
+2020-01-30 15:45:42.179 [http-bio-8080-exec-4] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToWalletCommand@4a2dafbd executed in 1404 milliseconds
+2020-01-30 15:45:44.123 [http-bio-8080-exec-5] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-30 15:45:44.644 [http-bio-8080-exec-5] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@6d1e2d64 executed in 519 milliseconds
+2020-01-30 15:47:59.880 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@1e3c4d5 executed in 607 milliseconds
+2020-01-30 15:48:02.746 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-towallet
+2020-01-30 15:48:04.154 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToWalletCommand@1f57f585 executed in 1406 milliseconds
+2020-01-30 15:48:04.914 [http-bio-8080-exec-4] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-30 15:48:05.414 [http-bio-8080-exec-4] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@316e77b1 executed in 499 milliseconds
+2020-01-30 15:48:20.984 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@1e3c4d5 executed in 560 milliseconds
+2020-01-30 15:48:22.121 [http-bio-8080-exec-14] INFO  by.training.final.ServletLogger - username-Craig, role-user, command-towallet
+2020-01-30 15:48:23.512 [http-bio-8080-exec-14] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToWalletCommand@1f57f585 executed in 1389 milliseconds
+2020-01-30 15:48:24.079 [http-bio-8080-exec-15] INFO  by.training.final.ServletLogger - username-Craig, role-user, command-tomarket
+2020-01-30 15:48:24.590 [http-bio-8080-exec-15] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@316e77b1 executed in 510 milliseconds
+2020-01-30 15:55:25.936 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@11e40740 executed in 595 milliseconds
+2020-01-30 15:55:36.439 [http-bio-8080-exec-11] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@11e40740 executed in 566 milliseconds
+2020-01-30 15:58:17.020 [http-bio-8080-exec-1] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@44cc7c8c executed in 649 milliseconds
+2020-01-30 15:58:25.099 [http-bio-8080-exec-14] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@44cc7c8c executed in 565 milliseconds
+2020-01-30 16:00:40.123 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@3ca9af98 executed in 634 milliseconds
+2020-01-30 16:00:45.537 [http-bio-8080-exec-12] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@3ca9af98 executed in 584 milliseconds
+2020-01-30 16:03:34.904 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@45c119fe executed in 327 milliseconds
+2020-01-30 16:03:35.380 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@6484ac31 executed in 401 milliseconds
+2020-01-30 16:03:35.434 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@2b35de93 executed in 0 milliseconds
+2020-01-30 16:03:35.734 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@78b46391 executed in 300 milliseconds
+2020-01-30 16:06:45.581 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@43a8f206 executed in 294 milliseconds
+2020-01-30 16:06:46.104 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@57297a27 executed in 422 milliseconds
+2020-01-30 16:06:46.142 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@6229ec3 executed in 0 milliseconds
+2020-01-30 16:06:46.427 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@5985a53a executed in 285 milliseconds
+2020-01-30 16:07:25.680 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@56326055 executed in 324 milliseconds
+2020-01-30 16:07:26.158 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@2ef3bcc1 executed in 386 milliseconds
+2020-01-30 16:07:26.204 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@2793ea4a executed in 0 milliseconds
+2020-01-30 16:07:26.485 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@58b67e0a executed in 281 milliseconds
+2020-01-30 16:08:25.916 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@365d5f01 executed in 586 milliseconds
+2020-01-30 16:11:19.805 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@54e8465b executed in 300 milliseconds
+2020-01-30 16:11:20.291 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@65b1bebd executed in 401 milliseconds
+2020-01-30 16:11:20.337 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@3104b70c executed in 0 milliseconds
+2020-01-30 16:11:20.623 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@482547fd executed in 286 milliseconds
+2020-01-30 16:12:35.015 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@3bd3876 executed in 348 milliseconds
+2020-01-30 16:12:35.547 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@a70c22b executed in 448 milliseconds
+2020-01-30 16:12:35.585 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@4c8f2ac3 executed in 0 milliseconds
+2020-01-30 16:12:35.870 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@12e6e808 executed in 285 milliseconds
+2020-01-30 16:16:09.585 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@4ad1ed3 executed in 323 milliseconds
+2020-01-30 16:16:10.080 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@1c20cf4f executed in 395 milliseconds
+2020-01-30 16:16:10.118 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@4b9a9206 executed in 0 milliseconds
+2020-01-30 16:16:10.403 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@18e1d318 executed in 285 milliseconds
+2020-01-30 16:17:07.871 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@56326055 executed in 343 milliseconds
+2020-01-30 16:17:08.372 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@2ef3bcc1 executed in 401 milliseconds
+2020-01-30 16:17:08.410 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@2793ea4a executed in 0 milliseconds
+2020-01-30 16:17:08.711 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@58b67e0a executed in 286 milliseconds
+2020-01-30 16:17:56.655 [http-bio-8080-exec-1] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@16464694 executed in 602 milliseconds
+2020-01-30 16:19:47.498 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@282c8e3d executed in 332 milliseconds
+2020-01-30 16:19:48.015 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@631d5ed3 executed in 417 milliseconds
+2020-01-30 16:19:48.052 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@2793ea4a executed in 0 milliseconds
+2020-01-30 16:19:48.485 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@72fa8494 executed in 417 milliseconds
+2020-01-30 16:20:33.247 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@282c8e3d executed in 337 milliseconds
+2020-01-30 16:20:33.732 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@631d5ed3 executed in 385 milliseconds
+2020-01-30 16:20:33.764 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@2793ea4a executed in 0 milliseconds
+2020-01-30 16:20:34.175 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@72fa8494 executed in 411 milliseconds
+2020-01-30 16:22:30.642 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@142683da executed in 301 milliseconds
+2020-01-30 16:22:31.159 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@7bcc0392 executed in 417 milliseconds
+2020-01-30 16:22:31.205 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@2793ea4a executed in 0 milliseconds
+2020-01-30 16:22:31.607 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@a4e9275 executed in 402 milliseconds
+2020-01-30 16:23:10.994 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@236f7e40 executed in 310 milliseconds
+2020-01-30 16:23:11.479 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@550a8d99 executed in 401 milliseconds
+2020-01-30 16:23:11.510 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@3104b70c executed in 0 milliseconds
+2020-01-30 16:23:11.780 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@45ce359d executed in 254 milliseconds
+2020-01-30 16:23:51.114 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@25ee2f50 executed in 645 milliseconds
+2020-01-30 16:25:18.978 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@46a49b05 executed in 317 milliseconds
+2020-01-30 16:25:19.479 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@3e7628bc executed in 417 milliseconds
+2020-01-30 16:25:19.517 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@4b9a9206 executed in 0 milliseconds
+2020-01-30 16:25:19.844 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@384cd246 executed in 312 milliseconds
+2020-01-30 16:26:15.634 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@142683da executed in 285 milliseconds
+2020-01-30 16:26:16.151 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@7bcc0392 executed in 433 milliseconds
+2020-01-30 16:26:16.204 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@2793ea4a executed in 0 milliseconds
+2020-01-30 16:26:16.505 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@a4e9275 executed in 301 milliseconds
+2020-01-30 16:26:53.793 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@4e9515da executed in 678 milliseconds
+2020-01-30 17:15:35.111 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@2647ddff executed in 301 milliseconds
+2020-01-30 17:15:35.644 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@4edce24d executed in 433 milliseconds
+2020-01-30 17:15:35.713 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@65a3e11 executed in 0 milliseconds
+2020-01-30 17:15:35.976 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@714d19c3 executed in 263 milliseconds
+2020-01-30 17:16:20.182 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@2647ddff executed in 285 milliseconds
+2020-01-30 17:16:20.683 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@4edce24d executed in 401 milliseconds
+2020-01-30 17:16:20.730 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@65a3e11 executed in 0 milliseconds
+2020-01-30 17:16:21.169 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@714d19c3 executed in 439 milliseconds
+2020-01-30 17:17:06.912 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@3513c8ba executed in 632 milliseconds
+2020-01-30 17:17:08.846 [http-bio-8080-exec-6] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-towallet
+2020-01-30 17:17:10.275 [http-bio-8080-exec-6] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToWalletCommand@52931133 executed in 1427 milliseconds
+2020-01-30 17:17:10.977 [http-bio-8080-exec-9] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-toorders
+2020-01-30 17:17:11.011 [http-bio-8080-exec-9] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMyOrdersCommand@a6570c3 executed in 31 milliseconds
+2020-01-30 17:21:16.614 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@2647ddff executed in 348 milliseconds
+2020-01-30 17:21:17.121 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@4edce24d executed in 423 milliseconds
+2020-01-30 17:21:17.153 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@65a3e11 executed in 0 milliseconds
+2020-01-30 17:21:17.438 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@714d19c3 executed in 285 milliseconds
+2020-01-30 17:22:40.900 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@2647ddff executed in 354 milliseconds
+2020-01-30 17:22:41.424 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@4edce24d executed in 439 milliseconds
+2020-01-30 17:22:41.455 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@65a3e11 executed in 0 milliseconds
+2020-01-30 17:22:41.756 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@714d19c3 executed in 285 milliseconds
+2020-01-30 17:23:20.323 [http-bio-8080-exec-6] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@e2b6da2 executed in 639 milliseconds
+2020-01-31 09:04:40.999 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@47e61f6c executed in 379 milliseconds
+2020-01-31 09:04:41.484 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@4edce24d executed in 392 milliseconds
+2020-01-31 09:04:41.538 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@1ef17263 executed in 0 milliseconds
+2020-01-31 09:04:41.823 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@2f65c9db executed in 285 milliseconds
+2020-01-31 09:05:26.675 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@47e61f6c executed in 316 milliseconds
+2020-01-31 09:05:27.185 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@4edce24d executed in 410 milliseconds
+2020-01-31 09:05:27.245 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@1ef17263 executed in 0 milliseconds
+2020-01-31 09:05:27.530 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@2f65c9db executed in 285 milliseconds
+2020-01-31 09:06:08.622 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@62e37672 executed in 335 milliseconds
+2020-01-31 09:06:09.269 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@544fbb31 executed in 546 milliseconds
+2020-01-31 09:06:09.309 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@419a2664 executed in 0 milliseconds
+2020-01-31 09:06:09.581 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@4fa892cb executed in 272 milliseconds
+2020-01-31 09:07:20.127 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@4accfb93 executed in 610 milliseconds
+2020-01-31 09:07:24.539 [http-bio-8080-exec-1] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 09:07:24.809 [http-bio-8080-exec-1] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@6b32e67 executed in 254 milliseconds
+2020-01-31 09:07:25.565 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 09:07:25.841 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@6b32e67 executed in 275 milliseconds
+2020-01-31 09:07:26.441 [http-bio-8080-exec-2] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 09:07:26.706 [http-bio-8080-exec-2] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@6b32e67 executed in 263 milliseconds
+2020-01-31 09:07:27.345 [http-bio-8080-exec-6] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 09:07:27.619 [http-bio-8080-exec-6] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@6b32e67 executed in 273 milliseconds
+2020-01-31 09:07:28.256 [http-bio-8080-exec-9] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 09:07:28.525 [http-bio-8080-exec-9] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@6b32e67 executed in 268 milliseconds
+2020-01-31 09:07:31.197 [http-bio-8080-exec-2] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-settypeoforder
+2020-01-31 09:07:31.228 [http-bio-8080-exec-2] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.SetTypeOfOrderCommand@5620a75c executed in 0 milliseconds
+2020-01-31 09:07:33.077 [http-bio-8080-exec-9] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-settypeoforder
+2020-01-31 09:07:33.078 [http-bio-8080-exec-9] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.SetTypeOfOrderCommand@5620a75c executed in 0 milliseconds
+2020-01-31 09:07:34.636 [http-bio-8080-exec-6] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-settypeoforder
+2020-01-31 09:07:34.638 [http-bio-8080-exec-6] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.SetTypeOfOrderCommand@5620a75c executed in 0 milliseconds
+2020-01-31 09:26:28.703 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@12f2afbf executed in 486 milliseconds
+2020-01-31 09:26:29.204 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@2aa3ac73 executed in 401 milliseconds
+2020-01-31 09:26:29.235 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@7f696392 executed in 0 milliseconds
+2020-01-31 09:26:29.520 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@3099dc9d executed in 269 milliseconds
+2020-01-31 09:27:10.541 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@62e37672 executed in 300 milliseconds
+2020-01-31 09:27:11.131 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@231c1a6c executed in 487 milliseconds
+2020-01-31 09:27:11.177 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@38f1aa6f executed in 0 milliseconds
+2020-01-31 09:27:11.431 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@4fa892cb executed in 247 milliseconds
+2020-01-31 09:28:39.367 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@3eb2ec91 executed in 326 milliseconds
+2020-01-31 09:28:39.866 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@13b0abe6 executed in 398 milliseconds
+2020-01-31 09:28:39.913 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@233f26ac executed in 0 milliseconds
+2020-01-31 09:28:40.183 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@3c9570e4 executed in 270 milliseconds
+2020-01-31 09:29:20.863 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@220b206a executed in 344 milliseconds
+2020-01-31 09:29:21.368 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@3152bc96 executed in 407 milliseconds
+2020-01-31 09:29:21.415 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@6ae401b4 executed in 0 milliseconds
+2020-01-31 09:29:21.685 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@5efc8552 executed in 270 milliseconds
+2020-01-31 09:30:12.791 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@22841c8b executed in 617 milliseconds
+2020-01-31 09:30:15.014 [http-bio-8080-exec-6] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-towallet
+2020-01-31 09:30:16.333 [http-bio-8080-exec-6] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToWalletCommand@601d3fbc executed in 1319 milliseconds
+2020-01-31 09:30:20.713 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-todeposit 
+2020-01-31 09:30:20.743 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToDepositCommand@2bf9c5ad executed in 1 milliseconds
+2020-01-31 09:30:22.629 [http-bio-8080-exec-9] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-deposit
+2020-01-31 09:30:24.035 [http-bio-8080-exec-9] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@2a840c0b executed in 1405 milliseconds
+2020-01-31 09:30:27.381 [http-bio-8080-exec-6] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-rejectransaction
+2020-01-31 09:30:30.132 [http-bio-8080-exec-6] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.admin.RejectTransactionCommand@b681383 executed in 2749 milliseconds
+2020-01-31 09:34:02.000 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@16f22873 executed in 352 milliseconds
+2020-01-31 09:34:02.506 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@4c0bc494 executed in 406 milliseconds
+2020-01-31 09:34:02.559 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@462bbb2c executed in 0 milliseconds
+2020-01-31 09:34:02.822 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@5f410696 executed in 263 milliseconds
+2020-01-31 09:34:48.916 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@16f22873 executed in 417 milliseconds
+2020-01-31 09:34:49.426 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@4c0bc494 executed in 410 milliseconds
+2020-01-31 09:34:49.471 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@462bbb2c executed in 0 milliseconds
+2020-01-31 09:34:49.734 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@5f410696 executed in 263 milliseconds
+2020-01-31 09:35:35.163 [http-bio-8080-exec-3] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@487e6edb executed in 670 milliseconds
+2020-01-31 09:35:37.663 [http-bio-8080-exec-1] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-towallet
+2020-01-31 09:35:39.035 [http-bio-8080-exec-1] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToWalletCommand@577d21c0 executed in 1370 milliseconds
+2020-01-31 09:35:40.573 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-towithdraw 
+2020-01-31 09:35:40.605 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToWithdrawCommand@7c3ec5f3 executed in 0 milliseconds
+2020-01-31 09:35:43.061 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-withdraw
+2020-01-31 09:35:44.618 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@464cf0a8 executed in 1556 milliseconds
+2020-01-31 09:40:33.775 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@6cef58c6 executed in 332 milliseconds
+2020-01-31 09:40:34.245 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@741744eb executed in 385 milliseconds
+2020-01-31 09:40:34.292 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@34dc8c4f executed in 0 milliseconds
+2020-01-31 09:40:34.577 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@4f8a671a executed in 285 milliseconds
+2020-01-31 09:41:14.536 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@4e09a3a9 executed in 332 milliseconds
+2020-01-31 09:41:15.153 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@131be1ea executed in 533 milliseconds
+2020-01-31 09:41:15.191 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@21508878 executed in 0 milliseconds
+2020-01-31 09:41:15.460 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@673a7e8f executed in 269 milliseconds
+2020-01-31 09:41:56.698 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@53c4eaac executed in 586 milliseconds
+2020-01-31 09:41:58.930 [http-bio-8080-exec-4] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-toorders
+2020-01-31 09:41:58.965 [http-bio-8080-exec-4] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMyOrdersCommand@609bf7b7 executed in 33 milliseconds
+2020-01-31 09:42:00.394 [http-bio-8080-exec-2] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-towallet
+2020-01-31 09:42:01.851 [http-bio-8080-exec-2] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToWalletCommand@1c3c56cf executed in 1455 milliseconds
+2020-01-31 09:42:07.315 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-rejectransaction
+2020-01-31 09:42:10.270 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.admin.RejectTransactionCommand@34f17d9a executed in 2924 milliseconds
+2020-01-31 09:46:26.634 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@64c33723 executed in 309 milliseconds
+2020-01-31 09:46:27.104 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@520077a5 executed in 369 milliseconds
+2020-01-31 09:46:27.151 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@3dad3e98 executed in 0 milliseconds
+2020-01-31 09:46:27.436 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@593d76 executed in 285 milliseconds
+2020-01-31 09:47:56.806 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@4e09a3a9 executed in 432 milliseconds
+2020-01-31 09:47:57.312 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@131be1ea executed in 406 milliseconds
+2020-01-31 09:47:57.343 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@21508878 executed in 0 milliseconds
+2020-01-31 09:47:57.628 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@673a7e8f executed in 269 milliseconds
+2020-01-31 09:48:48.573 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@64c33723 executed in 331 milliseconds
+2020-01-31 09:48:49.105 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@520077a5 executed in 432 milliseconds
+2020-01-31 09:48:49.151 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@3dad3e98 executed in 0 milliseconds
+2020-01-31 09:48:49.437 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@593d76 executed in 286 milliseconds
+2020-01-31 09:52:06.864 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@4e09a3a9 executed in 301 milliseconds
+2020-01-31 09:52:07.350 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@131be1ea executed in 386 milliseconds
+2020-01-31 09:52:07.381 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@21508878 executed in 0 milliseconds
+2020-01-31 09:52:07.682 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@673a7e8f executed in 286 milliseconds
+2020-01-31 09:52:47.421 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@4e09a3a9 executed in 337 milliseconds
+2020-01-31 09:52:47.991 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@131be1ea executed in 470 milliseconds
+2020-01-31 09:52:48.038 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@21508878 executed in 0 milliseconds
+2020-01-31 09:52:48.323 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@673a7e8f executed in 269 milliseconds
+2020-01-31 09:54:13.042 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@4b4b1268 executed in 740 milliseconds
+2020-01-31 10:46:46.988 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@4e09a3a9 executed in 301 milliseconds
+2020-01-31 10:46:47.659 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@131be1ea executed in 586 milliseconds
+2020-01-31 10:46:47.706 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@21508878 executed in 0 milliseconds
+2020-01-31 10:46:47.960 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@673a7e8f executed in 254 milliseconds
+2020-01-31 10:51:09.909 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@4e09a3a9 executed in 285 milliseconds
+2020-01-31 10:51:10.411 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@131be1ea executed in 401 milliseconds
+2020-01-31 10:51:10.442 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@21508878 executed in 0 milliseconds
+2020-01-31 10:51:10.712 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@673a7e8f executed in 254 milliseconds
+2020-01-31 10:52:34.021 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@53fcaf7f executed in 356 milliseconds
+2020-01-31 10:52:34.532 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@bd661c5 executed in 429 milliseconds
+2020-01-31 10:52:34.579 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@53f07129 executed in 0 milliseconds
+2020-01-31 10:52:34.964 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@20471e71 executed in 385 milliseconds
+2020-01-31 10:57:32.735 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@7dbcd21e executed in 301 milliseconds
+2020-01-31 10:57:33.250 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@2c4d08b5 executed in 430 milliseconds
+2020-01-31 10:57:33.297 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@15d466aa executed in 0 milliseconds
+2020-01-31 10:57:33.566 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@64796596 executed in 269 milliseconds
+2020-01-31 11:19:27.080 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@5b1bab2b executed in 286 milliseconds
+2020-01-31 11:19:27.612 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@6449485a executed in 432 milliseconds
+2020-01-31 11:19:27.654 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@6e8cfa74 executed in 0 milliseconds
+2020-01-31 11:19:27.917 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@64172da3 executed in 263 milliseconds
+2020-01-31 11:20:17.289 [http-bio-8080-exec-5] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@449d4ffe executed in 686 milliseconds
+2020-01-31 11:20:19.664 [http-bio-8080-exec-3] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-towallet
+2020-01-31 11:20:21.149 [http-bio-8080-exec-3] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToWalletCommand@56b9c722 executed in 1478 milliseconds
+2020-01-31 11:20:24.240 [http-bio-8080-exec-3] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-towithdraw 
+2020-01-31 11:20:24.267 [http-bio-8080-exec-3] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToWithdrawCommand@5c1fce3b executed in 0 milliseconds
+2020-01-31 11:20:26.924 [http-bio-8080-exec-3] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-withdraw
+2020-01-31 11:20:28.567 [http-bio-8080-exec-3] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@e691cf1 executed in 1642 milliseconds
+2020-01-31 11:20:32.520 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-rejectransaction
+2020-01-31 11:20:35.551 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.admin.RejectTransactionCommand@6e710f39 executed in 3029 milliseconds
+2020-01-31 11:22:06.106 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@5b1bab2b executed in 320 milliseconds
+2020-01-31 11:22:06.595 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@6449485a executed in 379 milliseconds
+2020-01-31 11:22:06.633 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@6e8cfa74 executed in 0 milliseconds
+2020-01-31 11:22:06.912 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@64172da3 executed in 279 milliseconds
+2020-01-31 11:23:42.916 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@7dbcd21e executed in 408 milliseconds
+2020-01-31 11:23:43.421 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@2c4d08b5 executed in 401 milliseconds
+2020-01-31 11:23:43.468 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@15d466aa executed in 0 milliseconds
+2020-01-31 11:23:43.738 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@64796596 executed in 270 milliseconds
+2020-01-31 11:24:31.704 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@1a194a9a executed in 633 milliseconds
+2020-01-31 11:44:25.120 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@7f54cb5a executed in 363 milliseconds
+2020-01-31 11:44:25.643 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@79993ff5 executed in 401 milliseconds
+2020-01-31 11:44:25.690 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@6e8cfa74 executed in 0 milliseconds
+2020-01-31 11:44:25.959 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@555f8a3e executed in 269 milliseconds
+2020-01-31 11:45:06.603 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@7f54cb5a executed in 483 milliseconds
+2020-01-31 11:45:07.098 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@79993ff5 executed in 401 milliseconds
+2020-01-31 11:45:07.136 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@6e8cfa74 executed in 0 milliseconds
+2020-01-31 11:45:07.405 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@555f8a3e executed in 269 milliseconds
+2020-01-31 11:45:51.590 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@305cc62a executed in 671 milliseconds
+2020-01-31 11:45:55.930 [http-bio-8080-exec-3] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 11:45:56.199 [http-bio-8080-exec-3] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@4609fae9 executed in 269 milliseconds
+2020-01-31 11:45:57.889 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 11:45:58.158 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@4609fae9 executed in 268 milliseconds
+2020-01-31 11:45:59.650 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 11:45:59.918 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@4609fae9 executed in 267 milliseconds
+2020-01-31 11:46:01.250 [http-bio-8080-exec-9] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 11:46:01.524 [http-bio-8080-exec-9] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@4609fae9 executed in 273 milliseconds
+2020-01-31 11:46:02.825 [http-bio-8080-exec-2] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 11:46:03.092 [http-bio-8080-exec-2] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@4609fae9 executed in 266 milliseconds
+2020-01-31 11:46:04.634 [http-bio-8080-exec-9] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 11:46:04.899 [http-bio-8080-exec-9] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@4609fae9 executed in 264 milliseconds
+2020-01-31 11:46:06.391 [http-bio-8080-exec-4] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 11:46:06.660 [http-bio-8080-exec-4] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@4609fae9 executed in 268 milliseconds
+2020-01-31 11:46:07.569 [http-bio-8080-exec-2] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 11:46:07.837 [http-bio-8080-exec-2] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@4609fae9 executed in 267 milliseconds
+2020-01-31 11:46:16.732 [http-bio-8080-exec-4] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@305cc62a executed in 523 milliseconds
+2020-01-31 11:46:18.314 [http-bio-8080-exec-4] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 11:46:18.580 [http-bio-8080-exec-4] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@4609fae9 executed in 266 milliseconds
+2020-01-31 11:46:19.633 [http-bio-8080-exec-4] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 11:46:19.911 [http-bio-8080-exec-4] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@4609fae9 executed in 277 milliseconds
+2020-01-31 11:46:20.522 [http-bio-8080-exec-1] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 11:46:20.791 [http-bio-8080-exec-1] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@4609fae9 executed in 268 milliseconds
+2020-01-31 11:55:37.110 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@5c2007db executed in 316 milliseconds
+2020-01-31 11:55:37.677 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@6f1a5910 executed in 451 milliseconds
+2020-01-31 11:55:37.737 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@5cf109bc executed in 2 milliseconds
+2020-01-31 11:55:38.039 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@6d26c394 executed in 302 milliseconds
+2020-01-31 11:56:17.516 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@5c2007db executed in 417 milliseconds
+2020-01-31 11:56:18.102 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@6f1a5910 executed in 502 milliseconds
+2020-01-31 11:56:18.155 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@5cf109bc executed in 0 milliseconds
+2020-01-31 11:56:18.440 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@6d26c394 executed in 285 milliseconds
+2020-01-31 11:57:04.907 [http-bio-8080-exec-2] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@29f67b05 executed in 682 milliseconds
+2020-01-31 11:57:10.984 [http-bio-8080-exec-1] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-toorders
+2020-01-31 11:57:11.016 [http-bio-8080-exec-1] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMyOrdersCommand@35011a31 executed in 32 milliseconds
+2020-01-31 11:57:16.233 [http-bio-8080-exec-1] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 11:57:16.744 [http-bio-8080-exec-1] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@61c3958d executed in 511 milliseconds
+2020-01-31 11:57:29.536 [http-bio-8080-exec-1] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-toorders
+2020-01-31 11:57:29.567 [http-bio-8080-exec-1] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMyOrdersCommand@35011a31 executed in 31 milliseconds
+2020-01-31 11:57:31.612 [http-bio-8080-exec-1] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-towallet
+2020-01-31 11:57:32.233 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 11:57:32.744 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@61c3958d executed in 509 milliseconds
+2020-01-31 11:57:33.262 [http-bio-8080-exec-1] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToWalletCommand@5713a56f executed in 1027 milliseconds
+2020-01-31 11:57:37.724 [http-bio-8080-exec-5] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 11:57:37.987 [http-bio-8080-exec-5] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@61c3958d executed in 263 milliseconds
+2020-01-31 11:57:39.184 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-toorders
+2020-01-31 11:57:39.215 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMyOrdersCommand@35011a31 executed in 30 milliseconds
+2020-01-31 11:57:40.036 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 11:57:40.530 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@61c3958d executed in 493 milliseconds
+2020-01-31 11:57:42.740 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 11:57:43.007 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@61c3958d executed in 266 milliseconds
+2020-01-31 11:58:10.128 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-setlimitorder
+2020-01-31 11:58:10.291 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.SetLimitOrderCommand@f82afb2 executed in 148 milliseconds
+2020-01-31 11:58:25.686 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-toorders
+2020-01-31 11:58:25.717 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMyOrdersCommand@35011a31 executed in 31 milliseconds
+2020-01-31 11:58:34.913 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-rejectorder
+2020-01-31 11:58:35.029 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.RejectOrderCommand@51a7720a executed in 116 milliseconds
+2020-01-31 11:58:37.243 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 11:58:37.714 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@61c3958d executed in 470 milliseconds
+2020-01-31 11:58:41.257 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-tomarket
+2020-01-31 11:58:41.522 [http-bio-8080-exec-8] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMarketCommand@61c3958d executed in 264 milliseconds
+2020-01-31 12:00:06.482 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@5c2007db executed in 329 milliseconds
+2020-01-31 12:00:07.037 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@6f1a5910 executed in 452 milliseconds
+2020-01-31 12:00:07.087 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@5cf109bc executed in 0 milliseconds
+2020-01-31 12:00:07.389 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@6d26c394 executed in 302 milliseconds
+2020-01-31 12:00:47.344 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@6be2112 executed in 301 milliseconds
+2020-01-31 12:00:47.814 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@bd661c5 executed in 385 milliseconds
+2020-01-31 12:00:47.867 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@ef60ee6 executed in 0 milliseconds
+2020-01-31 12:00:48.115 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@72bcd40c executed in 248 milliseconds
+2020-01-31 12:01:36.391 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@26729861 executed in 623 milliseconds
+2020-01-31 12:09:09.325 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@7831da98 executed in 389 milliseconds
+2020-01-31 12:09:09.804 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@107c0738 executed in 379 milliseconds
+2020-01-31 12:09:09.842 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@8b5b497 executed in 0 milliseconds
+2020-01-31 12:09:10.105 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@45f77a87 executed in 263 milliseconds
+2020-01-31 12:35:46.306 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@38ffd6ce executed in 454 milliseconds
+2020-01-31 12:35:46.939 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@1bf91972 executed in 532 milliseconds
+2020-01-31 12:35:47.002 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@3c69a59d executed in 0 milliseconds
+2020-01-31 12:35:47.287 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@6aa76a52 executed in 285 milliseconds
+2020-01-31 12:47:34.992 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@2bc5f42 executed in 361 milliseconds
+2020-01-31 12:47:35.517 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@207ea2bc executed in 423 milliseconds
+2020-01-31 12:47:35.565 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@3c69a59d executed in 0 milliseconds
+2020-01-31 12:47:35.833 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@19efa4d6 executed in 266 milliseconds
+2020-01-31 12:48:15.346 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@2bc5f42 executed in 317 milliseconds
+2020-01-31 12:48:15.882 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@207ea2bc executed in 436 milliseconds
+2020-01-31 12:48:15.920 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@3c69a59d executed in 0 milliseconds
+2020-01-31 12:48:16.183 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@19efa4d6 executed in 263 milliseconds
+2020-01-31 12:49:06.718 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@2cc4c027 executed in 602 milliseconds
+2020-01-31 12:49:09.796 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-towallet
+2020-01-31 12:49:11.327 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToWalletCommand@3f9944dc executed in 1529 milliseconds
+2020-01-31 12:49:12.152 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-toorders
+2020-01-31 12:49:12.190 [http-bio-8080-exec-7] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToMyOrdersCommand@1e6d196 executed in 38 milliseconds
+2020-01-31 12:49:14.217 [http-bio-8080-exec-10] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-towallet
+2020-01-31 12:49:15.716 [http-bio-8080-exec-10] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToWalletCommand@3f9944dc executed in 1498 milliseconds
+2020-01-31 14:34:33.928 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@e72ceb8 executed in 305 milliseconds
+2020-01-31 14:34:34.445 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@6aadeac7 executed in 404 milliseconds
+2020-01-31 14:34:34.483 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@2d0ffb47 executed in 0 milliseconds
+2020-01-31 14:34:34.768 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@242f313b executed in 270 milliseconds
+2020-01-31 14:36:36.630 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@8c2d541 executed in 348 milliseconds
+2020-01-31 14:36:37.011 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@57cc9d6f executed in 265 milliseconds
+2020-01-31 14:36:37.049 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@27c5ae14 executed in 0 milliseconds
+2020-01-31 14:36:37.133 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@5bdd96f1 executed in 84 milliseconds
+2020-01-31 14:46:32.984 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.RegistrationCommand@4e09a3a9 executed in 400 milliseconds
+2020-01-31 14:46:33.366 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.WithdrawCommand@20c482f1 executed in 270 milliseconds
+2020-01-31 14:46:33.412 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.ChangeLanguageCommand@59affebc executed in 0 milliseconds
+2020-01-31 14:46:33.513 [main] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.DepositCommand@44afe74a executed in 101 milliseconds
+2020-01-31 14:47:25.787 [http-bio-8080-exec-1] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.general.LoginCommand@5557dca9 executed in 686 milliseconds
+2020-01-31 14:47:28.109 [http-bio-8080-exec-1] INFO  by.training.final.ServletLogger - username-Eve, role-user, command-towallet
+2020-01-31 14:47:29.828 [http-bio-8080-exec-1] INFO  by.training.final.ServletLogger - Method of by.training.cryptomarket.command.user.ToWalletCommand@3e8fc904 executed in 1716 milliseconds

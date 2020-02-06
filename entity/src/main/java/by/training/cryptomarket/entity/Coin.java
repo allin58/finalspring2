@@ -3,11 +3,11 @@ package by.training.cryptomarket.entity;
 import javax.persistence.Entity;
 import javax.persistence.*;
 
+
+
 @Entity
 @Table(name = "coins")
 public class Coin  extends by.training.cryptomarket.entity.Entity {
-
-
 
     @Id
     @Column(name = "identity")

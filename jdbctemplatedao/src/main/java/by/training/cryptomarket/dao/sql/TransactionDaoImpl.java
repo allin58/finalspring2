@@ -6,11 +6,14 @@ import by.training.cryptomarket.entity.Transaction;
 import by.training.cryptomarket.enums.TransactionStatus;
 import by.training.cryptomarket.enums.TransactionType;
 import by.training.cryptomarket.exception.PersistentException;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.context.WebApplicationContext;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
@@ -25,6 +28,7 @@ import java.util.List;
  * @version 1.0
  */
 @Repository
+@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class TransactionDaoImpl extends BaseDao implements TransactionDao {
 
     /**

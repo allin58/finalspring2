@@ -17,7 +17,8 @@ public class User extends by.training.cryptomarket.entity.Entity  {
 
     @Id
     @Column(name = "identity")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userIdSequencer")
+    @SequenceGenerator(name = "userIdSequencer", sequenceName =  "user_id_sequence",allocationSize = 10)
         private Integer identity;
 
     @Column(name = "user_name")

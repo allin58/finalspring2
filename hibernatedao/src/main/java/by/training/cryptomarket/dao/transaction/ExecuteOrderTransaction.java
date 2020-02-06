@@ -12,8 +12,11 @@ import by.training.cryptomarket.entity.qualifier.WalletQualifier;
 import by.training.cryptomarket.enums.StateOfOrder;
 import by.training.cryptomarket.exception.PersistentException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.context.WebApplicationContext;
 
 
 /**
@@ -22,6 +25,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @version 1.0
  */
 @Component
+@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class ExecuteOrderTransaction extends DataBaseTransaction {
 
     @Autowired

@@ -1,9 +1,9 @@
 package by.training.cryptomarket.dao.transaction;
 
 
-import by.training.cryptomarket.dao.sql.CoinDaoImpl;
-import by.training.cryptomarket.dao.sql.TransactionDaoImpl;
-import by.training.cryptomarket.dao.sql.WalletDaoImpl;
+import by.training.cryptomarket.dao.CoinDao;
+import by.training.cryptomarket.dao.TransactionDao;
+import by.training.cryptomarket.dao.WalletDao;
 import by.training.cryptomarket.entity.Coin;
 import by.training.cryptomarket.entity.Transaction;
 import by.training.cryptomarket.entity.Wallet;
@@ -11,8 +11,11 @@ import by.training.cryptomarket.entity.qualifier.WalletQualifier;
 import by.training.cryptomarket.enums.TransactionStatus;
 import by.training.cryptomarket.exception.PersistentException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.context.WebApplicationContext;
 
 import java.sql.Timestamp;
 import java.util.Date;
@@ -23,16 +26,17 @@ import java.util.Date;
  * @version 1.0
  */
 @Component
+@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class ApproveRequestTransaction extends DataBaseTransaction {
 
     @Autowired
-    WalletDaoImpl walletDao;
+    WalletDao walletDao;
 
     @Autowired
-    TransactionDaoImpl transactionDao;
+    TransactionDao transactionDao;
 
     @Autowired
-    CoinDaoImpl coinDao;
+    CoinDao coinDao;
 
     /**
      * The field for storage a id of transaction.

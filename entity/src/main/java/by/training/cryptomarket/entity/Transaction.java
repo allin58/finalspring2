@@ -18,7 +18,8 @@ public class Transaction extends by.training.cryptomarket.entity.Entity {
 
     @Id
     @Column(name = "identity")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tansactionIdSequencer")
+    @SequenceGenerator(name = "tansactionIdSequencer", sequenceName =  "transaction_id_sequence",allocationSize = 10)
     private Integer identity;
 
 

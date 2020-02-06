@@ -16,7 +16,8 @@ import javax.persistence.*;
 public class Order extends by.training.cryptomarket.entity.Entity  {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "orderIdSequencer")
+    @SequenceGenerator(name = "orderIdSequencer", sequenceName =  "order_id_sequence",allocationSize = 10)
     @Column(name = "identity")
     private Integer identity;
 

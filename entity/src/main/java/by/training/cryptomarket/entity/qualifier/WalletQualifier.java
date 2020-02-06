@@ -34,6 +34,8 @@ public class WalletQualifier {
                 break;
 
         }
+
+
         if (wallet.getBtc() < 0
                 || wallet.getEth() < 0
                 || wallet.getUsdt() < 0) {

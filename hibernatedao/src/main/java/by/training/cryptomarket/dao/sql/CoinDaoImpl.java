@@ -1,21 +1,28 @@
 package by.training.cryptomarket.dao.sql;
 
 
+import by.training.cryptomarket.dao.CoinDao;
 import by.training.cryptomarket.entity.Coin;
 import by.training.cryptomarket.exception.PersistentException;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.context.WebApplicationContext;
 
 import java.util.List;
 
-@Repository
+//@Repository
+@Component
 @Transactional
-public class CoinDaoImpl extends BaseDao{
+@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
+public class CoinDaoImpl extends BaseDao implements CoinDao {
 
 
 
 
-    public List<Coin> read() throws Exception {
+    public List<Coin> read() throws PersistentException {
 
 
         List<Coin> list = null;
@@ -29,16 +36,17 @@ public class CoinDaoImpl extends BaseDao{
         return list;
     }
 
-    public void create(Coin coin) throws Exception {
+    public Integer create(Coin coin) throws PersistentException {
         try {
             entityManager.persist(coin);
         } catch (Exception e) {
             LOGGER.info("DataAccessException in CoinDaoImpl, method create()");
             throw new PersistentException();
         }
+        return 0;
     }
 
-    public void delete(Coin coin) throws Exception{
+    public void delete(Coin coin) throws PersistentException{
         try {
             entityManager.remove(coin);
         } catch (Exception e) {
@@ -59,7 +67,7 @@ public class CoinDaoImpl extends BaseDao{
         }
     }
 
-    public void update(Coin coin) throws Exception {
+    public void update(Coin coin) throws PersistentException {
         try {
             entityManager.merge(coin);
         } catch (Exception e) {
@@ -68,7 +76,7 @@ public class CoinDaoImpl extends BaseDao{
         }
     }
 
-    public Coin read(Integer id) throws Exception{
+    public Coin read(Integer id) throws PersistentException{
 
         Coin coin = null;
         try {

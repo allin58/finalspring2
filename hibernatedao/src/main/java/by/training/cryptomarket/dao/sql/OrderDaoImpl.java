@@ -1,21 +1,26 @@
 package by.training.cryptomarket.dao.sql;
 
 
+import by.training.cryptomarket.dao.OrderDao;
 import by.training.cryptomarket.entity.Order;
 import by.training.cryptomarket.exception.PersistentException;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.context.WebApplicationContext;
 
 import java.util.List;
 
 @Transactional
 @Repository
-public class OrderDaoImpl extends BaseDao {
+@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
+public class OrderDaoImpl extends BaseDao implements OrderDao {
 
 
 
 
-    public List<Order> read() throws Exception {
+    public List<Order> read() throws PersistentException {
         List<Order> list = null;
         try {
             list = entityManager.createQuery("from Order").getResultList();
@@ -26,7 +31,7 @@ public class OrderDaoImpl extends BaseDao {
         return list;
     }
 
-    public void create(Order order) throws Exception {
+    public Integer create(Order order) throws PersistentException {
 
         try {
             entityManager.persist(order);
@@ -34,20 +39,21 @@ public class OrderDaoImpl extends BaseDao {
             LOGGER.info("DataAccessException in OrderDaoImpl, method create()");
             throw new PersistentException();
         }
+        return 0;
     }
 
-    public void delete(Order order) throws Exception {
+    public void delete(Integer i) throws PersistentException {
 
 
         try {
-            entityManager.remove(order);
+            entityManager.remove(read(i));
         } catch (Exception e) {
             LOGGER.info("DataAccessException in OrderDaoImpl, method delete()");
             throw new PersistentException();
         }
     }
 
-    public void update(Order order) throws Exception {
+    public void update(Order order) throws PersistentException {
 
 
         try {
@@ -58,7 +64,7 @@ public class OrderDaoImpl extends BaseDao {
         }
     }
 
-    public Order read(Integer id) throws Exception {
+    public Order read(Integer id) throws PersistentException {
 
         Order order = null;
         try {

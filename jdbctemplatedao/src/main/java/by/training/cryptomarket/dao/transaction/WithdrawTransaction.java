@@ -1,15 +1,18 @@
 package by.training.cryptomarket.dao.transaction;
 
 
-import by.training.cryptomarket.dao.sql.CoinDaoImpl;
-import by.training.cryptomarket.dao.sql.TransactionDaoImpl;
-import by.training.cryptomarket.dao.sql.WalletDaoImpl;
+import by.training.cryptomarket.dao.CoinDao;
+import by.training.cryptomarket.dao.TransactionDao;
+import by.training.cryptomarket.dao.WalletDao;
 import by.training.cryptomarket.entity.Transaction;
 import by.training.cryptomarket.entity.Wallet;
 import by.training.cryptomarket.entity.qualifier.WalletQualifier;
 import by.training.cryptomarket.exception.PersistentException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.WebApplicationContext;
 
 
 /**
@@ -18,18 +21,19 @@ import org.springframework.stereotype.Component;
  * @version 1.0
  */
 @Component
+@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class WithdrawTransaction extends DataBaseTransaction {
 
 
     @Autowired
-    WalletDaoImpl walletDao;
+    WalletDao walletDao;
 
 
     @Autowired
-    CoinDaoImpl coinDao;
+    CoinDao coinDao;
 
     @Autowired
-    TransactionDaoImpl transactionDao;
+    TransactionDao transactionDao;
 
 
     /**

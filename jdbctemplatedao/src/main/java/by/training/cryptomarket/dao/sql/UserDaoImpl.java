@@ -5,11 +5,14 @@ import by.training.cryptomarket.dao.UserDao;
 import by.training.cryptomarket.entity.User;
 import by.training.cryptomarket.enums.Role;
 import by.training.cryptomarket.exception.PersistentException;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.context.WebApplicationContext;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

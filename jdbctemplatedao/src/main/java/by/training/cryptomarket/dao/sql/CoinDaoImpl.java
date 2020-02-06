@@ -4,9 +4,12 @@ package by.training.cryptomarket.dao.sql;
 import by.training.cryptomarket.dao.CoinDao;
 import by.training.cryptomarket.entity.Coin;
 import by.training.cryptomarket.exception.PersistentException;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.context.WebApplicationContext;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,6 +21,7 @@ import java.util.List;
  * @version 1.0
  */
 @Repository
+@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class CoinDaoImpl extends BaseDao implements CoinDao {
 
 
@@ -46,11 +50,7 @@ public class CoinDaoImpl extends BaseDao implements CoinDao {
      */
     private static  String deleteSql = "DELETE FROM coins WHERE identity = ?";
 
-    /**
-     * The method that returns collection of coins.
-     * @return collection of coins
-     * @throws PersistentException
-     */
+
     @Override
     public List<Coin> read(){
 

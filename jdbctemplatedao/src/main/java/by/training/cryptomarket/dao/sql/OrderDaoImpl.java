@@ -6,11 +6,14 @@ import by.training.cryptomarket.entity.Order;
 import by.training.cryptomarket.enums.StateOfOrder;
 import by.training.cryptomarket.enums.TypeOfOrder;
 import by.training.cryptomarket.exception.PersistentException;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.context.WebApplicationContext;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
@@ -25,6 +28,7 @@ import java.util.List;
  * @version 1.0
  */
 @Repository
+@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class OrderDaoImpl extends BaseDao implements OrderDao {
 
 
@@ -32,7 +36,7 @@ public class OrderDaoImpl extends BaseDao implements OrderDao {
     /**
      * The field to store the sql create request.
      */
-    private static  String createSql = "INSERT INTO orders (user_id,pair,amount,price,type,state) VALUES (?, ?::currencyPairs, ?, ?, ?::typesoforder, ?::statesOfOrder)";
+    private static  String createSql = "INSERT INTO orders (user_id,pair,amount,price,type,state) VALUES (?, ?, ?, ?, ?::typesoforder, ?::statesOfOrder)";
 
 
     /**
@@ -48,7 +52,7 @@ public class OrderDaoImpl extends BaseDao implements OrderDao {
     /**
      * The field to store the sql update request.
      */
-    private static  String updateSql = "UPDATE orders SET user_id = ?, pair = ?::currencyPairs, amount = ?, price = ?, type = ?::typesoforder, state = ?::statesOfOrder WHERE identity = ?";
+    private static  String updateSql = "UPDATE orders SET user_id = ?, pair = ?, amount = ?, price = ?, type = ?::typesoforder, state = ?::statesOfOrder WHERE identity = ?";
 
     /**
      * The field to store the sql delete request.
@@ -100,6 +104,7 @@ public class OrderDaoImpl extends BaseDao implements OrderDao {
      */
     @Override
     public Integer create(final Order order)  {
+
         GeneratedKeyHolder keyHolder = new GeneratedKeyHolder();
 
         try {

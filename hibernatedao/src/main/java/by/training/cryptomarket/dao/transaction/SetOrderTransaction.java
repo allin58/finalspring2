@@ -8,8 +8,11 @@ import by.training.cryptomarket.entity.Wallet;
 import by.training.cryptomarket.entity.qualifier.WalletQualifier;
 import by.training.cryptomarket.exception.PersistentException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.context.WebApplicationContext;
 
 /**
  * This class is responsible for setting of order.
@@ -17,6 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @version 1.0
  */
 @Component
+@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class SetOrderTransaction extends DataBaseTransaction {
 
     @Autowired

@@ -12,7 +12,10 @@ import by.training.cryptomarket.entity.qualifier.WalletQualifier;
 import by.training.cryptomarket.enums.TransactionStatus;
 import by.training.cryptomarket.exception.PersistentException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.WebApplicationContext;
 
 import java.sql.Timestamp;
 import java.util.Date;
@@ -24,6 +27,7 @@ import java.util.Date;
  * @version 1.0
  */
 @Component
+@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class RejectRequestTransaction extends DataBaseTransaction {
 
 

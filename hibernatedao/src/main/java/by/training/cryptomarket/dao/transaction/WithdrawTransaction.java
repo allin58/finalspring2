@@ -9,7 +9,10 @@ import by.training.cryptomarket.entity.Wallet;
 import by.training.cryptomarket.entity.qualifier.WalletQualifier;
 import by.training.cryptomarket.exception.PersistentException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.WebApplicationContext;
 
 
 /**
@@ -18,6 +21,7 @@ import org.springframework.stereotype.Component;
  * @version 1.0
  */
 @Component
+@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class WithdrawTransaction extends DataBaseTransaction {
 
 

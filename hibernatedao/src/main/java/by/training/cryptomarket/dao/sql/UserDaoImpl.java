@@ -1,24 +1,28 @@
 package by.training.cryptomarket.dao.sql;
 
 
+import by.training.cryptomarket.dao.UserDao;
 import by.training.cryptomarket.entity.User;
 import by.training.cryptomarket.exception.PersistentException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.context.WebApplicationContext;
 
 import java.util.List;
 
 @Transactional
 @Repository
-public class UserDaoImpl extends BaseDao {
+public class UserDaoImpl extends BaseDao implements UserDao {
 
 
 
 
 
 
-    public List<User> read() throws Exception {
+    public List<User> read() throws PersistentException {
         List<User> list = null;
         try {
             list = entityManager.createQuery("from User").getResultList();
@@ -31,7 +35,7 @@ public class UserDaoImpl extends BaseDao {
         return list;
     }
 
-    public void create(User user) throws Exception {
+    public Integer create(User user) throws PersistentException {
 
 
         try {
@@ -41,14 +45,15 @@ public class UserDaoImpl extends BaseDao {
             throw new PersistentException();
         }
 
-
+        return 0;
     }
 
 
 
-    public void delete(User user) throws Exception {
-//em.remove(em.contains(entity) ? entity : em.merge(entity));
+    public void delete(Integer userId) throws PersistentException {
 
+
+        User user = read(userId);
         try {
             user = entityManager.merge(user);
             entityManager.remove(user);
@@ -60,7 +65,7 @@ public class UserDaoImpl extends BaseDao {
 
     }
 
-    public void update(User user) throws Exception {
+    public void update(User user) throws PersistentException {
 
         try {
             entityManager.merge(user);
@@ -71,7 +76,7 @@ public class UserDaoImpl extends BaseDao {
 
     }
 
-    public User read(Integer id) throws Exception {
+    public User read(Integer id) throws PersistentException {
 
 
         User user = null;
